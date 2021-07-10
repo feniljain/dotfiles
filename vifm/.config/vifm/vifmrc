@@ -397,7 +397,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " Sample mappings
 
 " Open current folder in nvim
-nnoremap ,n :!nvim %c<cr>
+nnoremap ;n :!nvim %d<cr>
 
 " Start shell in current directory
 nnoremap s :shell<cr>
