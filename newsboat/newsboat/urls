@@ -1,0 +1,51 @@
+# Reddit
+http://www.reddit.com/r/vim/.rss "~Vim reddit"
+http://www.reddit.com/r/linux/.rss "~Linux reddit"
+http://www.reddit.com/r/programming/.rss "~Programming reddit"
+http://www.reddit.com/r/opensource/.rss "~Opensource reddit"
+http://www.reddit.com/r/linux4noobs/.rss "~Linux4Noobs reddit"
+http://www.reddit.com/r/rust/.rss "~Rust reddit"
+http://www.reddit.com/r/technology/.rss "~Technology reddit"
+http://www.reddit.com/r/FlutterDev/.rss "~FlutterDev reddit"
+http://www.reddit.com/r/dartlang/.rss "~Dart reddit"
+http://www.reddit.com/r/golang/.rss "~Golang reddit"
+#http://www.reddit.com/r/Animesuggest/.rss "~Anime suggest reddit"
+#http://www.reddit.com/r/node/.rss "~Node reddit"
+#http://www.reddit.com/r/javascript/.rss "~Javascript reddit"
+#http://www.reddit.com/r/anime/.rss "~Anime reddit"
+#http://www.reddit.com/r/internships/.rss "~Internships reddit"
+#http://www.reddit.com/r/MachineLearning/.rss "~MachineLearning reddit"
+#http://www.reddit.com/r/learnmachinelearning/.rss "~Learn Machine Learning reddit"
+#http://www.reddit.com/r/google/.rss "~Google reddit"
+#http://www.reddit.com/r/SQL/.rss "~SQL reddit"
+#http://www.reddit.com/r/datasets/.rss "~Datasets reddit"
+
+# Clean coder
+https://blog.cleancoder.com/atom.xml "~Uncle Bob " People""
+
+#Joel On Software
+https://www.joelonsoftware.com/feed/ "~Joel On Software"
+
+# Dave Cheney
+https://dave.cheney.net/feed/atom "~Dave Cheney Blog"
+#https://dave.cheney.net "~Dave Cheney Blog"
+
+# Dev.to
+https://dev.to/feed/ "~Dev.to Homepage Blogs"
+https://dev.to/feed/tag/golang "~Golang dev.to"
+https://dev.to/feed/tag/rust "~Rust dev.to"
+https://dev.to/feed/tag/flutter "~Flutter dev.to"
+https://dev.to/feed/tag/reactjs "~ReactJS dev.to"
+https://dev.to/feed/tag/node "~NodeJS dev.to"
+
+# Self Improving Dev
+# https://selfimproving.dev/feed/ "~Self Improving Dev"
+
+# Hackernoon Medium Feed
+https://medium.com/feed/hackernoon "~Hackernoon Medium Feed"
+
+# Hacker news type for go devs
+https://golangnews.com/index.xml "~Golang News"
+
+# DevOpsHeaven
+https://devopsheaven.com/feed.xml "~DevOps Heaven"

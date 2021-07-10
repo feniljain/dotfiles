@@ -1,0 +1,65 @@
+{
+  "clangd.path": "clangd-9",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "markdown",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "typescript.tsx",
+    "json",
+    "go",
+    "rust",
+    "cpp",
+    "c",
+    "lua"
+  ],
+  "suggest.autoTrigger": "none",
+  "diagnostic.enable": false,
+  "cSpell.enabled": false,
+  "rpc.enabled": false,
+  "rust-analyzer.diagnostics.disabled": ["macro-error"],
+  "rust-analyzer.checkOnSave.enable": false,
+  "go.goplsEnv": { "GOOS": "js", "GOARCH": "wasm" },
+  "diagnostic.virtualText": true,
+  "diagnostic.checkCurrentLine": false,
+  "languageserver": {
+    "lua": {
+      "command": "/home/feniljain/Projects/softwares/lua-language-server/bin/Linux/lua-language-server",
+      "args": [
+        "-E",
+        "/home/feniljain/Projects/softwares/lua-language-server/main.lua"
+      ],
+      "filetypes": ["lua"],
+      "rootPatterns": [".git/"],
+      "settings": {
+        "Lua": {
+          "workspace": {
+            "library": {
+              "/usr/local/share/nvim/runtime/lua": true,
+              "/usr/local/share/nvim/runtime/lua/vim": true,
+              "/usr/local/share/nvim/runtime/lua/vim/lsp": true
+            },
+            "maxPreload": 2000,
+            "preloadFileSize": 1000
+          },
+          "runtime": {
+            "version": "5.4.1"
+          },
+          "diagnostics": {
+            "enable": true,
+            "globals": [
+              "hs",
+              "vim",
+              "it",
+              "describe",
+              "before_each",
+              "after_each"
+            ],
+            "disable": ["lowercase-global"]
+          }
+        }
+      }
+    }
+  }
+}
