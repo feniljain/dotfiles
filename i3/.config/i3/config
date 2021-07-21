@@ -358,7 +358,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # exec /usr/bin/desktime-linux
 exec /usr/bin/safeeyes
-exec_always feh --bg-scale ~/Pictures/Wallpapers/xuid3yol2x271.webp
+# exec_always feh --bg-scale ~/Pictures/Wallpapers/xuid3yol2x271.webp
+exec_always feh --bg-scale ~/Pictures/Wallpapers/debian_wallpaper.png
 exec_always --no-startup-id compton
 
 # assign [class="Firefox Developer Edition"] $ws1

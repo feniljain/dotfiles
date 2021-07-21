@@ -80,6 +80,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
 	zsh-autosuggestions
+    evalcache
     # zsh-z
 	# zsh-syntax-highlighting
 	# zsh-vim-mode

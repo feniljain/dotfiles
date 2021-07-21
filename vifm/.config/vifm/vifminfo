@@ -17,10 +17,22 @@
 	/home/fenil
 	VirtualBox VMs
 1612260024
+'k
+	/home/feniljain/Projects/knowledge-base
+	blockchain
+1625982112
+'l
+	/home/feniljain/Projects/Learn
+	..
+1626244233
 'p
-	/home/fenil/Projects/knowledge-base
-	life
-1612264995
+	/home/feniljain/Projects
+	..
+1626244216
+'r
+	/home/feniljain/Projects/rust-projects
+	tagcsv
+1626259370
 
 # Bookmarks:
 
@@ -34,123 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/feniljain/Projects
-	..
-0
-d/home/fenil/newsBoatArticles
-	NoiseTorch__Realtime_microphone_noise_suppression_on_Linux.txt
-2
-d/home/fenil/Videos
-	DSC.json
-7
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	Learn
-8
-d/home/fenil
-	Projects
-11
-d/home
-	fenil
-1
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	Learn
-8
-d/home/fenil/Projects/Learn
-	..
-0
-d/home/fenil/Projects
-	Learn
-8
-d/home/fenil/Projects/Learn
-	Rust
-14
-d/home/fenil/Projects/Learn/Rust
-	rstop
-13
-d/home/fenil/Projects/Learn/Rust/rstop
-	src
-1
-d/home/fenil/Projects/Learn/Rust/rstop/src
-	..
-0
-d/home/fenil/Projects/Learn/Rust/rstop
-	Cargo.lock
-3
-d/home/fenil
-	.zshrc
-38
-d/home
-	fenil
-1
-d/home/fenil
-	Projects
-11
-d/home
-	..
-0
-d/
-	var
-22
-d/var
-	lock
-6
-d/
-	media
-9
-d/media
-	..
-0
-d/
-	media
-9
-d/media
-	fenil
-1
-d/media/fenil
-	858f056f-233d-40a1-b39d-68cc8668606e
-1
-d/media/fenil/858f056f-233d-40a1-b39d-68cc8668606e
-	..
-0
-d/media/fenil
-	858f056f-233d-40a1-b39d-68cc8668606e
-1
-d/media
-	fenil
-1
-d/
-	home
-4
-d/home
-	fenil
-1
-d/home/fenil
-	Public
-12
-d/home/fenil/Public
-	..
-0
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	knowledge-base
-20
-d/home/fenil/Projects/knowledge-base
-	vim
-17
-d/home/fenil/Projects/knowledge-base/vim
-	..
-0
-d/home/fenil/Projects/knowledge-base
-	ml
-11
 d/home/fenil/Projects
 	CPP
 3
@@ -292,12 +187,174 @@ d/home/fenil/.config/vifm
 d/home
 	..
 0
-d/home/feniljain/Projects
+d/home/feniljain/Projects/rust-projects
 	..
 0
+d/home/feniljain/Projects
+	VIT
+4
+d/home/feniljain/Projects/VIT
+	Lone
+2
+d/home/feniljain/Projects/VIT/Lone
+	LoneBackend
+1
+d/home/feniljain/Projects/VIT/Lone/LoneBackend
+	..
+0
+d/home/feniljain/Projects/VIT/Lone
+	Events_dataset.csv
+3
+d/home/feniljain/Projects/VIT
+	Lone
+2
+d/home/feniljain/Projects/VIT/Lone
+	LoneBackend
+1
+d/home/feniljain/Projects/VIT/Lone/LoneBackend
+	..
+0
+d/home/feniljain/Projects/VIT/Lone
+	LoneBackend
+1
+d/home/feniljain/Projects/VIT
+	stego-midi
+3
+d/home/feniljain/Projects/VIT/stego-midi
+	Country_Roads.mid
+2
+d/home/feniljain/Projects/VIT
+	HPC
+1
+d/home/feniljain/Projects/VIT/HPC
+	..
+0
+d/home/feniljain/Projects/VIT
+	HPC
+1
+d/home/feniljain/Projects
+	Learn
+3
+d/home/feniljain/Projects/Learn
+	..
+0
+d/home/feniljain/Projects
+	web-projects
+13
+d/home/feniljain/Projects/web-projects
+	Exercises
+2
+d/home/feniljain/Projects/web-projects/Exercises
+	..
+0
+d/home/feniljain/Projects/web-projects
+	script.js
+34
+d/home/feniljain/Projects
+	javascript-projects
+7
+d/home/feniljain/Projects/javascript-projects
+	moleculer-examples
+1
+d/home/feniljain/Projects/javascript-projects/moleculer-examples
+	blog
+4
+d/home/feniljain/Projects/javascript-projects/moleculer-examples/blog
+	mixins
+2
+d/home/feniljain/Projects/javascript-projects/moleculer-examples
+	conduit
+5
+d/home/feniljain/Projects/javascript-projects/moleculer-examples/conduit
+	..
+0
+d/home/feniljain/Projects/javascript-projects/moleculer-examples
+	conduit
+5
+d/home/feniljain/Projects/javascript-projects
+	moleculer-examples
+1
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	..
+0
+d/home/feniljain/Projects
+	javascript-projects
+7
+d/home/feniljain/Projects/javascript-projects
+	tyche
+2
+d/home/feniljain/Projects/javascript-projects/tyche
+	..
+0
+d/home/feniljain/Projects
+	javascript-projects
+7
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects
+	javascript-projects
+7
+d/home/feniljain/Projects/javascript-projects
+	tyche
+3
+d/home/feniljain/Projects/javascript-projects/tyche
+	models
+3
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	async-fn-await
+1
+d/home/feniljain/Projects/rust-projects/rust-analyzer/async-fn-await
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects
+	javascript-projects
+7
+d/home/feniljain/Projects/javascript-projects
+	tmp
+2
+d/home/feniljain/Projects
+	internship
+6
+d/home/feniljain/Projects/internship
+	backend-interview-exercise
+2
+d/home/feniljain/Projects/internship/backend-interview-exercise
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	async-fn-await
+1
+d/home/feniljain/Projects
+	internship
+6
 d
 
 # Right window history (oldest to newest):
+D/home/feniljain
+	Projects
+7
+D/home/feniljain/Projects
+	knowledge-base
+7
 D/home/feniljain/Projects/knowledge-base
 	blockchain
 2
@@ -371,11 +428,35 @@ D/home
 	
 0
 D/home/feniljain/Projects/knowledge-base
-	design
-4
+	..
+0
+D/home/feniljain/Projects
+	gitconfig.txt
+13
+D/home/feniljain/Projects/knowledge-base
+	ml
+14
+D/home/feniljain/Projects/knowledge-base/ml
+	..
+0
+D/home/feniljain/Projects/knowledge-base
+	blockchain
+2
 D
 
 # Command line history (oldest to newest):
+:.,.+1q
+:w
+:!git clone https://github.com/feniljain/engima.git
+:!git clone https://github.com/feniljain/zeus
+:!mv tyche/ tyche1
+:!cp -r blog/ ../tyche/
+:mkdir javascript-projects
+:mkdir tyche
+:Git 
+:G
+:n$
+:!vim .
 :split
 :vsplit
 :marks
@@ -383,9 +464,23 @@ D
 :nmap
 :mmap
 :Q
+:!git clone https://github.com/moleculerjs/moleculer-examples/tree/master/blog#readme
+:!git clone git clone https://github.com/moleculerjs/moleculer-examples.git
+:~git clone https://github.com/moleculerjs/moleculer-examples.git
+:!git clone https://github.com/moleculerjs/moleculer-examples.git
+:.,.+0q
 :q
 
 # Search history (oldest to newest):
+/inter
+/flutter
+/tldr
+/Proj
+/dsa
+/rstop
+/play
+/rust
+/pla
 /co
 /Learn
 /Rust
@@ -405,6 +500,7 @@ D
 /confg
 /condig
 /config
+/async
 
 # Prompt history (oldest to newest):
 pnotes1
@@ -421,6 +517,12 @@ pnotes.txt
 # Trash content:
 t/home/fenil/.local/share/vifm/Trash/000_notes.txt
 	/home/fenil/notes.txt
+t/home/feniljain/.local/share/vifm/Trash/000_extract_new_module
+	/home/feniljain/Projects/rust-projects/rust-analyzer/master/extract_new_module
+t/home/feniljain/.local/share/vifm/Trash/000_enigma
+	/home/feniljain/Projects/golang-projects/enigma
+t/home/feniljain/.local/share/vifm/Trash/000_zeus
+	/home/feniljain/Projects/golang-projects/zeus
 
 # State:
 f

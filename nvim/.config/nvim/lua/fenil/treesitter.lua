@@ -1,6 +1,11 @@
 require('nvim-treesitter.configs').setup({
 -- ensure_installed = "all",
-ensure_installed = {"go", "rust", "c", "cpp", "java", "dart", "lua"},
+ensure_installed = {"go", "rust", "c", "cpp", "lua", "typescript", "jsonc", "gomod", "html", "css", "dockerfile", "tsx"},
+
+rainbow = {
+    enable = true,
+    extended_mode = true,
+},
 
 highlight = {
     enable = true,

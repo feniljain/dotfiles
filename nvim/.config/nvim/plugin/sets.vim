@@ -44,5 +44,6 @@ set scrolloff=0
 " set signcolumn " Already handled in coc config
 " set mouse=a " Enabling use of mouse so that it can help scrolling of docs in floating windows
 "set updatetime=300
+set wildmode=longest,list,full
 " }}}
 
