@@ -45,5 +45,8 @@ set scrolloff=0
 " set mouse=a " Enabling use of mouse so that it can help scrolling of docs in floating windows
 "set updatetime=300
 set wildmode=longest,list,full
-" }}}
 
+" For treesitter folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+" }}}

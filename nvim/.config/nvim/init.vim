@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 " Plug 'diepm/vim-rest-console'
 Plug 'lambdalisue/suda.vim'
 Plug 'jiangmiao/auto-pairs'
+" Plug 'windwp/nvim-autopairs'
 " Plug 'Pocco81/ISuckAtSpelling.nvim'
 " Plug 'rmagatti/auto-session'
 " Plug 'rmagatti/session-lens'
@@ -50,9 +51,10 @@ Plug 'onsails/lspkind-nvim'
 Plug 'ray-x/lsp_signature.nvim'
 
 " Syntax Highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
 Plug 'simrat39/symbols-outline.nvim'
-" Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/playground'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
@@ -71,7 +73,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 " THEMES
 Plug 'gruvbox-community/gruvbox'
-" Plug 'eddyekofo94/gruvbox-flat.nvim'
+" Plug 'rktjmp/lush.nvim'
+" Plug 'npxbr/gruvbox.nvim'
+Plug 'eddyekofo94/gruvbox-flat.nvim'
 
 " Rust
 Plug 'cespare/vim-toml'
@@ -202,10 +206,10 @@ call plug#end()
 " }}}
 
 " Vimscript file settings ---------------------- {{{
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
+" augroup filetype_vim
+"     autocmd!
+"     autocmd FileType vim setlocal foldmethod=marker
+" augroup END
 " }}}
 
 " BG transparent settings in neovim ---------------------- {{{

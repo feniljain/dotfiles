@@ -165,3 +165,6 @@ source "$HOME/.cargo/env"
 
 alias tmux='tmux -u'
 . "$HOME/.cargo/env"
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

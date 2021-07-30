@@ -37,7 +37,7 @@
 # Bookmarks:
 
 # TUI:
-ar
+al
 q0
 v2
 ov
@@ -46,93 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/fenil/Projects
-	CPP
-3
-d/home/fenil
-	Music
-9
-d/home/fenil/Music
-	..
-0
-d/home/fenil
-	.mozilla
-18
-d/home/fenil/.mozilla
-	firefox
-2
-d/home/fenil/.mozilla/firefox
-	firefox-mpris
-6
-d/home/fenil/.mozilla
-	firefox
-2
-d/home/fenil
-	.mozilla
-18
-d/home
-	fenil
-1
-d/home/fenil
-	.config
-4
-d/home/fenil/.config
-	vifm
-50
-d/home/fenil/.config/vifm
-	scripts
-2
-d/home/fenil
-	.config
-4
-d/home/fenil/.config
-	vlc
-50
-d/home/fenil/.config/vlc
-	..
-0
-d/home/fenil/.config
-	vifm
-49
-d/home/fenil/.config/vifm
-	vifmrc
-4
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	Learn
-8
-d/home/fenil/Projects/Learn
-	Rust
-14
-d/home/fenil/Projects/Learn/Rust
-	rstop
-13
-d/home/fenil/Projects/Learn/Rust/rstop
-	target
-2
-d/home/fenil
-	.config
-4
-d/home/fenil/.config
-	vifm
-49
-d/home/fenil/.config/vifm
-	colors
-1
-d/home/fenil/.config/vifm/colors
-	..
-0
-d/home/fenil/.config/vifm
-	..
-0
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	knowledge-base
-20
 d/home/fenil/Projects/knowledge-base
 	life
 8
@@ -346,6 +259,93 @@ d/home/feniljain/Projects/rust-projects/rust-analyzer
 d/home/feniljain/Projects
 	internship
 6
+d/home/feniljain/Projects/rust-projects
+	rstop
+11
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/golang-projects
+	zeus
+37
+d/home/feniljain/Projects/golang-projects/zeus
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rstop
+11
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/golang-projects
+	zeus
+37
+d/home/feniljain/Projects/golang-projects/zeus
+	pkg
+3
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	remove_method_param
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer/remove_method_param
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	extract_module
+3
+d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module
+	.cargo
+1
+d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module/.cargo
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rstop
+11
+d/home/feniljain/Projects/rust-projects/rstop
+	main
+4
+d/home/feniljain/Projects/rust-projects/rstop/main
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rstop
+11
+d/home/feniljain/Projects/rust-projects/rstop
+	main
+4
+d/home/feniljain/Projects/rust-projects
+	tldr
+15
+d/home/feniljain/Projects/rust-projects/tldr
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	tldr
+15
+d/home/feniljain/Projects/rust-projects/tldr
+	main
+4
+d/home/feniljain/Projects/rust-projects/tldr/main
+	src
+1
+d/home/feniljain/Projects/rust-projects/tldr
+	objects
+5
+d/home/feniljain/Projects/rust-projects
+	tldr
+15
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/rust-projects
+	tldr
+15
 d
 
 # Right window history (oldest to newest):
@@ -472,6 +472,7 @@ D
 :q
 
 # Search history (oldest to newest):
+/ex
 /inter
 /flutter
 /tldr
@@ -501,6 +502,7 @@ D
 /condig
 /config
 /async
+/extr
 
 # Prompt history (oldest to newest):
 pnotes1

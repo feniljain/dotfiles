@@ -173,3 +173,6 @@ alias luamake=/home/feniljain/Projects/softwares/lua-language-server/3rd/luamake
 alias goland=/opt/GoLand-2021.1.3/bin/goland.sh
 alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos registry.appointy.com/trishul'
 # alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos ayushbpl10/trishul:v1'
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

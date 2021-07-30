@@ -84,5 +84,25 @@ nmap <Space>rw :InteractiveWindow<CR>
 " Window split shortcuts
 nnoremap <Space>v :vsplit<CR>
 nnoremap <Space>- :split<CR>
-" }}}
 
+" Use Y to automatically select to the end of the line
+nnoremap Y y$
+
+" Center screen while jumping in search
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Jumplist mutation
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" Moving lines around in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+" }}}

@@ -22,5 +22,7 @@ display-clone:
 	xrandr --output eDP-1 --auto --output HDMI-1 --auto --same-as eDP-1
 display-dual:
 	xrandr --output eDP-1 --auto --output HDMI-1 --auto --right-of eDP-1 --primary
+keyboard-dual:
+	setxkbmap -layout us,us -variant ,dvorak -option "lv3:rwin_switch,grp:alt_space_toggle"
 
 # xrandr --output LVDS-1 --off --output e-DP-1 --off --output HDMI-1 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output VGA-1 --off
