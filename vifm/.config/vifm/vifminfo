@@ -46,45 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/fenil/Projects/knowledge-base
-	life
-8
-d/home/fenil
-	Projects
-11
-d/home/fenil/Projects
-	knowledge-base
-20
-d/home/fenil/Projects/knowledge-base
-	life
-8
-d/home/fenil
-	..
-0
-d/home/fenil/Projects/knowledge-base
-	life
-8
-d/home/fenil
-	..
-0
-d/home
-	fenil
-1
-d/home/fenil
-	AndroidStudioProjects
-2
-d/home/fenil/AndroidStudioProjects
-	..
-0
-d/home/fenil
-	AndroidStudioProjects
-2
-d/home/fenil/AndroidStudioProjects
-	..
-0
-d/home/fenil
-	ApkProjects
-3
 d/home/fenil/ApkProjects
 	app
 1
@@ -344,8 +305,47 @@ d/home/feniljain/Projects
 	golang-projects
 5
 d/home/feniljain/Projects/rust-projects
-	tldr
-15
+	rstop
+11
+d/home/feniljain/Projects/rust-projects/rstop
+	main
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects/rust-analyzer/fix-remove_unused_param
+	..
+0
 d
 
 # Right window history (oldest to newest):
@@ -445,6 +445,7 @@ D/home/feniljain/Projects/knowledge-base
 D
 
 # Command line history (oldest to newest):
+:"
 :.,.+1q
 :w
 :!git clone https://github.com/feniljain/engima.git
@@ -463,12 +464,13 @@ D
 :nmao
 :nmap
 :mmap
-:Q
 :!git clone https://github.com/moleculerjs/moleculer-examples/tree/master/blog#readme
 :!git clone git clone https://github.com/moleculerjs/moleculer-examples.git
 :~git clone https://github.com/moleculerjs/moleculer-examples.git
 :!git clone https://github.com/moleculerjs/moleculer-examples.git
+:Q
 :.,.+0q
+:.,.+2q
 :q
 
 # Search history (oldest to newest):
@@ -481,7 +483,6 @@ D
 /rstop
 /play
 /rust
-/pla
 /co
 /Learn
 /Rust
@@ -503,6 +504,7 @@ D
 /config
 /async
 /extr
+/pla
 
 # Prompt history (oldest to newest):
 pnotes1

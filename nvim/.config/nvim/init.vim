@@ -49,6 +49,7 @@ Plug 'folke/trouble.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'onsails/lspkind-nvim'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'folke/lsp-colors.nvim'
 
 " Syntax Highlighting
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -192,6 +193,17 @@ call plug#end()
      autocmd!
      autocmd BufWritePre *.* :%s/\s\+$//e
  augroup END
+
+ " Force treesitter build on every save
+ " augroup updateTreesitterHighlighting
+ "     autocmd!
+ "     autocmd BufWritePre *.* call UpdateTreesitterHighlightingFn()
+ " augroup END
+
+function UpdateTreesitterHighlightingFn()
+    " :TSBufDisable highlight
+    " :TSBufEnable highlight
+endfunction
 
  " Protobuf support
  augroup filetype

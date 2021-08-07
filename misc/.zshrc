@@ -139,6 +139,7 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim -c 'set ft=man' -" # Open man pages in nvim with syntax highlighting
+export RUST_BACKTRACE=1
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
