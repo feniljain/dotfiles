@@ -94,7 +94,7 @@ require('lualine').setup{
     lualine_z = { 'location' },
   },
   inactive_sections = {
-    lualine_a = {  },
+    lualine_a = { require'nvim-lightbulb'.get_status_text() },
     lualine_b = {  },
     lualine_c = { 'filename' },
     lualine_x = { 'location' },

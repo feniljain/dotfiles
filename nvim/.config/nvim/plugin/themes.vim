@@ -39,6 +39,10 @@
 " let g:srcery_transparent_background = 0
 " colorscheme srcery
 
+" Toast.vim
+" set background=dark
+" colorscheme toast
+
 " To make background transparent
 hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
 " }}}

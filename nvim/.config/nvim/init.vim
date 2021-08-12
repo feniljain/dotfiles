@@ -28,8 +28,8 @@ Plug 'romgrk/winteract.vim'
 Plug 'tpope/vim-surround'
 " Plug 'diepm/vim-rest-console'
 Plug 'lambdalisue/suda.vim'
-Plug 'jiangmiao/auto-pairs'
-" Plug 'windwp/nvim-autopairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 " Plug 'Pocco81/ISuckAtSpelling.nvim'
 " Plug 'rmagatti/auto-session'
 " Plug 'rmagatti/session-lens'
@@ -43,23 +43,28 @@ Plug 'ObserverOfTime/discord.nvim', {'do': ':UpdateRemotePlugins'}
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'glepnir/lspsaga.nvim'
 Plug 'kabouzeid/nvim-lspinstall'
+Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for highlighting, or it starts break badly
+Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'onsails/lspkind-nvim'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'folke/lsp-colors.nvim'
+Plug 'kosayoda/nvim-lightbulb'
 
 " Syntax Highlighting
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
-Plug 'simrat39/symbols-outline.nvim'
 Plug 'nvim-treesitter/playground'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'abecodes/tabout.nvim'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " GIT
 Plug 'airblade/vim-gitgutter'
@@ -67,16 +72,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'drzel/vim-repo-edit'
 Plug 'junegunn/gv.vim'
 Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'APZelos/blamer.nvim'
 
 " HTML AND CSS AND JS
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-
 " THEMES
 Plug 'gruvbox-community/gruvbox'
-" Plug 'rktjmp/lush.nvim'
-" Plug 'npxbr/gruvbox.nvim'
-Plug 'eddyekofo94/gruvbox-flat.nvim'
 
 " Rust
 Plug 'cespare/vim-toml'
@@ -84,6 +86,8 @@ Plug 'simrat39/rust-tools.nvim'
 
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'romgrk/barbar.nvim'
+Plug 'wellle/tmux-complete.vim'
 
 " RFCs
 Plug 'ThePrimeagen/rfc-reader'
@@ -151,6 +155,10 @@ call plug#end()
 " Plug 'srcery-colors/srcery-vim'
 " Plug 'sainnhe/sonokai'
 " Plug 'tomasiser/vim-code-dark'
+" Plug 'rktjmp/lush.nvim'
+" Plug 'npxbr/gruvbox.nvim'
+" Plug 'eddyekofo94/gruvbox-flat.nvim'
+" Plug 'jsit/toast.vim'
 
 " GOLANG
 " Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
@@ -173,8 +181,6 @@ call plug#end()
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'ggreer/the_silver_searcher'
 " Plug 'nvim-telescope/telescope-media-files.nvim'
-
-" Plug 'APZelos/blamer.nvim'
 
 " Debugger
 " Plug 'mfussenegger/nvim-dap'
@@ -209,6 +215,8 @@ endfunction
  augroup filetype
    au! BufRead,BufNewFile *.proto setfiletype proto
  augroup end
+
+ autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
  " augroup goFixImportOnSave
  "   autocmd!

@@ -12,7 +12,7 @@
 'h
 	/home/feniljain/
 	..
-1625942383
+1628402646
 'j
 	/home/fenil
 	VirtualBox VMs
@@ -37,7 +37,7 @@
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
 ov
@@ -46,39 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/fenil/ApkProjects
-	app
-1
-d/home/fenil
-	.config
-4
-d/home/fenil/.config
-	vifm
-49
-d/home/fenil/.config/vifm
-	vifmrc
-4
-d/home
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	..
-0
-d/home/feniljain/Projects
-	VIT
-4
-d/home/feniljain/Projects/VIT
-	Lone
-2
-d/home/feniljain/Projects/VIT/Lone
-	LoneBackend
-1
-d/home/feniljain/Projects/VIT/Lone/LoneBackend
-	..
-0
-d/home/feniljain/Projects/VIT/Lone
-	Events_dataset.csv
-3
 d/home/feniljain/Projects/VIT
 	Lone
 2
@@ -346,9 +313,48 @@ d/home/feniljain/Projects/rust-projects/rust-analyzer
 d/home/feniljain/Projects/rust-projects/rust-analyzer/fix-remove_unused_param
 	..
 0
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+12
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects
+	golang-projects
+5
 d
 
 # Right window history (oldest to newest):
+D/home/feniljain/Projects/knowledge-base/miscellaneous
+	..
+0
+D/home/feniljain/Projects/javascript-projects
+	..
+0
 D/home/feniljain
 	Projects
 7
@@ -440,11 +446,38 @@ D/home/feniljain/Projects/knowledge-base/ml
 	..
 0
 D/home/feniljain/Projects/knowledge-base
+	compilers
+3
+D/home/feniljain/Projects/knowledge-base/compilers
+	..
+0
+D/home/feniljain/Projects/knowledge-base
+	blockchain
+2
+D/home/feniljain/Projects/knowledge-base/blockchain
+	..
+0
+D/home/feniljain/Projects/knowledge-base
+	blockchain
+2
+D/home/feniljain/Projects/knowledge-base/blockchain
+	..
+0
+D/home/feniljain/Projects/knowledge-base
+	blockchain
+2
+D/home/feniljain/Projects/knowledge-base/blockchain
+	..
+0
+D/home/feniljain/Projects/knowledge-base
 	blockchain
 2
 D
 
 # Command line history (oldest to newest):
+:qjkkj:q
+:qe:q
+:L
 :"
 :.,.+1q
 :w
@@ -468,12 +501,13 @@ D
 :!git clone git clone https://github.com/moleculerjs/moleculer-examples.git
 :~git clone https://github.com/moleculerjs/moleculer-examples.git
 :!git clone https://github.com/moleculerjs/moleculer-examples.git
+:.,.+2q
 :Q
 :.,.+0q
-:.,.+2q
 :q
 
 # Search history (oldest to newest):
+/kyverno
 /ex
 /inter
 /flutter
