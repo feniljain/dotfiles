@@ -1,0 +1,444 @@
+{
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "window.zoomLevel": -1,
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "f",
+            ],
+            "commands": [
+                "editor.action.formatSelection",
+            ],
+        },
+        {
+            "before": [
+                "<Space>",
+                "<Space>",
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "c",
+                "p",
+            ],
+            "commands": [
+                "editor.action.clipboardCopyAction"
+            ]
+        },
+        {
+            "before": [
+                "v",
+                "p",
+            ],
+            "commands": [
+                "editor.action.clipboardPasteAction"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "z",
+                "A"
+            ],
+            "commands": [
+                "editor.unfoldRecursively"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "\\"
+            ],
+            "commands": [
+                "workbench.action.splitEditorRight"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "-"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "n",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "r",
+                "f"
+            ],
+            "commands": [
+                "revealInExplorer"
+            ]
+        },
+        {
+            "before": [
+                "K",
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "n",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.peekImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "c",
+                "a"
+            ],
+            "commands": [
+                "editor.action.refactor"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "q",
+                "f"
+            ],
+            "commands": [
+                "problems.action.showQuickFixes"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "g",
+                "d",
+            ],
+            "commands": [
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "s",
+                "o",
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "f",
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "<Space>",
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "t",
+            ],
+            "commands": [
+                "workbench.action.showEditorsInActiveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "r",
+                "h",
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "r",
+                "h",
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "r",
+                "h",
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>",
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>",
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "n",
+                "f",
+            ],
+            "commands": [
+                "workbench.view.explorer",
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "t",
+                "n",
+            ],
+            "commands": [
+                "testing.runAtCursor",
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "t",
+                "l",
+            ],
+            "commands": [
+                "testing.reRunLastRun",
+            ],
+        },
+        {
+            "before": [
+                "<Space>",
+                "t",
+                "f",
+            ],
+            "commands": [
+                "testing.runCurrentFile",
+            ],
+        },
+        {
+            "before": [
+                "<Space>",
+                "f",
+            ],
+            "commands": [
+                "editor.action.formatDocument",
+            ],
+        },
+        {
+            "before": [
+                "<Space>",
+                "t",
+                "s",
+            ],
+            "commands": [
+                "workbench.view.extension.test",
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "f",
+                "d",
+            ],
+            "commands": [
+                "workbench.action.tasks.toggleProblems"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+            ],
+            "commands": [
+                ":q"
+            ]
+        },
+        {
+            "before": [
+                "m",
+                "r"
+            ],
+            "commands": [
+                "fileutils.renameFile"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "c",
+                "b",
+            ],
+            "commands": [
+                ":bd!"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.problems.focus"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "z",
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode",
+            ]
+        },
+    ],
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/home/feniljain/.local/bin/nvim",
+    "vim.hlsearch": true,
+    "vim.smartcase": true,
+    "vim.surround": true,
+    "vim.useCtrlKeys": true,
+    "vim.visualstar": true,
+    "vim.highlightedyank.enable": true,
+    "vim.foldfix": true,
+    "vim.debug.silent": false,
+    "vim.debug.loggingLevelForConsole": "debug",
+    // "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "editor.minimap.enabled": false,
+}

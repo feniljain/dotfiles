@@ -37,7 +37,7 @@
 # Bookmarks:
 
 # TUI:
-ar
+al
 q0
 v2
 ov
@@ -46,66 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/feniljain/Projects/VIT
-	Lone
-2
-d/home/feniljain/Projects/VIT/Lone
-	LoneBackend
-1
-d/home/feniljain/Projects/VIT/Lone/LoneBackend
-	..
-0
-d/home/feniljain/Projects/VIT/Lone
-	LoneBackend
-1
-d/home/feniljain/Projects/VIT
-	stego-midi
-3
-d/home/feniljain/Projects/VIT/stego-midi
-	Country_Roads.mid
-2
-d/home/feniljain/Projects/VIT
-	HPC
-1
-d/home/feniljain/Projects/VIT/HPC
-	..
-0
-d/home/feniljain/Projects/VIT
-	HPC
-1
-d/home/feniljain/Projects
-	Learn
-3
-d/home/feniljain/Projects/Learn
-	..
-0
-d/home/feniljain/Projects
-	web-projects
-13
-d/home/feniljain/Projects/web-projects
-	Exercises
-2
-d/home/feniljain/Projects/web-projects/Exercises
-	..
-0
-d/home/feniljain/Projects/web-projects
-	script.js
-34
-d/home/feniljain/Projects
-	javascript-projects
-7
-d/home/feniljain/Projects/javascript-projects
-	moleculer-examples
-1
-d/home/feniljain/Projects/javascript-projects/moleculer-examples
-	blog
-4
-d/home/feniljain/Projects/javascript-projects/moleculer-examples/blog
-	mixins
-2
-d/home/feniljain/Projects/javascript-projects/moleculer-examples
-	conduit
-5
 d/home/feniljain/Projects/javascript-projects/moleculer-examples/conduit
 	..
 0
@@ -346,9 +286,75 @@ d/home/feniljain/Projects/rust-projects
 d/home/feniljain/Projects
 	golang-projects
 5
+d/home/feniljain/Projects/golang-projects
+	zeus
+16
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	rstop
+11
+d/home/feniljain/Projects/rust-projects/rstop
+	refs
+6
+d/home/feniljain/Projects/rust-projects
+	tldr
+15
+d/home/feniljain/Projects/rust-projects/tldr
+	objects
+5
+d/home/feniljain/Projects/rust-projects
+	web_crawler
+16
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	macro-rename
+8
+d/home/feniljain/Projects/rust-projects/rust-analyzer/macro-rename
+	.cargo
+1
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	extract_module
+3
+d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module
+	lib
+9
 d
 
 # Right window history (oldest to newest):
+D/home/feniljain/Projects/knowledge-base/programming
+	..
+0
+D/home/feniljain/Projects/knowledge-base/hardware
+	..
+0
 D/home/feniljain/Projects/knowledge-base/miscellaneous
 	..
 0
@@ -475,6 +481,8 @@ D/home/feniljain/Projects/knowledge-base
 D
 
 # Command line history (oldest to newest):
+:chmod
+:a
 :qjkkj:q
 :qe:q
 :L
@@ -504,6 +512,7 @@ D
 :.,.+2q
 :Q
 :.,.+0q
+:exit
 :q
 
 # Search history (oldest to newest):
@@ -561,6 +570,8 @@ t/home/feniljain/.local/share/vifm/Trash/000_enigma
 	/home/feniljain/Projects/golang-projects/enigma
 t/home/feniljain/.local/share/vifm/Trash/000_zeus
 	/home/feniljain/Projects/golang-projects/zeus
+t/home/feniljain/.local/share/vifm/Trash/000_fileRenamer
+	/home/feniljain/Projects/knowledge-base/fileRenamer
 
 # State:
 f
