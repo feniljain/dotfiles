@@ -1,6 +1,52 @@
 {
-    "workbench.colorTheme": "Gruvbox Material Dark",
+    //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "[html]": {
+        "editor.tabSize": 2
+    },
+
+    "window.enableMenuBarMnemonics": false,
+    "window.menuBarVisibility": "hidden",
+    "window.newWindowDimensions": "maximized",
+    "window.restoreWindows": "none",
+    "window.title": "${rootName}",
+    "window.titleBarStyle": "native",
     "window.zoomLevel": -1,
+
+    "workbench.activityBar.visible": true,
+    "workbench.editor.showTabs": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.tree.indent": 16,
+    "workbench.useExperimentalGridLayout": true,
+    "workbench.colorTheme": "Gruvbox Material Dark",
+
+    // "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    // "editor.fontSize": 18,
+    "editor.formatOnType": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.cursorSurroundingLines": 5,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.minimap.enabled": false,
+
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/home/feniljain/.local/bin/nvim",
+    "vim.hlsearch": true,
+    "vim.smartcase": true,
+    "vim.surround": true,
+    "vim.useCtrlKeys": true,
+    "vim.visualstar": true,
+    "vim.highlightedyank.enable": true,
+    "vim.foldfix": true,
+    "vim.debug.silent": false,
+    "vim.debug.loggingLevelForConsole": "debug",
     "vim.visualModeKeyBindings": [
         {
             "before": [
@@ -424,21 +470,31 @@
                 "workbench.action.toggleZenMode",
             ]
         },
+        {
+            "before": [
+                "<Space>",
+                "w",
+                "r"
+            ],
+            "commands": [
+                "workbench.action.reloadWindow"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>",
+            ],
+            "commands": [
+                "references-view.next"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "commands": [
+                "references-view.prev"
+            ]
+        },
     ],
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/home/feniljain/.local/bin/nvim",
-    "vim.hlsearch": true,
-    "vim.smartcase": true,
-    "vim.surround": true,
-    "vim.useCtrlKeys": true,
-    "vim.visualstar": true,
-    "vim.highlightedyank.enable": true,
-    "vim.foldfix": true,
-    "vim.debug.silent": false,
-    "vim.debug.loggingLevelForConsole": "debug",
-    // "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-    "security.workspace.trust.untrustedFiles": "newWindow",
-    "editor.minimap.enabled": false,
 }
