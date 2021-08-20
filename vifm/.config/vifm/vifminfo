@@ -46,66 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/feniljain/Projects/javascript-projects/moleculer-examples/conduit
-	..
-0
-d/home/feniljain/Projects/javascript-projects/moleculer-examples
-	conduit
-5
-d/home/feniljain/Projects/javascript-projects
-	moleculer-examples
-1
-d/home/feniljain/Projects
-	rust-projects
-10
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	..
-0
-d/home/feniljain/Projects
-	javascript-projects
-7
-d/home/feniljain/Projects/javascript-projects
-	tyche
-2
-d/home/feniljain/Projects/javascript-projects/tyche
-	..
-0
-d/home/feniljain/Projects
-	javascript-projects
-7
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects
-	javascript-projects
-7
-d/home/feniljain/Projects/javascript-projects
-	tyche
-3
-d/home/feniljain/Projects/javascript-projects/tyche
-	models
-3
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	async-fn-await
-1
-d/home/feniljain/Projects/rust-projects/rust-analyzer/async-fn-await
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	fix-remove_unused_param
-4
-d/home/feniljain/Projects
-	javascript-projects
-7
 d/home/feniljain/Projects/javascript-projects
 	tmp
 2
@@ -332,20 +272,80 @@ d/home/feniljain/Projects/rust-projects/play_ground
 	src
 2
 d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain
+	Projects
+42
+d/home/feniljain/Projects
+	golang-projects
+5
+d/home/feniljain/Projects/golang-projects
+	zeus
+38
+d/home/feniljain/Projects/golang-projects/zeus
+	pkg
+3
+d/home/feniljain/Projects/golang-projects
+	fileRenamer
+13
+d/home/feniljain/Projects/golang-projects/fileRenamer
+	renamer
+1
+d/home/feniljain/Projects/golang-projects
+	fluttertest
+14
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects/rust-projects/rust
+	build
+3
+d/home/feniljain/Projects/rust-projects
+	rowan
+11
+d/home/feniljain/Projects/rust-projects/rowan
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	tremor-runtime
+18
+d/home/feniljain/Projects/rust-projects/tremor-runtime
+	..
+0
+d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
 	rust-analyzer
 14
 d/home/feniljain/Projects/rust-projects/rust-analyzer
-	macro-rename
-8
-d/home/feniljain/Projects/rust-projects/rust-analyzer/macro-rename
-	.cargo
-1
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
 d/home/feniljain/Projects/rust-projects/rust-analyzer
 	extract_module
 3
 d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module
-	lib
-9
+	.cargo
+1
 d
 
 # Right window history (oldest to newest):
@@ -481,6 +481,7 @@ D/home/feniljain/Projects/knowledge-base
 D
 
 # Command line history (oldest to newest):
+:wqa
 :chmod
 :a
 :qjkkj:q

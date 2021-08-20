@@ -442,6 +442,10 @@ let g:gitgutter_enabled = 1
 "nnoremap <silent> <Space>buf :call PrototoolFormatFix()<CR>
 " }}}
 
+" Remove file name inclusion in search in rg
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 nmap <silent> gof :exec '!gofmt -w '.expand('%:p')<CR>
 " nmap <silent> gol :exec '!golint .'<CR>
 nmap <silent> gol :exec '!golint '.expand('%:p')<CR>

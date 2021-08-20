@@ -33,10 +33,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gnr <Plug>(coc-rename)
 " nmap <silent> gdn tabedit % | call CocActionAsync('jumpDefinition')<cr>
-
 " nmap <space>cla <Plug>(coc-codeaction-selected)
 nmap <space>cla <Plug>(coc-codeaction)
-nmap <space>so :CocList symbols<cr>
+" nmap <space>so :CocList symbols<cr>
+nmap <space>so :Vista<cr>
 nmap <space>cld :CocList diagnostics<cr>
 nmap <space>clc :CocList commands<cr>
 " nmap <space>le :CocCommand explorer<cr>
@@ -117,7 +117,7 @@ nnoremap <Space>rh :nohlsearch<CR>
 nnoremap <Space>cb :bd!<CR>
 " Winteract Settings
 nmap <Space>rw :InteractiveWindow<CR>
-nnoremap <Space>rf :RustFmtCR><
+nnoremap <Space>rf :RustFmt<CR>
 nnoremap <Space>rr :CocCommand rust-analyzer.reload<CR>
 
 
@@ -222,6 +222,9 @@ Plug 'christoomey/vim-system-copy'
 
 " Testing
 Plug 'vim-test/vim-test'
+
+Plug 'liuchengxu/vista.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " set clipboard=unnamedplus " Use system clipboard
@@ -291,7 +294,7 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 let g:suda_smart_edit = 1
 let g:suda#prompt = 'Password > '
 
-let test#strategy = 'vimterminal'
+let test#strategy = 'basic'
 nnoremap <Space>tn :TestNearest<CR>
 nnoremap <Space>tf :TestFile<CR
 nnoremap <Space>tl :TestLast<CR>
