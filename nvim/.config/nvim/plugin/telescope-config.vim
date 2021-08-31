@@ -1,5 +1,3 @@
-lua require("fenil")
-
 nnoremap ts :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap tg :lua require('telescope.builtin').git_files()<CR>
 nnoremap tf :lua require('telescope.builtin').find_files()<CR>

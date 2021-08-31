@@ -46,36 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/feniljain/Projects/javascript-projects
-	tmp
-2
-d/home/feniljain/Projects
-	internship
-6
-d/home/feniljain/Projects/internship
-	backend-interview-exercise
-2
-d/home/feniljain/Projects/internship/backend-interview-exercise
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	async-fn-await
-1
-d/home/feniljain/Projects
-	internship
-6
-d/home/feniljain/Projects/rust-projects
-	rstop
-11
-d/home/feniljain/Projects
-	golang-projects
-5
-d/home/feniljain/Projects/golang-projects
-	zeus
-37
 d/home/feniljain/Projects/golang-projects/zeus
 	..
 0
@@ -332,23 +302,56 @@ d/home/feniljain/Projects
 	rust-projects
 10
 d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects/golang-projects
+	fluttertest
+16
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/golang-projects
+	fluttertest
+16
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
 	rust-analyzer
 14
 d/home/feniljain/Projects/rust-projects/rust-analyzer
 	fix-remove_unused_param
 4
 d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-14
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	extract_module
-3
-d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module
-	.cargo
-1
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects/rust-projects/play_ground/src
+	..
+0
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
 d
 
 # Right window history (oldest to newest):
+D/home/feniljain/Projects/rust-projects
+	..
+0
 D/home/feniljain/Projects/knowledge-base/programming
 	..
 0
@@ -476,11 +479,21 @@ D/home/feniljain/Projects/knowledge-base/blockchain
 	..
 0
 D/home/feniljain/Projects/knowledge-base
-	blockchain
-2
+	gRPC
+6
+D/home/feniljain/Projects/knowledge-base/gRPC
+	..
+0
+D/home/feniljain/Projects/knowledge-base
+	gRPC
+6
 D
 
 # Command line history (oldest to newest):
+:mkdir alom
+:!go mod 
+:touch
+:!touch sanskar1.cpp
 :wqa
 :chmod
 :a
@@ -517,6 +530,11 @@ D
 :q
 
 # Search history (oldest to newest):
+/go-rabbit
+/tmp
+/sans
+/hades
+/Hades
 /kyverno
 /ex
 /inter
@@ -525,7 +543,6 @@ D
 /Proj
 /dsa
 /rstop
-/play
 /rust
 /co
 /Learn
@@ -549,6 +566,7 @@ D
 /async
 /extr
 /pla
+/play
 
 # Prompt history (oldest to newest):
 pnotes1

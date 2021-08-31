@@ -358,6 +358,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # exec /usr/bin/desktime-linux
 exec /usr/bin/safeeyes
+exec /usr/bin/redshift
 exec_always feh --bg-scale ~/Pictures/Wallpapers/gchudbo1rhf71.jpg
 # exec_always feh --bg-scale ~/Pictures/Wallpapers/vim-wallpaper1.png
 exec_always --no-startup-id compton
