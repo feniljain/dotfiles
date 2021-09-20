@@ -76,7 +76,7 @@ nnoremap <Space>pr :Prettier<CR>
 "nnoremap <silent> [q :cnext<CR>
 nnoremap <silent> <C-j> :cnext<CR>
 nnoremap <silent> <C-k> :cprevious<CR>
-nnoremap <silent> <C-q> :cw<CR>
+" nnoremap <silent> <C-q> :cw<CR> " Replaced by function QuickFixToggle()
 
 " Winteract Settings
 nmap <Space>rw :InteractiveWindow<CR>
@@ -105,4 +105,8 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 " Moving lines around in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" Better indenting
+vnoremap > >gv
+vnoremap < <gv
 " }}}

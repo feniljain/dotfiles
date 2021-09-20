@@ -261,6 +261,17 @@ vnoremap <Space>jp :call JSONPreview()<CR>
 nnoremap <Space>cb :bd!<CR>
 " }}}
 
+" QuickFixToggle ---------------------- {{{
+function! QuickFixToggle()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+      copen
+    else
+      cclose
+    endif
+endfunction
+nnoremap <silent> <C-q> :call QuickFixToggle()<CR>
+" }}}
+
 " terminal split helper function ---------------------- {{{
 function! TerminalSplitHelper()
     split tempTerminal

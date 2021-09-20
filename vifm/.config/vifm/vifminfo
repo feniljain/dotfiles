@@ -46,135 +46,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/feniljain/Projects/golang-projects/zeus
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rstop
-11
-d/home/feniljain/Projects
-	golang-projects
-5
-d/home/feniljain/Projects/golang-projects
-	zeus
-37
-d/home/feniljain/Projects/golang-projects/zeus
-	pkg
-3
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	remove_method_param
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer/remove_method_param
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	extract_module
-3
-d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module
-	.cargo
-1
-d/home/feniljain/Projects/rust-projects/rust-analyzer/extract_module/.cargo
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rstop
-11
-d/home/feniljain/Projects/rust-projects/rstop
-	main
-4
-d/home/feniljain/Projects/rust-projects/rstop/main
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	rstop
-11
-d/home/feniljain/Projects/rust-projects/rstop
-	main
-4
-d/home/feniljain/Projects/rust-projects
-	tldr
-15
-d/home/feniljain/Projects/rust-projects/tldr
-	..
-0
-d/home/feniljain/Projects/rust-projects
-	tldr
-15
-d/home/feniljain/Projects/rust-projects/tldr
-	main
-4
-d/home/feniljain/Projects/rust-projects/tldr/main
-	src
-1
-d/home/feniljain/Projects/rust-projects/tldr
-	objects
-5
-d/home/feniljain/Projects/rust-projects
-	tldr
-15
-d/home/feniljain/Projects
-	golang-projects
-5
-d/home/feniljain/Projects/rust-projects
-	rstop
-11
-d/home/feniljain/Projects/rust-projects/rstop
-	main
-4
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	fix-remove_unused_param
-4
-d/home/feniljain/Projects/rust-projects
-	play_ground
-9
-d/home/feniljain/Projects/rust-projects/play_ground
-	src
-2
-d/home/feniljain/Projects/rust-projects
-	play_ground
-9
-d/home/feniljain/Projects/rust-projects/play_ground
-	src
-2
-d/home/feniljain/Projects
-	golang-projects
-5
-d/home/feniljain/Projects/rust-projects
-	play_ground
-9
-d/home/feniljain/Projects/rust-projects/play_ground
-	src
-2
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	fix-remove_unused_param
-4
-d/home/feniljain/Projects/rust-projects/rust-analyzer/fix-remove_unused_param
-	..
-0
-d/home/feniljain/Projects
-	golang-projects
-5
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
-d/home/feniljain/Projects/rust-projects/rust-analyzer
-	fix-remove_unused_param
-4
-d/home/feniljain/Projects/rust-projects
-	rust-analyzer
-12
 d/home/feniljain/Projects/rust-projects/rust-analyzer
 	fix-remove_unused_param
 4
@@ -346,9 +217,141 @@ d/home/feniljain/Projects/rust-projects/play_ground/src
 d/home/feniljain/Projects/rust-projects/play_ground
 	src
 2
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	macro-rename
+8
+d/home/feniljain/Projects/rust-projects
+	rust
+13
+d/home/feniljain/Projects/rust-projects/rust
+	compiler
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-remove_unused_param
+4
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-async-inline-func
+4
+d/home/feniljain/Projects/rust-projects/rust-analyzer/fix-async-inline-func
+	..
+0
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-async-inline-func
+4
+d/home/feniljain/Projects/rust-projects/rust-analyzer/fix-async-inline-func
+	..
+0
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	fix-async-inline-func
+4
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/internship/dyte
+	dyte-entities
+4
+d/home/feniljain/Projects/internship/dyte/dyte-entities
+	..
+0
+d/home/feniljain/Projects/internship/dyte
+	dyte-entities
+4
+d/home/feniljain/Projects/internship/dyte/dyte-entities
+	.git
+1
+d/home/feniljain/Projects/internship/dyte
+	recording-v2
+5
+d/home/feniljain/Projects/internship/dyte/recording-v2
+	..
+0
+d/home/feniljain/Projects/internship/dyte
+	dyte-auth-microservice
+3
+d/home/feniljain/Projects/internship/dyte/dyte-auth-microservice
+	.git
+1
+d/home/feniljain/Projects/internship/dyte
+	webhooks-microservice
+8
+d/home/feniljain/Projects/internship/dyte/webhooks-microservice
+	..
+0
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/internship/dyte
+	recording-v2
+7
+d/home/feniljain/Projects/internship/dyte/recording-v2
+	..
+0
+d/home/feniljain/Projects/internship/dyte
+	backend
+1
+d/home/feniljain/Projects/internship/dyte/backend
+	node_modules
+6
+d/home/feniljain/Projects/internship/dyte
+	web-sdk
+9
+d/home/feniljain/Projects/internship/dyte/web-sdk
+	..
+0
+d/home/feniljain/Projects/internship/dyte
+	web-sdk
+9
+d/home/feniljain/Projects/rust-projects
+	rust-analyzer
+14
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	master
+10
+d/home/feniljain/Projects/rust-projects/rust-analyzer/master
+	.cargo
+1
+d/home/feniljain/Projects/rust-projects/rust-analyzer
+	master
+10
+d/home/feniljain/Projects/rust-projects
+	play_ground
+9
+d/home/feniljain/Projects/rust-projects/play_ground
+	src
+2
+d/home/feniljain/Projects
+	rust-projects
+10
+d/home/feniljain/Projects/internship/dyte
+	web-sdk
+9
+d/home/feniljain/Projects/internship/dyte/web-sdk
+	dist_vanilla
+9
+d/home/feniljain/Projects/internship/dyte
+	webhooks-microservice
+10
 d
 
 # Right window history (oldest to newest):
+D/home/feniljain/Projects/knowledge-base/interviews
+	..
+0
 D/home/feniljain/Projects/rust-projects
 	..
 0
@@ -490,11 +493,12 @@ D/home/feniljain/Projects/knowledge-base
 D
 
 # Command line history (oldest to newest):
+:!touch dyte-client-app-script
+:!chmod +x dyte-client-app-script
 :mkdir alom
 :!go mod 
 :touch
 :!touch sanskar1.cpp
-:wqa
 :chmod
 :a
 :qjkkj:q
@@ -527,9 +531,18 @@ D
 :Q
 :.,.+0q
 :exit
+:wqa
+:touch meeting-agendas
+:touch steps
 :q
 
 # Search history (oldest to newest):
+/client
+/sdk
+/backend
+/dyte-app
+/demo
+/auth
 /go-rabbit
 /tmp
 /sans
@@ -591,6 +604,8 @@ t/home/feniljain/.local/share/vifm/Trash/000_zeus
 	/home/feniljain/Projects/golang-projects/zeus
 t/home/feniljain/.local/share/vifm/Trash/000_fileRenamer
 	/home/feniljain/Projects/knowledge-base/fileRenamer
+t/home/feniljain/.local/share/vifm/Trash/004_dyte-client-app
+	/home/feniljain/Projects/internship/dyte/dyte-client-app
 
 # State:
 f

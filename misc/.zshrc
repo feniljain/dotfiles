@@ -88,6 +88,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# bindkey '^I'   complete-word       # tab          | complete
+# bindkey '^[[1;    ' autosuggest-accept  # shift + tab  | autosuggest
+# bindkey '`' autosuggest-accept
+bindkey '^ ' autosuggest-accept # Using Ctrl+Space instead of right arrow key for accepting auto-complete suggestion
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
