@@ -37,6 +37,7 @@ nmap <silent> gnr <Plug>(coc-rename)
 " nmap <silent> gdn tabedit % | call CocActionAsync('jumpDefinition')<cr>
 " nmap <space>cla <Plug>(coc-codeaction-selected)
 nmap <silent> gca <Plug>(coc-codeaction)
+vmap <silent> gca <Plug>(coc-codeaction-selected)
 " nmap <space>so :CocList symbols<cr>
 nmap <space>so :Vista<cr>
 nmap <silent> gfd :CocFzfList diagnostics<cr>
@@ -115,7 +116,8 @@ noremap  <Space>df :DartFmt<CR>
 " noremap  tf :Files<CR>
 " noremap  ts :Rg<CR>
 " noremap  tt :Buffers<CR>
-nnoremap <Space>nt :NERDTreeFind<CR>
+nnoremap <Space>nf :NERDTreeFind<CR>
+nnoremap <Space>nt :NERDTreeToggle<CR>
 nnoremap <Space>gi :GoImports<CR>
 nnoremap <Space>rh :nohlsearch<CR>
 nnoremap <Space>cb :bd!<CR>
@@ -187,6 +189,7 @@ vnoremap <Space><Space> :Commentary<cr>
 " 		\'coc-yank',
 " 		\'coc-spell-checker',
 " 		\'coc-discord-rpc'
+" 		\'coc-actions'
 " 	\]
 
 
@@ -233,7 +236,6 @@ Plug 'vim-test/vim-test'
 Plug 'liuchengxu/vista.vim'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'p00f/nvim-ts-rainbow'
@@ -242,7 +244,10 @@ Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for 
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'ellisonleao/glow.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'kwkarlwang/bufresize.nvim'
 call plug#end()
 
 " set clipboard=unnamedplus " Use system clipboard
@@ -280,6 +285,7 @@ set scrolloff=0
 set wildmode=longest,list,full
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set so=4
 
 " Removes all previous autocmd to prevent stacking of same command over save
 " augroup autocmdSafety

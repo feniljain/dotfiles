@@ -21,16 +21,6 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+t n",
-        "command": "testing.runAtCursor",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+; c",
-        "command": "-testing.runAtCursor",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+t a",
         "command": "testing.runAll"
     },
@@ -97,5 +87,27 @@
         "key": "space",
         "command": "-filesExplorer.openFilePreserveFocus",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+    },
+    {
+        "key": "ctrl+q f",
+        "command": "problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "-problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "ctrl+t l",
+        "command": "testing.reRunLastRun"
+    },
+    {
+        "key": "ctrl+; l",
+        "command": "-testing.reRunLastRun"
+    },
+    {
+        "key": "ctrl+t n",
+        "command": "testing.run"
     }
 ]

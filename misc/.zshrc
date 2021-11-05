@@ -81,6 +81,7 @@ plugins=(
 	git
 	zsh-autosuggestions
     evalcache
+    battery
     # zsh-z
 	# zsh-syntax-highlighting
 	# zsh-vim-mode

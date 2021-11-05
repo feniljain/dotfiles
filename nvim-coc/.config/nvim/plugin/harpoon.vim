@@ -26,12 +26,13 @@ nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
 " nmap <leader>rf :lua require("harpoon.mark").rm_file(4)<CR>
 nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
 nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
-nmap <leader>va :lua require("harpoon.term").sendCommand(1, 1)<CR>
-nmap <leader>vs :lua require("harpoon.term").sendCommand(1, 2)<CR>
-nmap <leader>vd :lua require("harpoon.term").sendCommand(1, 3)<CR>
-nmap <leader>vf :lua require("harpoon.term").sendCommand(1, 4)<CR>
-nmap <leader>ca :lua require("harpoon.term").sendCommand(2, 1)<CR>
-nmap <leader>cs :lua require("harpoon.term").sendCommand(2, 2)<CR>
+nmap <leader>td :lua require("harpoon.term").gotoTerminal(3)<CR>
+nmap <leader>vaa :lua require("harpoon.term").sendCommand(1, 1)<CR>
+nmap <leader>vas :lua require("harpoon.term").sendCommand(1, 2)<CR>
+nmap <leader>vad :lua require("harpoon.term").sendCommand(1, 3)<CR>
+nmap <leader>vaf :lua require("harpoon.term").sendCommand(1, 4)<CR>
+nmap <leader>vsa :lua require("harpoon.term").sendCommand(2, 1)<CR>
+nmap <leader>vss :lua require("harpoon.term").sendCommand(2, 2)<CR>
 " unmap ;w " Unmapping commands
 " unmap ;r
 " unmap ;e

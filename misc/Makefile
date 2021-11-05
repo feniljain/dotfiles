@@ -27,3 +27,7 @@ keyboard-dvorak-dual:
 keyboard-colemak-dual:
 	setxkbmap -layout us,us -variant ,colemak -option "lv3:rwin_switch,grp:alt_space_toggle"
 # xrandr --output LVDS-1 --off --output e-DP-1 --off --output HDMI-1 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output VGA-1 --off
+ssh-dyte-vm:
+	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-southeast-1.pem ubuntu@18.141.234.94
+remove-title-bar:
+	xprop -format _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS 2

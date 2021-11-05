@@ -100,6 +100,24 @@
                 "editor.action.clipboardPasteAction"
             ]
         },
+        {
+            "before": [
+                "Space",
+                "\\",
+            ],
+            "commands": [
+                "workbench.action.splitEditorLeft"
+            ]
+        },
+        {
+            "before": [
+                "Space",
+                "-",
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
     ],
     "vim.insertModeKeyBindings": [
         {
@@ -242,16 +260,14 @@
                 "editor.action.refactor"
             ]
         },
-        {
-            "before": [
-                "g",
-                "q",
-                "f"
-            ],
-            "commands": [
-                "problems.action.showQuickFixes"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<C-q>"
+        //     ],
+        //     "commands": [
+        //         "problems.action.showQuickFixes"
+        //     ]
+        // },
         {
             "before": [
                 "g",
