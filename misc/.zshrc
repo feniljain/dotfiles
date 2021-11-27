@@ -125,11 +125,11 @@ fi
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-export JAVA_HOME="/usr/lib/jvm/jdk-16.0.1"
-export PATH_TO_FX="/media/data/Misc/E/softwares/javafx-sdk-11.0.2/lib"
+# export JAVA_HOME="/usr/lib/jvm/jdk-16.0.1"
+# export PATH_TO_FX="/media/data/Misc/E/softwares/javafx-sdk-11.0.2/lib"
 export PATH="$PATH:/home/fenil/anaconda3/bin"
 export PATH="$PATH:$DART_SDK/bin"
-export PATH="$PATH:/home/fenil/flutter_linux_v1.9.1+hotfix.6-stable/flutter/bin"
+export PATH="$PATH:/media/data/E/softwares/flutter/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.local/bin"
