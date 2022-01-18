@@ -39,7 +39,7 @@ nmap <silent> gnr <Plug>(coc-rename)
 nmap <silent> gca <Plug>(coc-codeaction)
 vmap <silent> gca <Plug>(coc-codeaction-selected)
 " nmap <space>so :CocList symbols<cr>
-nmap <space>so :Vista<cr>
+nmap <space>so :Vista coc<cr>
 nmap <silent> gfd :CocFzfList diagnostics<cr>
 nmap <silent> glc :CocFzfList commands<cr>
 " nmap <space>le :CocCommand explorer<cr>
@@ -210,6 +210,7 @@ Plug 'junegunn/fzf'
 Plug 'ggreer/the_silver_searcher'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'ThePrimeagen/harpoon'
 Plug 'airblade/vim-gitgutter'
 " Plug 'maxmellon/vim-jsx-pretty'
@@ -248,6 +249,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ellisonleao/glow.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'kwkarlwang/bufresize.nvim'
+Plug 'puremourning/vimspector'
 call plug#end()
 
 " set clipboard=unnamedplus " Use system clipboard
@@ -286,6 +288,9 @@ set wildmode=longest,list,full
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set so=4
+" set spilts to be done below and right rather than defaults
+set splitbelow
+set splitright
 
 " Removes all previous autocmd to prevent stacking of same command over save
 " augroup autocmdSafety
@@ -299,9 +304,6 @@ let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
-" To make background transparent
-hi Normal guibg=NONE ctermbg=NONE
 
 set backspace=indent,eol,start
 let g:rainbow_active = 1
@@ -447,3 +449,7 @@ vnoremap < <gv
 
 " Print pwd
 nnoremap <Space>cd :!pwd<CR>
+
+" To make background transparent
+" Always remember to keep this after colorscheme
+hi Normal guibg=NONE ctermbg=NONE

@@ -129,7 +129,7 @@ fi
 # export PATH_TO_FX="/media/data/Misc/E/softwares/javafx-sdk-11.0.2/lib"
 export PATH="$PATH:/home/fenil/anaconda3/bin"
 export PATH="$PATH:$DART_SDK/bin"
-export PATH="$PATH:/media/data/E/softwares/flutter/bin"
+export PATH="$PATH:/Users/feniljain/Projects/softwares/flutter/bin/"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.local/bin"
@@ -146,11 +146,23 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim -c 'set ft=man' -" # Open man pages in nvim with syntax highlighting
 export RUST_BACKTRACE=1
+export PATH="$PATH:/Users/feniljain/.pyenv/shims/"
 
+# ==== Mac setup
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-eval `dircolors /home/feniljain/.dir_colors/dircolors`
+export TERM=xterm-256color
+export PATH=/opt/homebrew/bin:$PATH
+# export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
+# export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+# ==============
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -183,3 +195,7 @@ alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos 
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

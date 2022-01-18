@@ -16,6 +16,8 @@ nmap <leader>a :lua require("harpoon.ui").nav_file(1)<CR>
 nmap <leader>s :lua require("harpoon.ui").nav_file(2)<CR>
 nmap <leader>d :lua require("harpoon.ui").nav_file(3)<CR>
 nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
+nmap <leader>g :lua require("harpoon.ui").nav_file(5)<CR>
+nmap <leader>h :lua require("harpoon.ui").nav_file(6)<CR>
 " nmap <leader>ca :lua require("harpoon.mark").set_current_at(1)<CR>
 " nmap <leader>cs :lua require("harpoon.mark").set_current_at(2)<CR>
 " nmap <leader>cd :lua require("harpoon.mark").set_current_at(3)<CR>
@@ -27,6 +29,8 @@ nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
 nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
 nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
 nmap <leader>td :lua require("harpoon.term").gotoTerminal(3)<CR>
+nmap <leader>tf :lua require("harpoon.term").gotoTerminal(4)<CR>
+nmap <leader>tg :lua require("harpoon.term").gotoTerminal(5)<CR>
 nmap <leader>vaa :lua require("harpoon.term").sendCommand(1, 1)<CR>
 nmap <leader>vas :lua require("harpoon.term").sendCommand(1, 2)<CR>
 nmap <leader>vad :lua require("harpoon.term").sendCommand(1, 3)<CR>

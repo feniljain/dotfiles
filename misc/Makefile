@@ -29,5 +29,9 @@ keyboard-colemak-dual:
 # xrandr --output LVDS-1 --off --output e-DP-1 --off --output HDMI-1 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output VGA-1 --off
 ssh-dyte-vm:
 	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-southeast-1.pem ubuntu@13.233.112.41
+ssh-dyte-jumphost:
+	ssh -i ~/.ssh/dyte_staging_jumphost/dyte.pem ubuntu@jumphost.staging.dyte.in
+ssh-mc-server:
+	ssh -i ~/.ssh/mc/mc_key_1212.pem priyeshbhawsar15@20.205.124.233
 remove-title-bar:
 	xprop -format _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS 2

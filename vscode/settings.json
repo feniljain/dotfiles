@@ -1,516 +1,261 @@
 {
-    //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-    "security.workspace.trust.untrustedFiles": "newWindow",
-    "[html]": {
-        "editor.tabSize": 2
+  //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "[html]": {
+    "editor.tabSize": 2
+  },
+
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "hidden",
+  "window.newWindowDimensions": "maximized",
+  "window.restoreWindows": "none",
+  "window.title": "${rootName}",
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": -1,
+
+  "workbench.activityBar.visible": true,
+  "workbench.editor.showTabs": false,
+  "workbench.panel.defaultLocation": "",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.tree.indent": 16,
+  "workbench.useExperimentalGridLayout": true,
+  "workbench.colorTheme": "Gruvbox Material Dark",
+
+  // "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  // "editor.fontSize": 18,
+  "editor.formatOnType": true,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  "editor.cursorSurroundingLines": 5,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.minimap.enabled": false,
+
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/home/feniljain/.local/bin/nvim",
+  "vim.hlsearch": true,
+  "vim.smartcase": true,
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
+  "vim.visualstar": true,
+  "vim.highlightedyank.enable": true,
+  "vim.foldfix": true,
+  "vim.debug.silent": false,
+  "vim.debug.loggingLevelForConsole": "debug",
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
-
-    "window.enableMenuBarMnemonics": false,
-    "window.menuBarVisibility": "hidden",
-    "window.newWindowDimensions": "maximized",
-    "window.restoreWindows": "none",
-    "window.title": "${rootName}",
-    "window.titleBarStyle": "native",
-    "window.zoomLevel": -1,
-
-    "workbench.activityBar.visible": true,
-    "workbench.editor.showTabs": false,
-    "workbench.panel.defaultLocation": "right",
-    "workbench.sideBar.location": "right",
-    "workbench.startupEditor": "none",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.tree.indent": 16,
-    "workbench.useExperimentalGridLayout": true,
-    "workbench.colorTheme": "Gruvbox Material Dark",
-
-    // "editor.fontFamily": "JetBrains Mono",
-    "editor.fontLigatures": true,
-    // "editor.fontSize": 18,
-    "editor.formatOnType": true,
-    "editor.cursorBlinking": "solid",
-    "editor.cursorStyle": "block",
-    "editor.cursorSurroundingLines": 5,
-    "editor.semanticHighlighting.enabled": true,
-    "editor.minimap.enabled": false,
-
-    "breadcrumbs.enabled": true,
-    "breadcrumbs.filePath": "on",
-
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/home/feniljain/.local/bin/nvim",
-    "vim.hlsearch": true,
-    "vim.smartcase": true,
-    "vim.surround": true,
-    "vim.useCtrlKeys": true,
-    "vim.visualstar": true,
-    "vim.highlightedyank.enable": true,
-    "vim.foldfix": true,
-    "vim.debug.silent": false,
-    "vim.debug.loggingLevelForConsole": "debug",
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "f",
-            ],
-            "commands": [
-                "editor.action.formatSelection",
-            ],
-        },
-        {
-            "before": [
-                "<Space>",
-                "<Space>",
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ]
-        },
-        {
-            "before": [
-                "c",
-                "p",
-            ],
-            "commands": [
-                "editor.action.clipboardCopyAction"
-            ]
-        },
-        {
-            "before": [
-                "v",
-                "p",
-            ],
-            "commands": [
-                "editor.action.clipboardPasteAction"
-            ]
-        },
-        {
-            "before": [
-                "Space",
-                "\\",
-            ],
-            "commands": [
-                "workbench.action.splitEditorLeft"
-            ]
-        },
-        {
-            "before": [
-                "Space",
-                "-",
-            ],
-            "commands": [
-                "workbench.action.splitEditorDown"
-            ]
-        },
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<esc>"
-            ]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "z",
-                "A"
-            ],
-            "commands": [
-                "editor.unfoldRecursively"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "\\"
-            ],
-            "commands": [
-                "workbench.action.splitEditorRight"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "-"
-            ],
-            "commands": [
-                "workbench.action.splitEditorDown"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "j"
-            ],
-            "commands": [
-                "workbench.action.focusBelowGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "k"
-            ],
-            "commands": [
-                "workbench.action.focusAboveGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "h"
-            ],
-            "commands": [
-                "workbench.action.focusLeftGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "l"
-            ],
-            "commands": [
-                "workbench.action.focusRightGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "n",
-                "t"
-            ],
-            "commands": [
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "r",
-                "f"
-            ],
-            "commands": [
-                "revealInExplorer"
-            ]
-        },
-        {
-            "before": [
-                "K",
-            ],
-            "commands": [
-                "editor.action.showHover"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "r"
-            ],
-            "commands": [
-                "editor.action.goToReferences"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "n",
-                "r"
-            ],
-            "commands": [
-                "editor.action.rename"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                "editor.action.peekImplementation"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "c",
-                "a"
-            ],
-            "commands": [
-                "editor.action.refactor"
-            ]
-        },
-        // {
-        //     "before": [
-        //         "<C-q>"
-        //     ],
-        //     "commands": [
-        //         "problems.action.showQuickFixes"
-        //     ]
-        // },
-        {
-            "before": [
-                "g",
-                "p",
-                "g",
-                "d",
-            ],
-            "commands": [
-                "editor.action.peekDefinition"
-            ]
-        },
-        {
-            "before": [
-                "t",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.findInFiles"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "s",
-                "o",
-            ],
-            "commands": [
-                "workbench.action.gotoSymbol"
-            ]
-        },
-        {
-            "before": [
-                "t",
-                "f",
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "<Space>",
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ]
-        },
-        {
-            "before": [
-                "t",
-                "t",
-            ],
-            "commands": [
-                "workbench.action.showEditorsInActiveGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "r",
-                "h",
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "r",
-                "h",
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "r",
-                "h",
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-        {
-            "before": [
-                "<C-l>",
-            ],
-            "commands": [
-                "workbench.action.nextEditorInGroup"
-            ]
-        },
-        {
-            "before": [
-                "<C-h>",
-            ],
-            "commands": [
-                "workbench.action.previousEditorInGroup"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "n",
-                "f",
-            ],
-            "commands": [
-                "workbench.view.explorer",
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "t",
-                "n",
-            ],
-            "commands": [
-                "testing.runAtCursor",
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "t",
-                "l",
-            ],
-            "commands": [
-                "testing.reRunLastRun",
-            ],
-        },
-        {
-            "before": [
-                "<Space>",
-                "t",
-                "f",
-            ],
-            "commands": [
-                "testing.runCurrentFile",
-            ],
-        },
-        {
-            "before": [
-                "<Space>",
-                "f",
-            ],
-            "commands": [
-                "editor.action.formatDocument",
-            ],
-        },
-        {
-            "before": [
-                "<Space>",
-                "t",
-                "s",
-            ],
-            "commands": [
-                "workbench.view.extension.test",
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "f",
-                "d",
-            ],
-            "commands": [
-                "workbench.action.tasks.toggleProblems"
-            ]
-        },
-        {
-            "before": [
-                "<C-w>",
-            ],
-            "commands": [
-                ":q"
-            ]
-        },
-        {
-            "before": [
-                "m",
-                "r"
-            ],
-            "commands": [
-                "fileutils.renameFile"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "c",
-                "b",
-            ],
-            "commands": [
-                ":bd!"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "p",
-                "d"
-            ],
-            "commands": [
-                "workbench.action.problems.focus"
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "z",
-            ],
-            "commands": [
-                "workbench.action.toggleZenMode",
-            ]
-        },
-        {
-            "before": [
-                "<Space>",
-                "w",
-                "r"
-            ],
-            "commands": [
-                "workbench.action.reloadWindow"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>",
-            ],
-            "commands": [
-                "references-view.next"
-            ]
-        },
-        {
-            "before": [
-                "<C-j>",
-            ],
-            "commands": [
-                "references-view.prev"
-            ]
-        },
-    ],
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<Space>", "f"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["<Space>", "<Space>"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["c", "p"],
+      "commands": ["editor.action.clipboardCopyAction"]
+    },
+    {
+      "before": ["v", "p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      "before": ["Space", "\\"],
+      "commands": ["workbench.action.splitEditorLeft"]
+    },
+    {
+      "before": ["Space", "-"],
+      "commands": ["workbench.action.splitEditorDown"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["z", "A"],
+      "commands": ["editor.unfoldRecursively"]
+    },
+    {
+      "before": ["<Space>", "\\"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<Space>", "-"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<Space>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<Space>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<Space>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<Space>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<Space>", "n", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<Space>", "r", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g", "n", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    {
+      "before": ["g", "c", "a"],
+      "commands": ["editor.action.refactor"]
+    },
+    // {
+    //     "before": [
+    //         "<C-q>"
+    //     ],
+    //     "commands": [
+    //         "problems.action.showQuickFixes"
+    //     ]
+    // },
+    {
+      "before": ["g", "p", "g", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    {
+      "before": ["t", "s"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<Space>", "s", "o"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["t", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<Space>", "<Space>"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["t", "t"],
+      "commands": ["workbench.action.showEditorsInActiveGroup"]
+    },
+    {
+      "before": ["<Space>", "r", "h"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<Space>", "r", "h"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<Space>", "r", "h"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.nextEditorInGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.previousEditorInGroup"]
+    },
+    {
+      "before": ["<Space>", "n", "f"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<Space>", "t", "n"],
+      "commands": ["testing.runAtCursor"]
+    },
+    {
+      "before": ["<Space>", "t", "l"],
+      "commands": ["testing.reRunLastRun"]
+    },
+    {
+      "before": ["<Space>", "t", "f"],
+      "commands": ["testing.runCurrentFile"]
+    },
+    {
+      "before": ["<Space>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<Space>", "t", "s"],
+      "commands": ["workbench.view.extension.test"]
+    },
+    {
+      "before": ["g", "f", "d"],
+      "commands": ["workbench.action.tasks.toggleProblems"]
+    },
+    {
+      "before": ["<C-w>"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["m", "r"],
+      "commands": ["fileutils.renameFile"]
+    },
+    {
+      "before": ["<Space>", "c", "b"],
+      "commands": [":bd!"]
+    },
+    {
+      "before": ["g", "p", "d"],
+      "commands": ["workbench.action.problems.focus"]
+    },
+    {
+      "before": ["<Space>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["<Space>", "w", "r"],
+      "commands": ["workbench.action.reloadWindow"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["references-view.next"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["references-view.prev"]
+    }
+  ]
 }
+
