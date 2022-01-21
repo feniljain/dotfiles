@@ -1,3 +1,114 @@
+let mapleader=" "
+
+" Plugins
+set commentary
+set NERDTree
+set surround
+set ideajoin
+
+" Other sets
+set relativenumber
+set number
+set smartcase
+set clipboard+=unnamed
+set clipboard+=ideaput
+
 inoremap jk <esc>
 nnoremap zO :action ExpandRegionRecursively<CR>
 nnoremap zC :action CollapseRegionRecursively<CR>
+
+" Editing and sourcing ideavimrc
+nnoremap <leader>ev :e ~/.ideavimrc<CR>
+nnoremap <leader>sv :action IdeaVim.ReloadVimRc.reload<CR>
+
+" Distraction free mode(like zen)
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+
+" Pasting from yank history
+nnoremap <leader>y :action PasteMultiple<CR>
+
+" Terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+" Open terminal in folder which currently open file resides
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" vim-commentary
+nnoremap <space><space> :action CommentByLineComment<CR>
+vnoremap <space><space> :action CommentByLineComment<CR>
+" NERDTree
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeToggle<CR>
+
+" :actionlist
+
+nnoremap <c-q> :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>f  :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+nnoremap tf :action RecentFiles<CR>
+" Try this out
+nnoremap tt :action RecentLocations<CR>
+nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+
+nnoremap gnd :action GotoNextError<CR>
+nnoremap gpd :action GotoPreviousError<CR>
+
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>- :action SplitHorizontally<CR>
+" Figure out what is this
+" nnoremap <c-=> :action Unsplit<CR>
+" nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
+
+nnoremap <c-h> :action PreviousTab<CR>
+nnoremap <c-l> :action NextTab<CR>
+
+" nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+" nnoremap <Leader>n :action NextWindow<CR>nnoremap <Leader>q :action CloseContent<CR>
+" nnoremap <leader>qa :action CloseAllEditors<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+" Searching
+
+set incsearch
+" nnoremap ts :action FindInPath<CR>
+nnoremap ts :action SearchEverywhere<CR>
+nnoremap ga :action GotoAction<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap gtr :action GotoRelated<CR>
+nnoremap gch :action CallHierarchy<CR>
+nnoremap <leader>nb :action ShowNavBar<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gnr :action RenameElement<CR>
+nnoremap gca :action ShowIntentionActions<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+" nnoremap ]h :action VcsShowNextChangeMarker<cr>
+" nnoremap [h :action VcsShowPrevChangeMarker<cr>
+
+" nnoremap <c-p> :action JumpToLastWindow<CR>
+" nnoremap <c-x> :action HideAllWindows<CR>
+
+" nnoremap ,r :action ContextRun<CR>
+" nnoremap ,c :action RunClass<CR>
+" nnoremap ,f :action ChooseRunConfiguration<CR>
+" nnoremap ,t :action ActivateRunToolWindow<CR>
+" nnoremap ,u :action Rerun<CR>
+" nnoremap ,f :action RerunFailedTests<CR>
+" nnoremap ,b :action ToggleLineBreakpoint<CR>
+" nnoremap ,d :action ContextDebug<CR>
+" nnoremap ,n :action ActivateDebugToolWindow<CR>
