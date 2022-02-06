@@ -21,6 +21,8 @@ nnoremap zC :action CollapseRegionRecursively<CR>
 nnoremap <leader>ev :e ~/.ideavimrc<CR>
 nnoremap <leader>sv :action IdeaVim.ReloadVimRc.reload<CR>
 
+nnoremap <leader>cb :action CloseActiveTab<CR>
+
 " Distraction free mode(like zen)
 nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
 
@@ -79,7 +81,8 @@ vnoremap > >gv
 
 set incsearch
 " nnoremap ts :action FindInPath<CR>
-nnoremap ts :action SearchEverywhere<CR>
+" nnoremap ts :action SearchEverywhere<CR>
+nnoremap ts :action FindInPath<CR>
 nnoremap ga :action GotoAction<CR>
 nnoremap gf :action GotoFile<CR>
 nnoremap gr :action FindUsages<CR>

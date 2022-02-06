@@ -1,6 +1,6 @@
 {
   "coc.preferences.useQuickfixForLocations": true,
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+  "clangd.path": "/usr/local/opt/llvm/bin/clangd",
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "eslint.autoFixOnSave": true,

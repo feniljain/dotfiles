@@ -154,6 +154,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/Users/feniljain/Library/Python/3.8/bin
+export LLVM_DIR=/usr/local/opt/llvm@13
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -192,6 +194,7 @@ alias luamake=/home/feniljain/Projects/softwares/lua-language-server/3rd/luamake
 alias goland=/opt/GoLand-2021.1.3/bin/goland.sh
 alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos registry.appointy.com/trishul'
 # alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos ayushbpl10/trishul:v1'
+alias cls='printf "\ec"'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
