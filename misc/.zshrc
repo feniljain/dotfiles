@@ -144,7 +144,7 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 # export PATH="$PATH:/opt/yarn-1.22.5/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export MANPAGER="nvim -c 'set ft=man' -" # Open man pages in nvim with syntax highlighting
+export MANPAGER="nvim +Man!" # Open man pages in nvim with syntax highlighting
 export RUST_BACKTRACE=1
 export PATH="$PATH:/Users/feniljain/.pyenv/shims/"
 
