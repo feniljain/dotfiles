@@ -156,7 +156,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/feniljain/Library/Python/3.8/bin
 export LLVM_DIR=/usr/local/opt/llvm@13
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 export TERM=xterm-256color
@@ -164,6 +164,8 @@ export PATH=/opt/homebrew/bin:$PATH
 # export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export LC_ALL=en_US.UTF-8
 # ==============
 
 # >>> conda initialize >>>
@@ -203,3 +205,14 @@ alias cls='printf "\ec"'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+vgrep() {
+  INITIAL_QUERY="$1"
+  VGREP_PREFIX="vgrep --no-header "
+  FZF_DEFAULT_COMMAND="$VGREP_PREFIX '$INITIAL_QUERY'" \
+  fzf --bind "change:reload:$VGREP_PREFIX {q} || true" --ansi --phony --tac --query "$INITIAL_QUERY" \
+  | awk '{print $1}' | xargs -I{} -o vgrep --show {}
+}
+
+# asdf stuff
+. /usr/local/opt/asdf/libexec/asdf.sh

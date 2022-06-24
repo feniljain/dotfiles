@@ -27,11 +27,20 @@ keyboard-dvorak-dual:
 keyboard-colemak-dual:
 	setxkbmap -layout us,us -variant ,colemak -option "lv3:rwin_switch,grp:alt_space_toggle"
 # xrandr --output LVDS-1 --off --output e-DP-1 --off --output HDMI-1 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output VGA-1 --off
+# ssh-dyte-vm:
+# 	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-southeast-1.pem ubuntu@13.233.112.41
 ssh-dyte-vm:
-	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-southeast-1.pem ubuntu@13.233.112.41
+	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-south-1.pem ubuntu@3.110.213.239
 ssh-dyte-jumphost:
 	ssh -i ~/.ssh/dyte_staging_jumphost/dyte.pem ubuntu@jumphost.staging.dyte.in
+ssh-dyte-livestreaming:
+	ssh -i ~/.ssh/dyte_livestreaming/localtesting.pem ubuntu@ip-10-0-4-62.ap-south-1.compute.internal
+ssh-dyte-playground:
+	ssh -i ~/.ssh/dyte_playground/dyte.pem ubuntu@testingv3.dyte.in -vvv
 ssh-mc-server:
 	ssh -i ~/.ssh/mc/mc_key_1212.pem priyeshbhawsar15@20.205.124.233
 remove-title-bar:
 	xprop -format _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS 2
+logs:
+	adb -e logcat com.dyte.mobilecorekmm.android > logs-with-webrtc-errors
+	# adb logcat | grep -F "`adb shell ps | grep com.dyte.mobilecorekmm.android  | tr -s [:space:] ' ' | cut -d' ' -f2`"

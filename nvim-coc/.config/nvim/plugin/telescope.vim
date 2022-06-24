@@ -5,7 +5,8 @@ nnoremap tf :lua require('telescope.builtin').find_files()<CR>
 " nnoremap `f :lua require('telescope.builtin').find_files()<CR>
 
 nnoremap tcs :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
-nnoremap tt :lua require('telescope.builtin').buffers()<CR>
+" nnoremap tt :lua require('telescope.builtin').buffers()<CR>
+nnoremap tt :Buffers <CR>
 nnoremap tb :lua require('telescope.builtin').builtin()<CR>
 nnoremap th :lua require('telescope.builtin').help_tags()<CR>
 nnoremap td :lua require('fenil.telescope').search_dotfiles()<CR>

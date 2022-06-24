@@ -36,7 +36,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gnr <Plug>(coc-rename)
 " nmap <silent> gdn tabedit % | call CocActionAsync('jumpDefinition')<cr>
 " nmap <space>cla <Plug>(coc-codeaction-selected)
-nmap <silent> gca <Plug>(coc-codeaction)
+nmap <silent> gca <Plug>(coc-codeaction-cursor)
 vmap <silent> gca <Plug>(coc-codeaction-selected)
 " nmap <space>so :CocList symbols<cr>
 nmap <space>so :Vista coc<cr>
@@ -213,6 +213,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'ThePrimeagen/harpoon'
 Plug 'airblade/vim-gitgutter'
+Plug 'sindrets/diffview.nvim'
 " Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'hail2u/vim-css3-syntax'
 " Plug 'hzchirs/vim-material'
@@ -291,6 +292,9 @@ set so=4
 " set spilts to be done below and right rather than defaults
 set splitbelow
 set splitright
+
+set switchbuf=useopen,usetab
+let g:fzf_buffers_jump=1
 
 " Removes all previous autocmd to prevent stacking of same command over save
 " augroup autocmdSafety
@@ -453,3 +457,5 @@ nnoremap <Space>cd :!pwd<CR>
 " To make background transparent
 " Always remember to keep this after colorscheme
 hi Normal guibg=NONE ctermbg=NONE
+
+autocmd InsertLeave * set nopaste
