@@ -459,3 +459,7 @@ nnoremap <Space>cd :!pwd<CR>
 hi Normal guibg=NONE ctermbg=NONE
 
 autocmd InsertLeave * set nopaste
+
+" Highlighting for languages inside code blocks of markdown ( it's an inbuilt feature )
+" Ref: https://www.getrevue.co/profile/vim_tricks/issues/highlight-syntax-inside-markdown-1253642
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
