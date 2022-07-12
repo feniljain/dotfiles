@@ -30,6 +30,7 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'windwp/nvim-autopairs'
  Plug 'tpope/vim-commentary'
  Plug 'sbdchd/neoformat'
+ Plug 'rcarriga/nvim-notify'
 
  " LSP
  Plug 'neovim/nvim-lspconfig'

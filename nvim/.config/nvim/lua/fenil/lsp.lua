@@ -47,10 +47,10 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gcra', vim.lsp.buf.range_code_action, bufopts)
     vim.keymap.set('v', 'gcra', vim.lsp.buf.range_code_action, bufopts)
 
-    vim.keymap.set('n', 'gwd', '<cmd>Trouble workspace_diagnostics<CR>', bufopts)
-    vim.keymap.set('n', 'gfd', '<cmd>Trouble lsp_document_diagnostics<CR>', bufopts)
-    vim.keymap.set('n', 'gqf', '<cmd>Trouble quickfix<CR>', bufopts)
-    vim.keymap.set('n', 'gsd', '<cmd>Trouble show_line_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gwd', '<cmd>TroubleToggle workspace_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gfd', '<cmd>TroubleToggle document_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gqf', '<cmd>TroubleToggle quickfix<CR>', bufopts)
+    vim.keymap.set('n', 'gsd', '<cmd>TroubleToggle show_line_diagnostics<CR>', bufopts)
 
     vim.keymap.set('n', 'g[', vim.lsp.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', 'g]', vim.lsp.diagnostic.goto_next, bufopts)
@@ -88,13 +88,13 @@ local on_attach = function(client, bufnr)
     -- buf_set_keymap('n', 'gnr', '<cmd>Lspsaga rename<cr>', opts)
     -- -- buf_set_keymap('n', 'gca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    -- -- buf_set_keymap('n', 'gr', '<cmd>Trouble lsp_references<cr>', opts) buf_set_keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', opts)
+    -- -- buf_set_keymap('n', 'gr', '<cmd> lsp_references<cr>', opts) buf_set_keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', opts)
     -- -- buf_set_keymap('n', 'gca', '<cmd>Lspsaga code_action<cr>', opts)
     -- buf_set_keymap('n', 'gca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
     -- buf_set_keymap('v', 'gca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
     -- buf_set_keymap('n', 'gcra', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', opts)
     -- buf_set_keymap('v', 'gcra', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', opts)
-    -- buf_set_keymap('n', 'gwd', '<cmd>Trouble workspace_diagnostics<cr>', opts)
+    -- buf_set_keymap('n', 'gwd', '<cmd> workspace_diagnostics<cr>', opts)
     -- buf_set_keymap('n', 'gfd', '<cmd>Trouble lsp_document_diagnostics<cr>', opts)
     -- buf_set_keymap('n', 'gqf', '<cmd>Trouble quickfix<cr>', opts)
     -- buf_set_keymap('n', 'gsd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
@@ -193,20 +193,18 @@ local function setup_servers()
     })
 
     for _, server in ipairs(lsp_installer.get_installed_servers()) do
-        local opts = {
+        lspconfig[server.name].setup {
             on_attach = on_attach,
             capabilities = capabilities,
         }
-        if server.name == "rust_analyzer" then
-            local has_rust_tools, rust_tools = pcall(require, "rust-tools")
-            if has_rust_tools then
-                rust_tools.setup({ server = opts })
-                goto continue
-            end
-        end
-        lspconfig[server.name].setup { opts }
-        ::continue::
-        vim.cmd([[ do User LspAttachBuffers ]])
+    end
+
+    local has_rust_tools, rust_tools = pcall(require, "rust-tools")
+    if has_rust_tools then
+        rust_tools.setup({ server = {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        } })
     end
 end
 

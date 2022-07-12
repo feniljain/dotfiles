@@ -12,5 +12,6 @@ require("fenil.rust-tools")
 require("fenil.play")
 require("fenil.lightbulb")
 require("fenil.fidget")
+require("fenil.notify")
 
 -- require("fenil.whid")
