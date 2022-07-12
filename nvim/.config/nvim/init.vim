@@ -27,7 +27,6 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'romgrk/winteract.vim'
  Plug 'tpope/vim-surround'
  Plug 'lambdalisue/suda.vim'
- " Plug 'jiangmiao/auto-pairs'
  Plug 'windwp/nvim-autopairs'
  Plug 'tpope/vim-commentary'
  Plug 'sbdchd/neoformat'
@@ -43,9 +42,9 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'saadparwaiz1/cmp_luasnip'
  " cmp Path completion
  Plug 'hrsh7th/cmp-path'
- Plug 'hrsh7th/cmp-buffer'
+ " Plug 'hrsh7th/cmp-buffer'
  Plug 'andersevenrud/cmp-tmux'
- Plug 'hrsh7th/cmp-cmdline'
+ " Plug 'hrsh7th/cmp-cmdline'
 
  Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for highlighting, or it starts break badly
  Plug 'glepnir/lspsaga.nvim'
@@ -134,6 +133,7 @@ call plug#end()
  " Plug 'folke/which-key.nvim'
  " Plug 'lewis6991/spellsitter.nvim'
  " Plug 'bfredl/nvim-luadev'
+ " Plug 'jiangmiao/auto-pairs'
 
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}

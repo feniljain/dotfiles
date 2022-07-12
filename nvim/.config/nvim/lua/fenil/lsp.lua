@@ -1,3 +1,5 @@
+local M = {}
+
 require('lspkind').init({})
 
 -- TODO: Get nvim-compe to complete brackets too, ref: https://www.reddit.com/r/neovim/comments/o4uuhg/nvimlspnvimcompe_auto_add_parentheses_when/
@@ -24,44 +26,44 @@ local on_attach = function(client, bufnr)
 
     require 'lsp_signature'.on_attach(cfg)
 
-      -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'gpgd', '<cmd>Lspsaga preview_definition<CR>', bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', bufopts)
-  vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', 'gnr', '<cmd>Lspsaga rename<CR>', bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('v', 'gca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gcra', vim.lsp.buf.range_code_action, bufopts)
-  vim.keymap.set('v', 'gcra', vim.lsp.buf.range_code_action, bufopts)
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'gpgd', '<cmd>Lspsaga preview_definition<CR>', bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', bufopts)
+    vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', 'gnr', '<cmd>Lspsaga rename<CR>', bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('v', 'gca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gcra', vim.lsp.buf.range_code_action, bufopts)
+    vim.keymap.set('v', 'gcra', vim.lsp.buf.range_code_action, bufopts)
 
-  vim.keymap.set('n', 'gwd', '<cmd>Trouble workspace_diagnostics<CR>', bufopts)
-  vim.keymap.set('n', 'gfd', '<cmd>Trouble lsp_document_diagnostics<CR>', bufopts)
-  vim.keymap.set('n', 'gqf', '<cmd>Trouble quickfix<CR>', bufopts)
-  vim.keymap.set('n', 'gsd', '<cmd>Trouble show_line_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gwd', '<cmd>Trouble workspace_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gfd', '<cmd>Trouble lsp_document_diagnostics<CR>', bufopts)
+    vim.keymap.set('n', 'gqf', '<cmd>Trouble quickfix<CR>', bufopts)
+    vim.keymap.set('n', 'gsd', '<cmd>Trouble show_line_diagnostics<CR>', bufopts)
 
-  vim.keymap.set('n', 'gpd', vim.lsp.diagnostic.goto_prev, bufopts)
-  vim.keymap.set('n', 'gnd', vim.lsp.diagnostic.goto_next, bufopts)
-  vim.keymap.set('n', 'gll', vim.lsp.diagnostic.set_loclist, bufopts)
-  vim.keymap.set('n', 'gsf', vim.lsp.buf.document_symbol, bufopts)
-  vim.keymap.set('n', 'gsw', vim.lsp.buf.workspace_symbol, bufopts)
+    vim.keymap.set('n', 'g[', vim.lsp.diagnostic.goto_prev, bufopts)
+    vim.keymap.set('n', 'g]', vim.lsp.diagnostic.goto_next, bufopts)
+    vim.keymap.set('n', 'gll', vim.lsp.diagnostic.set_loclist, bufopts)
+    vim.keymap.set('n', 'gsf', vim.lsp.buf.document_symbol, bufopts)
+    vim.keymap.set('n', 'gsw', vim.lsp.buf.workspace_symbol, bufopts)
 
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 
     -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
@@ -112,7 +114,7 @@ local on_attach = function(client, bufnr)
     -- visual mode
     if client.resolved_capabilities.document_range_formatting then
         -- buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-        vim.keymap.set('v', '<space>f','<cmd>lua vim.lsp.buf.range_formatting()<CR>', bufopts)
+        vim.keymap.set('v', '<space>f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', bufopts)
     end
 
     -- Set autocommands conditional on server_capabilities
@@ -171,11 +173,13 @@ local on_attach = function(client, bufnr)
     })
 end
 
+M.on_attach = on_attach
+
+-- rust_analyzer is handled by rust-tools.nvim
 local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "eslint", "jsonls", "marksman" }
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()
-    print("Setting up servers")
 
     lsp_installer.setup({
         ensure_installed = servers,
@@ -188,69 +192,27 @@ local function setup_servers()
         }
     })
 
-    -- for _, server in ipairs(lsp_installer.get_installed_servers()) do
-    --     lspconfig[server.name].setup {
-    --         on_attach = on_attach,
-    --         capabilities = capabilities,
-    --     }
-    --
-    -- end
-    --
-
-    -- lspconfig['rust_analyzer'].setup({
-    --     on_attach = function (client, bufnr)
-    --         print("Calling on_attach for rust_analyzer")
-    --         on_attach(client, bufnr)
-    --         print("Done calling on_attach for rust-analyzer")
-    --     end,
-    --     capabilities = capabilities,
-    -- })
-
-    lspconfig.rust_analyzer.setup({
-        on_attach = function (client, bufnr)
-            print("Calling on_attach for rust_analyzer server")
-            on_attach(client, bufnr)
-            print("Done calling on_attach for rust_analyzer server")
-        end,
-        capabilities = capabilities,
-    })
-
-    lspconfig.sumneko_lua.setup({
-        on_attach = function (client, bufnr)
-            print("Calling on_attach for lua server")
-            on_attach(client, bufnr)
-            print("Done calling on_attach for lua server")
-        end,
-        capabilities = capabilities,
-    })
-
-    lspconfig.gopls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-
-    lspconfig.tsserver.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-
-    lspconfig.eslint.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-
-    lspconfig.jsonls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-
-    lspconfig.marksman.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
+    for _, server in ipairs(lsp_installer.get_installed_servers()) do
+        local opts = {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+        if server.name == "rust_analyzer" then
+            local has_rust_tools, rust_tools = pcall(require, "rust-tools")
+            if has_rust_tools then
+                rust_tools.setup({ server = opts })
+                goto continue
+            end
+        end
+        lspconfig[server.name].setup { opts }
+        ::continue::
+        vim.cmd([[ do User LspAttachBuffers ]])
+    end
 end
 
 setup_servers()
+
+return M
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 -- require'lspinstall'.post_install_hook = function ()
@@ -296,4 +258,4 @@ setup_servers()
 --         },
 --     },
 -- }
-
+--
