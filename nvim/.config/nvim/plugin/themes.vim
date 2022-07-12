@@ -45,5 +45,7 @@
 
 " To make background transparent
 hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
+" For making dividers between windows very small
+hi WinSeperator guibg=NONE
 " }}}
 

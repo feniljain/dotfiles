@@ -18,14 +18,26 @@ inoremap <OA> <nop>
 inoremap <OB> <nop>
 inoremap <OD> <nop>
 inoremap <OC> <nop>
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 noremap  <C-l> :tabn<CR>
 noremap  <C-h> :tabp<CR>
 noremap  <C-n> :tabnew<CR>
+
 " Press Ctrl-u in insert mode to convert current word under cursor to uppercase
-inoremap <C-u> jkviwU
+" inoremap <C-u> jkviwU
 " Press Ctrl-u in normal mode to convert current word under cursor to uppercase
-nnoremap <C-u> viwU
+" nnoremap <C-u> viwU
+
+" NERDTree bindings
+nnoremap <Space>nf :NERDTreeFind<CR>
+nnoremap <Space>nt :NERDTreeToggle<CR>
+
+"Remove the highlighting from previous search
+nnoremap <Space>rh :nohlsearch<CR>
+" Print pwd
+nnoremap <Space>cd :!pwd<CR>
+
 " To open vimrc in a new vertical split
 nnoremap <Space>ev :vsplit $MYVIMRC<cr>
 " To source vimrc quickly
@@ -35,13 +47,11 @@ nnoremap <Space>sv :source $MYVIMRC<cr>
 " To source current lua quickly
 nnoremap <Space>sl :luafile %<cr>
 "Match all the texts which have a trailing space
-nnoremap <leader>w :match Error /\v...\s/<CR>
+" nnoremap <leader>w :match Error /\v...\s/<CR>
 "Remove highlighting done by previous command
-nnoremap <leader>W :match none<CR>
+" nnoremap <leader>W :match none<CR>
 "Start the search with \v regex mode of vim
 "nnoremap / /\v
-"Remove the highlighting from previous search
-nnoremap <Space>rh :nohlsearch<CR>
 " for identing the whole code
 noremap <Space>ic =G<CR>
 " For opening explore

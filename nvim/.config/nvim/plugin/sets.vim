@@ -4,11 +4,11 @@ set undofile                " Save undos after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
-set clipboard=unnamed       " Use system clipboard
+" set clipboard=unnamed       " Use system clipboard
 set backspace=indent,eol,start
+set incsearch
 set number
 set relativenumber
-set incsearch
 set ts=2 sw=2
 set linebreak
 set laststatus=2
@@ -41,12 +41,22 @@ set ignorecase
 " Visual indication of line your cursor is on, works in normal and visual mode
 " set cursorline
 set scrolloff=0
-" set signcolumn " Already handled in coc config
+set signcolumn=yes:1 " Do not mess with this, unless you want your editor window dancing
 " set mouse=a " Enabling use of mouse so that it can help scrolling of docs in floating windows
 "set updatetime=300
 set wildmode=longest,list,full
 
+set shortmess+=c
+
 " For treesitter folding
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+
+set so=4
+" set spilts to be done below and right rather than defaults
+set splitbelow
+set splitright
+
+set switchbuf=useopen,usetab
+" set winbar=%f " Uncomment this once it is fully realeased
 " }}}

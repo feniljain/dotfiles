@@ -126,7 +126,6 @@ nmap <Space>rw :InteractiveWindow<CR>
 nnoremap <Space>rf :RustFmt<CR>
 nnoremap <Space>rr :CocCommand rust-analyzer.reload<CR>
 
-
 " Press Ctrl-u in insert mode to convert current word under cursor to uppercase
 " inoremap <C-u> jkviwU
 " Press Ctrl-u in normal mode to convert current word under cursor to uppercase
@@ -194,63 +193,63 @@ vnoremap <Space><Space> :Commentary<cr>
 
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'szw/vim-maximizer'
-Plug 'preservim/NERDTree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'dart-lang/dart-vim-plugin'
-" Plug 'natebosch/vim-lsc'
-" Plug 'natebosch/vim-lsc-dart'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'frazrepo/vim-rainbow'
-Plug 'itchyny/lightline.vim'
-Plug 'josa42/vim-lightline-coc'
-Plug 'itchyny/vim-gitbranch'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'ggreer/the_silver_searcher'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'ThePrimeagen/harpoon'
-Plug 'airblade/vim-gitgutter'
-Plug 'sindrets/diffview.nvim'
-" Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'hail2u/vim-css3-syntax'
-" Plug 'hzchirs/vim-material'
-Plug 'Yggdroot/indentLine'
-"Plug 'wellle/tmux-complete.vim'
-" Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
-Plug 'farmergreg/vim-lastplace'
-Plug 'romgrk/winteract.vim'
-Plug 'tpope/vim-surround'
-Plug 'lambdalisue/suda.vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'morhetz/gruvbox'
-Plug 'gruvbox-community/gruvbox'
-" Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'christoomey/vim-system-copy'
-
-" Testing
-Plug 'vim-test/vim-test'
-
-Plug 'liuchengxu/vista.vim'
-Plug 'simrat39/symbols-outline.nvim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
-Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for highlighting, or it starts break badly
-Plug 'ThePrimeagen/git-worktree.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+" Plug 'szw/vim-maximizer'
+" Plug 'preservim/NERDTree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" " Plug 'dart-lang/dart-vim-plugin'
+" " Plug 'natebosch/vim-lsc'
+" " Plug 'natebosch/vim-lsc-dart'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" " Plug 'frazrepo/vim-rainbow'
+" Plug 'itchyny/lightline.vim'
+" Plug 'josa42/vim-lightline-coc'
+" Plug 'itchyny/vim-gitbranch'
+" Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf'
+" Plug 'ggreer/the_silver_searcher'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+" Plug 'ThePrimeagen/harpoon'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'sindrets/diffview.nvim'
+" " Plug 'maxmellon/vim-jsx-pretty'
+" " Plug 'hail2u/vim-css3-syntax'
+" " Plug 'hzchirs/vim-material'
+" Plug 'Yggdroot/indentLine'
+" "Plug 'wellle/tmux-complete.vim'
+" " Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+" Plug 'farmergreg/vim-lastplace'
+" Plug 'romgrk/winteract.vim'
+" Plug 'tpope/vim-surround'
+" Plug 'lambdalisue/suda.vim'
+" " Plug 'joshdick/onedark.vim'
+" " Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+" " Plug 'pangloss/vim-javascript'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-commentary'
+" Plug 'christoomey/vim-system-copy'
+"
+" " Testing
+" Plug 'vim-test/vim-test'
+"
+" Plug 'liuchengxu/vista.vim'
+" Plug 'simrat39/symbols-outline.nvim'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+" Plug 'p00f/nvim-ts-rainbow'
+" Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+" Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for highlighting, or it starts break badly
+" Plug 'ThePrimeagen/git-worktree.nvim'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Plug 'ellisonleao/glow.nvim'
 " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'ellisonleao/glow.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'kwkarlwang/bufresize.nvim'
-Plug 'puremourning/vimspector'
+" Plug 'kwkarlwang/bufresize.nvim'
+" Plug 'puremourning/vimspector'
 call plug#end()
 
 " set clipboard=unnamedplus " Use system clipboard
@@ -294,6 +293,8 @@ set splitbelow
 set splitright
 
 set switchbuf=useopen,usetab
+set completeopt=menuone,noinsert,noselect
+
 let g:fzf_buffers_jump=1
 
 " Removes all previous autocmd to prevent stacking of same command over save
@@ -409,6 +410,7 @@ let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
 syntax on
 
+" Remove file name inclusion in search in rg
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 

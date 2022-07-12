@@ -26,6 +26,7 @@ nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
 " nmap <leader>rf :lua require("harpoon.mark").rm_file(4)<CR>
 nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
 nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
+nmap <leader>td :lua require("harpoon.term").gotoTerminal(2)<CR>
 nmap <leader>va :lua require("harpoon.term").sendCommand(1, 1)<CR>
 nmap <leader>vs :lua require("harpoon.term").sendCommand(1, 2)<CR>
 nmap <leader>vd :lua require("harpoon.term").sendCommand(1, 3)<CR>
