@@ -2,8 +2,6 @@ local M = {}
 
 require('lspkind').init({})
 
--- TODO: Get nvim-compe to complete brackets too, ref: https://www.reddit.com/r/neovim/comments/o4uuhg/nvimlspnvimcompe_auto_add_parentheses_when/
-
 local lsp_installer = require 'nvim-lsp-installer'
 local lspconfig = require 'lspconfig'
 

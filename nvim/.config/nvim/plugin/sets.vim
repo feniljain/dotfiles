@@ -26,7 +26,6 @@ set smartindent
 set termguicolors
 set colorcolumn=80
 set autoread
-set listchars
 set encoding=utf-8
 set syntax
 set noshowmode
@@ -59,4 +58,9 @@ set splitright
 
 set switchbuf=useopen,usetab
 " set winbar=%f " Uncomment this once it is fully realeased
+
+" enable list mode
+set list
+" display chars for tabs
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 " }}}

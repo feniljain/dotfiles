@@ -43,7 +43,7 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'saadparwaiz1/cmp_luasnip'
  " cmp Path completion
  Plug 'hrsh7th/cmp-path'
- " Plug 'hrsh7th/cmp-buffer'
+ Plug 'hrsh7th/cmp-buffer'
  Plug 'andersevenrud/cmp-tmux'
  " Plug 'hrsh7th/cmp-cmdline'
 
@@ -81,6 +81,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
  " THEMES
  Plug 'gruvbox-community/gruvbox'
+ " Plug 'Yazeed1s/minimal.nvim'
 
  " Rust
  Plug 'cespare/vim-toml'

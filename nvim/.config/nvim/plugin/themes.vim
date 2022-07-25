@@ -1,15 +1,17 @@
 " Themes ---------------------- {{{
 " Vim-material config
-" let g:airline_theme='material'
-" let g:material_style='oceanic'
- let g:material_style='palenight'
-" colorscheme vim-material
+" " let g:airline_theme='material'
+" " let g:material_style='oceanic'
+ " let g:material_style='palenight'
+" " colorscheme vim-material
 
 " GruvBox Config
- let g:gruvbox_contrast_dark = 'soft'
- let g:gruvbox_improved_warnings = '1'
- let g:gruvbox_guisp_fallback = 'bg'
- colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'soft'
+" let g:gruvbox_improved_warnings = '1'
+" let g:gruvbox_guisp_fallback = 'bg'
+colorscheme gruvbox
+
+" colorscheme minimal-base16
 
 " Gruvbox Flat
 " let g:gruvbox_flat_style = "hard"
@@ -40,11 +42,10 @@
 " colorscheme srcery
 
 " Toast.vim
-" set background=dark
 " colorscheme toast
 
 " To make background transparent
-hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
+" hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
 " For making dividers between windows very small
 hi WinSeperator guibg=NONE
 " }}}

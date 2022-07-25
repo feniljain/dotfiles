@@ -1,21 +1,51 @@
 local actions = require('telescope.actions')
+
+local previewers = require("telescope.previewers")
+local Job = require("plenary.job")
+local new_maker = function(filepath, bufnr, opts)
+    filepath = vim.fn.expand(filepath)
+    Job:new({
+        command = "file",
+        args = { "--mime-type", "-b", filepath },
+        on_exit = function(j)
+            local mime_type = vim.split(j:result()[1], "/")[1]
+            if mime_type == "text" then
+                previewers.buffer_previewer_maker(filepath, bufnr, opts)
+            else
+                -- maybe we want to write something to the buffer here
+                vim.schedule(function()
+                    vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
+                end)
+            end
+        end
+    }):sync()
+end
+
 require('telescope').setup {
     defaults = {
+        preview = {
+            timeout = 500,
+            msg_bg_fillchar = "",
+            -- hide_on_startup = true -- hide previewer when picker starts
+        },
         vimgrep_arguments = {
-          'rg',
-          '--color=never',
-          '--no-heading',
-          '--with-filename',
-          '--line-number',
-          '--column',
-          '--smart-case',
-          '--hidden'
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
+            "--trim",
         },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        prompt_prefix = ' > ',
         layout_config = {
-            prompt_position = 'bottom',
+            prompt_position = 'top',
         },
+        prompt_prefix = "❯ ",
+        selection_caret = "❯ ",
+        sorting_strategy = "ascending",
         color_devicons = true,
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
@@ -27,8 +57,10 @@ require('telescope').setup {
                 ["<C-x>"] = false,
                 ["<esc>"] = actions.close,
                 ["<C-q>"] = actions.send_to_qflist,
+                ['<C-p>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
             },
-        }
+        },
+        buffer_previewer_maker = new_maker,
     },
     extensions = {
         fzy_native = {
@@ -62,7 +94,7 @@ M.git_branches = function()
 end
 
 M.switch_projects = function()
-    require("telescope.builtin").find_files ({
+    require("telescope.builtin").find_files({
         prompt_title = "< Switch Project >",
         cwd = "$HOME/Projects/",
     })
