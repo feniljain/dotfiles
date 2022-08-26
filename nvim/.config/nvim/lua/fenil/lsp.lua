@@ -62,6 +62,7 @@ local on_attach = function(client, bufnr)
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+    -- vim.keymap.set('n', '<space>so', '<cmd>LSoutlineToggle <CR>', bufopts) -- Not good enough as symbols-outline.nvim yet, check back in future
 
     -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 

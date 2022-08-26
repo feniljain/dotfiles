@@ -171,3 +171,8 @@ alias tmux='tmux -u'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Set vim keybindings instead of emacs keybindings( which are default ones)
+# Source: https://www.youtube.com/watch?v=XY5qCQcrHns
+# set -o vi
+set -o emacs

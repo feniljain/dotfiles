@@ -13,5 +13,6 @@ require("fenil.play")
 require("fenil.lightbulb")
 require("fenil.fidget")
 require("fenil.notify")
+require("fenil.osc52")
 
 -- require("fenil.whid")

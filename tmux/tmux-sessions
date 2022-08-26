@@ -2,7 +2,7 @@
 
 PROJECTS="~/Projects"
 APPOINTY="~/Projects/golang-projects/appointy"
-DYTE="~/Projects/internship/dyte"
+DYTE="~/Projects/work/dyte"
 KNOWLEDGE_BASE="~/Projects/knowledge-base"
 RUST_PROJECTS="~/Projects/rust-projects"
 GOLANG_PROJECTS="~/Projects/golang-projects"
@@ -17,7 +17,7 @@ createWindows() {
            tmux neww -t $sessionName -n 'Secondary'
            ;;
         3)
-           tmux neww -t $sessionName -n 'kb-gotop-buf'
+           tmux neww -t $sessionName -n 'kb-htop-buf'
            ;;
         4)
            tmux neww -t $sessionName -n 'Misc'
@@ -59,7 +59,7 @@ buildAppointySession() {
     tmux select-window -t $sessionName:3
     buildVIFMCmd "$APPOINTY" "$KNOWLEDGE_BASE"
     tmux send-keys "$vifmCmd" 'C-m'
-    tmux split-window -h 'exec gotop'
+    tmux split-window -h 'exec htop'
     tmux split-window -v
 
     # Window 4
@@ -85,7 +85,7 @@ buildDyteSession() {
     tmux select-window -t $sessionName:3
     buildVIFMCmd "$DYTE" "$KNOWLEDGE_BASE"
     tmux send-keys "$vifmCmd" 'C-m'
-    tmux split-window -h 'exec gotop'
+    tmux split-window -h 'exec htop'
     tmux split-window -v
 
     # Window 4
@@ -110,7 +110,7 @@ buildGenericSession() {
     tmux select-window -t $sessionName:3
     buildVIFMCmd "$PROJECTS" "$KNOWLEDGE_BASE"
     tmux send-keys "$vifmCmd" 'C-m'
-    tmux split-window -h 'exec gotop'
+    tmux split-window -h 'exec htop'
     tmux split-window -v
 }
 

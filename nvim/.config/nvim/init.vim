@@ -31,6 +31,10 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'tpope/vim-commentary'
  Plug 'sbdchd/neoformat'
  Plug 'rcarriga/nvim-notify'
+ Plug 'ojroques/nvim-osc52'
+" JAKT
+ Plug 'SerenityOS/jakt', { 'rtp': 'editors/vim' }
+
 
  " LSP
  Plug 'neovim/nvim-lspconfig'
@@ -45,6 +49,7 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'hrsh7th/cmp-path'
  Plug 'hrsh7th/cmp-buffer'
  Plug 'andersevenrud/cmp-tmux'
+ Plug 'hrsh7th/cmp-emoji'
  " Plug 'hrsh7th/cmp-cmdline'
 
  Plug 'folke/lsp-colors.nvim' " Do not remove this it provides compatibility for highlighting, or it starts break badly

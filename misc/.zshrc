@@ -93,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # bindkey '^[[1;    ' autosuggest-accept  # shift + tab  | autosuggest
 # bindkey '`' autosuggest-accept
 bindkey '^ ' autosuggest-accept # Using Ctrl+Space instead of right arrow key for accepting auto-complete suggestion
+bindkey -v '^ ' autosuggest-accept # Same but for vim mode
 
 # User configuration
 
@@ -216,3 +217,7 @@ vgrep() {
 
 # asdf stuff
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# Set vim keybindings instead of emacs keybindings( which are default ones)
+# Source: https://www.youtube.com/watch?v=XY5qCQcrHns
+set -o emacs

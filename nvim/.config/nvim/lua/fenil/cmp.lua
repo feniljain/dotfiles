@@ -43,6 +43,7 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         -- { name = 'tmux' },
+        { name = 'emoji' },
         { name = 'buffer', keyword_length = 5 },
         -- { name = 'nvim_lsp_signature_help' }, -- Currently using lsp_signature instead
         { name = 'path' },

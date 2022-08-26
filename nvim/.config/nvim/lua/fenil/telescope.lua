@@ -57,7 +57,7 @@ require('telescope').setup {
                 ["<C-x>"] = false,
                 ["<esc>"] = actions.close,
                 ["<C-q>"] = actions.send_to_qflist,
-                ['<C-p>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
+                -- ['<C-p>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
             },
         },
         buffer_previewer_maker = new_maker,
