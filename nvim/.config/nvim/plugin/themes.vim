@@ -12,6 +12,7 @@
 colorscheme gruvbox
 
 " colorscheme minimal-base16
+" highlight Folded ctermbg=White ctermfg=Red
 
 " Gruvbox Flat
 " let g:gruvbox_flat_style = "hard"

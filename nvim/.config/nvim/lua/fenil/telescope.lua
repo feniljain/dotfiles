@@ -1,5 +1,6 @@
 local actions = require('telescope.actions')
 
+local lga_actions = require('telescope-live-grep-args.actions')
 local previewers = require("telescope.previewers")
 local Job = require("plenary.job")
 local new_maker = function(filepath, bufnr, opts)
@@ -57,6 +58,7 @@ require('telescope').setup {
                 ["<C-x>"] = false,
                 ["<esc>"] = actions.close,
                 ["<C-q>"] = actions.send_to_qflist,
+                ["<C-k>"] = lga_actions.quote_prompt(),
                 -- ['<C-p>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
             },
         },
@@ -66,6 +68,14 @@ require('telescope').setup {
         fzy_native = {
             override_generic_sorter = true,
             override_file_sorter = true,
+        },
+        live_grep_args = {
+            auto_quoting = true,
+            mappings = {
+                i = {
+                    ["<C-k>"] = lga_actions.quote_prompt(),
+                }
+            }
         }
     }
 }
@@ -73,6 +83,7 @@ require('telescope').setup {
 require("telescope").load_extension("git_worktree")
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('project')
+-- require('telescope').load_extension('telescope-live-grep-args')
 -- require('telescope').load_extension('media_files')
 
 local M = {}

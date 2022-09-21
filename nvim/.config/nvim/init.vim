@@ -35,7 +35,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " JAKT
  Plug 'SerenityOS/jakt', { 'rtp': 'editors/vim' }
 
-
  " LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'williamboman/nvim-lsp-installer'
@@ -71,6 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'nvim-telescope/telescope-fzy-native.nvim'
  Plug 'nvim-telescope/telescope-project.nvim'
+ Plug 'nvim-telescope/telescope-live-grep-args.nvim'
  Plug 'junegunn/fzf.vim'
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
@@ -86,7 +86,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
  " THEMES
  Plug 'gruvbox-community/gruvbox'
- " Plug 'Yazeed1s/minimal.nvim'
+ Plug 'Yazeed1s/minimal.nvim'
 
  " Rust
  Plug 'cespare/vim-toml'

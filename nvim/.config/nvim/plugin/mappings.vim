@@ -120,3 +120,14 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap > >gv
 vnoremap < <gv
 " }}}
+
+" In this (https://www.youtube.com/watch?v=uL9oOZStezw) video prime
+" complains about not using {} and for jumping
+" through code blocks because they add items to jumplist, someone in
+" the comment gives this solution:
+" map("n", "{", ":execute 'keepjumps norm! ' . v:count1 . '{'<CR>")
+" map("n", "}", ":execute 'keepjumps norm! ' . v:count1 . '}'<CR>")
+" Convert to vimscript
+nnoremap { :execute 'keepjumps norm! ' . v:count1 . '{'<CR>
+nnoremap } :execute 'keepjumps norm! ' . v:count1 . '}'<CR>
+
