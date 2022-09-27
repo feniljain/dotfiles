@@ -76,14 +76,18 @@ require('telescope').setup {
                     ["<C-k>"] = lga_actions.quote_prompt(),
                 }
             }
-        }
+        },
+        heading = {
+            treesitter = true,
+        },
     }
 }
 
 require("telescope").load_extension("git_worktree")
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('project')
--- require('telescope').load_extension('telescope-live-grep-args')
+require('telescope').load_extension('conventional_commits')
+require('telescope').load_extension('heading')
 -- require('telescope').load_extension('media_files')
 
 local M = {}

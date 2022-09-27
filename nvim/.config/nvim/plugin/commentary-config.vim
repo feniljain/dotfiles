@@ -55,6 +55,3 @@ augroup END
 
 " nnoremap <Space><Space> :call ToggleComment()<cr>
 " vnoremap <Space><Space> :call ToggleComment()<cr>
-
-nnoremap <Space><Space> :Commentary<cr>
-vnoremap <Space><Space> :Commentary<cr>

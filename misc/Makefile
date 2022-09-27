@@ -29,6 +29,8 @@ keyboard-colemak-dual:
 # xrandr --output LVDS-1 --off --output e-DP-1 --off --output HDMI-1 --primary --mode 1280x1024 --pos 0x0 --rotate normal --output VGA-1 --off
 # ssh-dyte-vm:
 # 	ssh -i ~/.ssh/dyte_vm/LightsailDefaultKey-ap-southeast-1.pem ubuntu@13.233.112.41
+ssh-dyte-ashutosh-vm:
+	ssh ubuntu@3.108.226.201
 ssh-dyte-staging-jumphost:
 	ssh -i ~/.ssh/id_rsa fenil@jumphost.staging.dyte.in
 ssh-dyte-jumphost:

@@ -11,5 +11,3 @@ function! s:save_and_exec() abort
 
   return
 endfunction
-" save and resource current file
-nnoremap <Space>x :call <SID>save_and_exec()<CR>

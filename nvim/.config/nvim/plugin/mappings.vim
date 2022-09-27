@@ -67,7 +67,7 @@ noremap <Space>l <C-W>l
 
 " neovim terminal mappings
 tnoremap jk <C-\><C-n>
-noremap <C-t> :terminal<CR>
+" noremap <C-t> :terminal<CR>
 
 " VIM-ZOOM REMAP
 " noremap <Space>vz <C-W>m
@@ -130,4 +130,3 @@ vnoremap < <gv
 " Convert to vimscript
 nnoremap { :execute 'keepjumps norm! ' . v:count1 . '{'<CR>
 nnoremap } :execute 'keepjumps norm! ' . v:count1 . '}'<CR>
-

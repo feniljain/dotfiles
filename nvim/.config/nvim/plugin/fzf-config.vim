@@ -1,12 +1,5 @@
-" FZF Mappings
-noremap <Space>fs :Rg<CR>
-noremap <Space>ff :Files<CR>
-" noremap <Space>fb :Buffers<CR>
-" noremap <Space>fc :Colors<CR>
-"noremap `` :Buffers<CR>
-"noremap `s :Rg<CR>
-"noremap `f :Files<CR>
-"noremap `c :Commits<CR>
+" To jump to the buffer window if it is already open
+let g:fzf_buffers_jump=1
 
 "fzf config
 " let g:fzf_layout = { 'down': '~30%' }

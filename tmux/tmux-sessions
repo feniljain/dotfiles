@@ -1,7 +1,6 @@
 #!/bin/bash
 
 PROJECTS="~/Projects"
-APPOINTY="~/Projects/golang-projects/appointy"
 DYTE="~/Projects/work/dyte"
 KNOWLEDGE_BASE="~/Projects/knowledge-base"
 RUST_PROJECTS="~/Projects/rust-projects"
@@ -17,7 +16,11 @@ createWindows() {
            tmux neww -t $sessionName -n 'Secondary'
            ;;
         3)
-           tmux neww -t $sessionName -n 'kb-htop-buf'
+           if [ $N == 4 ]; then
+            tmux neww -t $sessionName -n 'Tertiary'
+           else
+            tmux neww -t $sessionName -n 'kb-htop-buf'
+           fi
            ;;
         4)
            tmux neww -t $sessionName -n 'Misc'
@@ -82,14 +85,19 @@ buildDyteSession() {
     tmux send-keys "$vifmCmd" 'C-m'
 
     # Window 3
+    buildVIFMCmd "$DYTE"
     tmux select-window -t $sessionName:3
+    tmux send-keys "$vifmCmd" 'C-m'
+
+    # Window 4
+    tmux select-window -t $sessionName:4
     buildVIFMCmd "$DYTE" "$KNOWLEDGE_BASE"
     tmux send-keys "$vifmCmd" 'C-m'
     tmux split-window -h 'exec htop'
     tmux split-window -v
 
-    # Window 4
-    tmux select-window -t $sessionName:4
+    # Window 5
+    # tmux select-window -t $sessionName:5
     # tmux send-keys "sudo openfortigui" 'C-m'
 }
 
@@ -130,18 +138,6 @@ sessionName=""
 
 # Build session
 case "$flag" in
-    "-a")
-        sessionName="appointy"
-        sessionAlreadyExists $sessionName
-        if [[ $sessionExists == 0 ]]
-        then
-            createSession $sessionName
-            createWindows 4
-            buildAppointySession
-        else
-            echo "session already exists, directly connecting to it"
-        fi
-        ;;
     "-d")
         sessionName="dyte"
         sessionAlreadyExists $sessionName

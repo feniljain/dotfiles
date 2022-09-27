@@ -1,4 +1,3 @@
-nnoremap <Space>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.

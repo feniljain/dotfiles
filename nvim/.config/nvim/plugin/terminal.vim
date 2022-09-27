@@ -5,6 +5,3 @@ function! s:small_terminal() abort
   set winfixheight
   term
 endfunction
-
-" ANKI: Make a small terminal at the bottom of the screen.
-nnoremap <Space>st :call <SID>small_terminal()<CR>

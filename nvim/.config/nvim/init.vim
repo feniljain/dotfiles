@@ -71,6 +71,9 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'nvim-telescope/telescope-fzy-native.nvim'
  Plug 'nvim-telescope/telescope-project.nvim'
  Plug 'nvim-telescope/telescope-live-grep-args.nvim'
+ Plug 'olacin/telescope-cc.nvim'
+ Plug 'crispgm/telescope-heading.nvim'
+
  Plug 'junegunn/fzf.vim'
  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
@@ -324,22 +327,12 @@ nnoremap <Space>sl :call matchadd('LineHighlight', '\%'.line('.').'l')
 nnoremap <Space>cs :call clearmatches()
 " }}}
 
-" Let Commands ---------------------- {{{
+" Non Plugin Let Commands ---------------------- {{{
 " Fixing clipboard warning
 let g:loaded_clipboard_provider = 1
 
-" To jump to the buffer window if it is already open
-let g:fzf_buffers_jump=1
-
 " Syntax highlighting for lua in vim files
 let g:vimsyn_embed = 'l'
-
-let g:suda_smart_edit = 1
-let g:suda#prompt = 'Password > '
-
-let test#strategy = 'basic'
-
-let g:gitgutter_enabled = 1
 " }}}
 
 " Change font size quickly ---------------------- {{{
