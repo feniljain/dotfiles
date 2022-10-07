@@ -76,7 +76,6 @@ tnoremap jk <C-\><C-n>
 
 noremap  <Space>` :Goyo<CR>
 "noremap  <Space>k :Goyo!<CR>
-nnoremap <Space>pr :Prettier<CR>
 
 " Fix floating windows problem
 " inoremap <C-c> <ESC>

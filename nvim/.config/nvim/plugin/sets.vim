@@ -47,7 +47,7 @@ set wildmode=longest,list,full
 
 set shortmess+=c
 
-" For treesitter folding
+" For tree sitter folding
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
@@ -63,4 +63,12 @@ set switchbuf=useopen,usetab
 set list
 " display chars for tabs
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+
+" Nvim 0.8.0 features
+" " Only show command line, when it is actually in use
+" set cmdheight=0
+" " Set a winbar with file name
+" set winbar=%=%m\ %f
+" " Using tree sitter based spell checker, this only checks comments in code
+" set spell
 " }}}

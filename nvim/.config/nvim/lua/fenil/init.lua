@@ -14,5 +14,8 @@ require("fenil.lightbulb")
 require("fenil.fidget")
 require("fenil.notify")
 require("fenil.osc52")
+require("fenil.null-ls")
+require("fenil.prettier")
+require("fenil.eslint")
 
 -- require("fenil.whid")

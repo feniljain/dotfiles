@@ -151,3 +151,6 @@ nnoremap tgc :lua require('telescope').extensions.git_worktree.create_git_worktr
 
 " Inspired from gO of man pages
 nnoremap tO :Telescope heading<CR>
+
+" ======== Specific LSP Commands ========
+nnoremap <space>p :Prettier<CR>

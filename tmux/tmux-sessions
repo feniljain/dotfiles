@@ -115,7 +115,12 @@ buildGenericSession() {
     tmux send-keys "$vifmCmd" 'C-m'
 
     # Window 3
+    buildVIFMCmd "$folderPath"
     tmux select-window -t $sessionName:3
+    tmux send-keys "$vifmCmd" 'C-m'
+
+    # Window 4
+    tmux select-window -t $sessionName:4
     buildVIFMCmd "$PROJECTS" "$KNOWLEDGE_BASE"
     tmux send-keys "$vifmCmd" 'C-m'
     tmux split-window -h 'exec htop'
@@ -180,7 +185,7 @@ case "$flag" in
         if [[ $sessionExists == 0 ]]
         then
             createSession $sessionName
-            createWindows 3
+            createWindows 4
             buildGenericSession "$RUST_PROJECTS"
         else
             echo "session already exists, directly connecting to it"

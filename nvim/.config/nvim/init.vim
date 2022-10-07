@@ -86,6 +86,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
  " HTML AND CSS AND JS
  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+ Plug 'jose-elias-alvarez/null-ls.nvim'
+ Plug 'MunifTanjim/prettier.nvim'
+ Plug 'MunifTanjim/eslint.nvim'
 
  " THEMES
  Plug 'gruvbox-community/gruvbox'

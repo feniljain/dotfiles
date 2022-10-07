@@ -4,6 +4,14 @@ require('lspkind').init({})
 
 local lsp_installer = require 'nvim-lsp-installer'
 local lspconfig = require 'lspconfig'
+local util = require 'vim.lsp.util'
+
+local formatting_callback = function(client, bufnr)
+    vim.keymap.set('n', '<leader>f', function()
+        local params = util.make_formatting_params({})
+        client.request('textDocument/formatting', params, nil, bufnr)
+    end, { buffer = bufnr })
+end
 
 local on_attach = function(client, bufnr)
 
@@ -32,7 +40,7 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gpgd', '<cmd>Lspsaga preview_definition<CR>', bufopts)
+    vim.keymap.set('n', 'gpgd', '<cmd>Lspsaga peek_definition<CR>', bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
@@ -64,56 +72,29 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
     -- vim.keymap.set('n', '<space>so', '<cmd>LSoutlineToggle <CR>', bufopts) -- Not good enough as symbols-outline.nvim yet, check back in future
 
-    -- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    -- if it is `tsserver`, use `null-ls` for formatting, as that is where
+    -- prettier.nvim/eslint.nvim hooks up
+    --
+    -- if it is some other LSP, register normally
+    --
+    -- Taken from: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
+    --
+    -- Only needed for 0.7
+    if client.name == "tsserver" then
+        formatting_callback(client, bufnr)
+    else
+        -- Set some keybinds conditional on server capabilities
+        -- normal mode
+        if client.resolved_capabilities.document_formatting then
+            -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+            vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', bufopts)
+        end
 
-    -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- -- Mappings.
-    -- local opts = { noremap = true, silent = true }
-    -- buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    -- buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    -- buf_set_keymap('n', 'gpgd', '<cmd>Lspsaga preview_definition<cr>', opts)
-    -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    -- buf_set_keymap('n', 'gK', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    -- buf_set_keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
-    -- -- buf_set_keymap('n', 'wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    -- -- buf_set_keymap('n', 'wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    -- -- buf_set_keymap('n', 'wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    -- buf_set_keymap('n', 'gtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    -- -- buf_set_keymap('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- buf_set_keymap('n', 'gnr', '<cmd>Lspsaga rename<cr>', opts)
-    -- -- buf_set_keymap('n', 'gca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    -- -- buf_set_keymap('n', 'gr', '<cmd> lsp_references<cr>', opts) buf_set_keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', opts)
-    -- -- buf_set_keymap('n', 'gca', '<cmd>Lspsaga code_action<cr>', opts)
-    -- buf_set_keymap('n', 'gca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    -- buf_set_keymap('v', 'gca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    -- buf_set_keymap('n', 'gcra', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', opts)
-    -- buf_set_keymap('v', 'gcra', '<cmd>lua vim.lsp.buf.range_code_action()<cr>', opts)
-    -- buf_set_keymap('n', 'gwd', '<cmd> workspace_diagnostics<cr>', opts)
-    -- buf_set_keymap('n', 'gfd', '<cmd>Trouble lsp_document_diagnostics<cr>', opts)
-    -- buf_set_keymap('n', 'gqf', '<cmd>Trouble quickfix<cr>', opts)
-    -- buf_set_keymap('n', 'gsd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    -- buf_set_keymap('n', 'gpd', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    -- buf_set_keymap('n', 'gnd', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    -- buf_set_keymap('n', 'gll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    -- buf_set_keymap('n', 'gsf', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
-    -- buf_set_keymap('n', 'gsw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
-
-    -- Set some keybinds conditional on server capabilities
-    -- normal mode
-    if client.resolved_capabilities.document_formatting then
-        -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-        vim.keymap.set('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', bufopts)
-    end
-
-    -- visual mode
-    if client.resolved_capabilities.document_range_formatting then
-        -- buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-        vim.keymap.set('v', '<space>f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', bufopts)
+        -- visual mode
+        if client.resolved_capabilities.document_range_formatting then
+            -- buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+            vim.keymap.set('v', '<leader>f', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', bufopts)
+        end
     end
 
     -- Set autocommands conditional on server_capabilities
@@ -141,6 +122,19 @@ local on_attach = function(client, bufnr)
             callback = vim.lsp.buf.clear_references,
         })
     end
+
+    if false and client.server_capabilities.codeLensProvider then
+        if filetype ~= "elm" then
+            vim.cmd [[
+           augroup lsp_document_codelens
+             au! * <buffer>
+             autocmd BufEnter ++once         <buffer> lua require"vim.lsp.codelens".refresh()
+             autocmd BufWritePost,CursorHold <buffer> lua require"vim.lsp.codelens".refresh()
+           augroup END
+         ]]
+        end
+    end
+
 
     vim.diagnostic.config({
         virtual_text = true,
@@ -175,7 +169,7 @@ end
 M.on_attach = on_attach
 
 -- rust_analyzer is handled by rust-tools.nvim
-local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "eslint", "jsonls", "marksman" }
+local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman" }
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()
