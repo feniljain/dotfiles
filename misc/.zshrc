@@ -125,11 +125,16 @@ fi
 # To customize promp, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export TERM=xterm-256color
+export EDITOR="nvim"
+export VISUAL="nvim"
+export MANPAGER="nvim +Man!" # Open man pages in nvim with syntax highlighting
+export RUST_BACKTRACE=1
 
 # export JAVA_HOME="/usr/lib/jvm/jdk-16.0.1"
 # export PATH_TO_FX="/media/data/Misc/E/softwares/javafx-sdk-11.0.2/lib"
-export PATH="$PATH:/home/fenil/anaconda3/bin"
-export PATH="$PATH:$DART_SDK/bin"
+# export PATH="$PATH:/home/fenil/anaconda3/bin"
+# export PATH="$PATH:$DART_SDK/bin"
 export PATH="$PATH:/Users/feniljain/Projects/softwares/flutter/bin/"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$GOBIN"
@@ -138,15 +143,11 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 # export PATH="$PATH:/home/fenil/evans_linux_386"
 # export PATH="$PATH:/home/fenil/nvim-linux64/bin"
-export PATH="$PATH:/opt/firefox/firefox"
-export PATH="$PATH:/usr/local/share/npm/bin"
+# export PATH="$PATH:/opt/firefox/firefox"
+# export PATH="$PATH:/usr/local/share/npm/bin"
 # export PATH="$PATH:/home/fenil/flutter_linux_v1.9.1+hotfix.6-stable/flutter/bin/cache/dart-sdk/bin"
 # export PATH="$PATH:$HOME/.pub-cache/bin"
 # export PATH="$PATH:/opt/yarn-1.22.5/bin"
-export EDITOR="nvim"
-export VISUAL="nvim"
-export MANPAGER="nvim +Man!" # Open man pages in nvim with syntax highlighting
-export RUST_BACKTRACE=1
 export PATH="$PATH:/Users/feniljain/.pyenv/shims/"
 
 # ==== Mac setup
@@ -156,33 +157,31 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/Users/feniljain/Library/Python/3.8/bin
-export LLVM_DIR=/usr/local/opt/llvm@13
+# export LLVM_DIR=/usr/local/opt/llvm@13
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-export TERM=xterm-256color
 export PATH=/opt/homebrew/bin:$PATH
 # export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
 # export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export LC_ALL=en_US.UTF-8
 # ==============
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/fenil/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/fenil/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/fenil/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/fenil/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/fenil/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/fenil/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/fenil/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/fenil/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
 LANG="en_US.UTF-8"
 LC_COLLATE="en_US.UTF-8"
@@ -193,19 +192,19 @@ LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 
-alias luamake=/home/feniljain/Projects/softwares/lua-language-server/3rd/luamake/luamake
-alias goland=/opt/GoLand-2021.1.3/bin/goland.sh
-alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos registry.appointy.com/trishul'
+# alias luamake=/home/feniljain/Projects/softwares/lua-language-server/3rd/luamake/luamake
+# alias goland=/opt/GoLand-2021.1.3/bin/goland.sh
+# alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos registry.appointy.com/trishul'
 # alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos ayushbpl10/trishul:v1'
-alias cls='printf "\ec"'
+# alias cls='printf "\ec"'
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 vgrep() {
   INITIAL_QUERY="$1"
@@ -215,9 +214,27 @@ vgrep() {
   | awk '{print $1}' | xargs -I{} -o vgrep --show {}
 }
 
-# asdf stuff
-. /usr/local/opt/asdf/libexec/asdf.sh
+# Erlang and Elixir
+export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+export KERL_BUILD_DOCS="yes"
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Next two lines are from preventing
+# zsh giving repetitive "correct `cargo`
+# to `.cargo` prompts"
+#
+# source:
+# https://superuser.com/questions/439209/how-to-partially-disable-the-zshs-autocorrect
+unsetopt correct_all
+setopt correct
 
 # Set vim keybindings instead of emacs keybindings( which are default ones)
 # Source: https://www.youtube.com/watch?v=XY5qCQcrHns
 set -o emacs
+export PATH=$PATH:/Users/feniljain/.spicetify
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc'; fi

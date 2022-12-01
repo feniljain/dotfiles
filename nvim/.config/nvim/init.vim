@@ -39,6 +39,7 @@ call plug#begin('~/.local/share/nvim/plugged')
  Plug 'neovim/nvim-lspconfig'
  Plug 'williamboman/nvim-lsp-installer'
  Plug 'L3MON4D3/LuaSnip'
+ Plug 'tamago324/nlsp-settings.nvim'
 
 " Completion
  Plug 'hrsh7th/nvim-cmp'
@@ -96,7 +97,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
  " Rust
  Plug 'cespare/vim-toml'
- Plug 'simrat39/rust-tools.nvim'
+ " Plug 'simrat39/rust-tools.nvim'
 
  " Statusline
  Plug 'hoob3rt/lualine.nvim'

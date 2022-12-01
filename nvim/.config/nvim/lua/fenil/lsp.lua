@@ -169,7 +169,7 @@ end
 M.on_attach = on_attach
 
 -- rust_analyzer is handled by rust-tools.nvim
-local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman" }
+local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls" }
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()
@@ -189,16 +189,27 @@ local function setup_servers()
         lspconfig[server.name].setup {
             on_attach = on_attach,
             capabilities = capabilities,
+            settings = {
+                ["rust-analyzer"] = {
+                    server = {
+                        path = "~/Projects/rust-projects/rust-analyzer/fix_completions/target/release/rust-analyzer --log-file LOGS",
+                    },
+                    -- trace = {
+                    --     server = "verbose"
+                    -- },
+                }
+
+            }
         }
     end
 
-    local has_rust_tools, rust_tools = pcall(require, "rust-tools")
-    if has_rust_tools then
-        rust_tools.setup({ server = {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        } })
-    end
+    -- local has_rust_tools, rust_tools = pcall(require, "rust-tools")
+    -- if has_rust_tools then
+    --     rust_tools.setup({ server = {
+    --         on_attach = on_attach,
+    --         capabilities = capabilities,
+    --     } })
+    -- end
 end
 
 setup_servers()

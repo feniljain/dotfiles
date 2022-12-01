@@ -33,6 +33,10 @@ augroup JaktCommentGroup | au!
     autocmd FileType jakt setlocal commentstring=//\ %s
 augroup END
 
+augroup ElixirCommentGroup | au!
+    autocmd FileType elixir setlocal commentstring=#\ %s
+augroup END
+
 " function! ToggleComment()
 "     if has_key(s:comment_map, &filetype)
 "         let comment_leader = s:comment_map[&filetype]

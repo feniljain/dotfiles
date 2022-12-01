@@ -1,3 +1,7 @@
+" This vimrc is mostly for use in a light weight 
+" environment, where you just want to rely on 
+" defaults and nothing else
+
 " General
 inoremap jk <esc> 
 
@@ -22,3 +26,11 @@ vnoremap K :m '<-2<CR>gv=gv
 " Better indenting
 vnoremap > >gv
 vnoremap < <gv
+
+" Make search easier
+set smartcase
+set ignorecase
+
+" Window split shortcuts
+nnoremap <Space>v :vsplit<CR>
+nnoremap <Space>- :split<CR>
