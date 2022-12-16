@@ -11,6 +11,9 @@
 " let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
 
+" colorscheme tokyonight
+" colorscheme tokyonight-moon
+
 " colorscheme minimal-base16
 " highlight Folded ctermbg=White ctermfg=Red
 
@@ -46,8 +49,12 @@ colorscheme gruvbox
 " colorscheme toast
 
 " To make background transparent
-hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
+" hi Normal guibg=NONE ctermbg=NONE ctermfg=NONE
 " For making dividers between windows very small
 hi WinSeperator guibg=NONE
+
+" " Color for numbers and relative numbers
+" hi LineNr ctermfg=15
+" hi LineNr ctermbg=15
 " }}}
 

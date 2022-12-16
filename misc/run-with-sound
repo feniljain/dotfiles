@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+cmd=$1
+
+if [ -z "$cmd" ]
+then
+      echo "no command is passed"
+      exit 1
+fi
+
+$cmd; say -v Bells "dong dong dong"

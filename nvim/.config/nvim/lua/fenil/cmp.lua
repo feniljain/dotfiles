@@ -2,7 +2,7 @@ local M = {}
 
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-local lspkind = require('lspkind')
+local lspkind = require 'lspkind'
 
 cmp.setup {
     snippet = {
@@ -52,13 +52,7 @@ cmp.setup {
         format = lspkind.cmp_format({
             mode = 'symbol_text', -- show only symbol annotations
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-            with_text = true,
-            menu = {
-                buffer = "[buf]",
-                nvim_lsp = "[LSP]",
-                path = "[path]",
-                luasnip = "[snip]",
-            }
+            ellipsis_char = '...',
         }),
     },
     experimental = {
@@ -110,9 +104,8 @@ require 'cmp'.setup.cmdline('/', {
 })
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-M.capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+M.capabilities = require('cmp_nvim_lsp').default_capabilities()
 M.cmp = cmp
 
 return M

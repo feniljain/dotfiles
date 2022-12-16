@@ -233,6 +233,8 @@ setopt correct
 set -o emacs
 export PATH=$PATH:/Users/feniljain/.spicetify
 
+export PATH=$PATH:/Users/feniljain/.local/share/neovim/bin
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc'; fi
 

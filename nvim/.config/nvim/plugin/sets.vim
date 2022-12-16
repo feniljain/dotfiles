@@ -41,7 +41,7 @@ set ignorecase
 " set cursorline
 set scrolloff=0
 set signcolumn=yes:1 " Do not mess with this, unless you want your editor window dancing
-" set mouse=a " Enabling use of mouse so that it can help scrolling of docs in floating windows
+set mouse=
 "set updatetime=300
 set wildmode=longest,list,full
 
@@ -65,10 +65,6 @@ set list
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 
 " Nvim 0.8.0 features
-" " Only show command line, when it is actually in use
-" set cmdheight=0
-" " Set a winbar with file name
-" set winbar=%=%m\ %f
 " " Using tree sitter based spell checker, this only checks comments in code
-" set spell
+" set spell " ughh...this is annoying
 " }}}
