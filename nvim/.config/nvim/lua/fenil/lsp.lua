@@ -1,8 +1,10 @@
 local M = {}
 
+-- TODO: Give descriptions to all keymaps everywhere, to see ref checkout kickstart.nvim
+
 local vim = vim
 
-vim.lsp.set_log_level 'trace'
+-- vim.lsp.set_log_level 'trace'
 
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require 'lspconfig'
@@ -49,13 +51,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gwd', '<cmd>TroubleToggle workspace_diagnostics<CR>', bufopts)
     vim.keymap.set('n', 'gfd', '<cmd>TroubleToggle document_diagnostics<CR>', bufopts)
     vim.keymap.set('n', 'gqf', '<cmd>TroubleToggle quickfix<CR>', bufopts)
-    vim.keymap.set('n', 'gsd', '<cmd>TroubleToggle show_line_diagnostics<CR>', bufopts)
 
-    vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, bufopts)
-    vim.keymap.set('n', 'gsf', vim.lsp.buf.document_symbol, bufopts)
-    vim.keymap.set('n', 'gsw', vim.lsp.buf.workspace_symbol, bufopts)
-
+    vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, bufopts)
+    vim.keymap.set('n', ']g', vim.diagnostic.goto_next, bufopts)
+    vim.keymap.set('n', 'gsf', '<cmd>Telescope lsp_document_symbols<CR>', bufopts)
+    vim.keymap.set('n', 'gsw', '<cmd>Telescope lsp_workspace_symbols<CR>', bufopts)
     vim.keymap.set('n', '<space>so', '<cmd>Lspsaga outline <CR>', bufopts) -- Not good enough as symbols-outline.nvim yet, check back in future
 
     if client.server_capabilities.documentFormattingProvider then
@@ -155,7 +155,7 @@ local function setup_servers()
                     -- },
                     rustc = {
                         source = "discover",
-                    }
+                    },
                 }
 
             }
