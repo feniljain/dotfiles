@@ -131,7 +131,7 @@ end
 
 M.on_attach = on_attach
 
-local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls" }
+local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" }
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()

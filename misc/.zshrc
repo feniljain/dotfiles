@@ -240,3 +240,9 @@ if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc' ]; t
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix

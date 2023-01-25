@@ -1,7 +1,6 @@
 " Mappings ---------------------- {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 "Grep basic the highlighting
 " nnoremap <leader>g :silent execute ":grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
@@ -28,10 +27,6 @@ noremap  <C-n> :tabnew<CR>
 " inoremap <C-u> jkviwU
 " Press Ctrl-u in normal mode to convert current word under cursor to uppercase
 " nnoremap <C-u> viwU
-
-" NERDTree bindings
-nnoremap <Space>nf :NERDTreeFind<CR>
-nnoremap <Space>nt :NERDTreeToggle<CR>
 
 "Remove the highlighting from previous search
 nnoremap <Space>rh :nohlsearch<CR>

@@ -6,7 +6,8 @@ return require('packer').startup(function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'ThePrimeagen/harpoon'
-    use 'Yggdroot/indentLine'
+    -- use 'Yggdroot/indentLine' -- removing coz: https://www.reddit.com/r/neovim/comments/101omgs/comment/j2p62tq/
+    use 'nacro90/numb.nvim'
     use 'farmergreg/vim-lastplace'
     use 'christoomey/vim-system-copy'
     use 'preservim/nerdtree'
@@ -19,6 +20,7 @@ return require('packer').startup(function(use)
     use 'rcarriga/nvim-notify'
     use 'ojroques/nvim-osc52'
     use 'editorconfig/editorconfig-vim'
+    use 'shortcuts/no-neck-pain.nvim'
 
     --  JAKT
     -- use 'SerenityOS/jakt', { 'rtp': 'editors/vim' }

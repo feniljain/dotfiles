@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["editorconfig-vim"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
+    url = "https://github.com/editorconfig/editorconfig-vim"
+  },
   ["eslint.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/eslint.nvim",
@@ -148,11 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
-  },
-  indentLine = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/indentLine",
-    url = "https://github.com/Yggdroot/indentLine"
   },
   ["lsp-colors.nvim"] = {
     loaded = true,
@@ -214,10 +214,20 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["no-neck-pain.nvim"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
+    url = "https://github.com/shortcuts/no-neck-pain.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["numb.nvim"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/numb.nvim",
+    url = "https://github.com/nacro90/numb.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

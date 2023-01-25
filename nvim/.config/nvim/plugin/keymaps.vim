@@ -39,7 +39,11 @@ nnoremap <Space>tl :TestLast<CR>
 nnoremap <Space>st :call <SID>small_terminal()<CR>
 
 " ----------------------------- NERD-TREE -----------------------------
+nnoremap <Space>nf :NERDTreeFind<CR>
 nnoremap <Space>nt :NERDTreeToggle<CR>
+
+" ----------------------------- NO-NECK-PAIN -----------------------------
+nnoremap <Space>np :NoNeckPain<CR>
 
 " ----------------------------- LUA DEV -----------------------------
 " save and resource current file
