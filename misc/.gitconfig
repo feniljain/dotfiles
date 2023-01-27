@@ -1,0 +1,27 @@
+# This is Git's per-user configuration file.
+[user]
+	email = fkjainco@gmail.com
+	name = feniljain
+
+[color]
+	ui = true
+
+[includeIf "gitdir:~/Projects/word/dyte/"]
+	path = ~/Projects/work/dyte/.gitconfig
+
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+# Use a pager for large output, just like other git commands.
+[pager]
+        difftool = true
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+        dft = difftool

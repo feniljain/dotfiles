@@ -41,6 +41,7 @@
     */
     /* pkgs.vim */
     /* pkgs.curl */
+    /* pkgs.git */
 
     /* Pkg not supported in mac */
     /* pkgs.helm */
