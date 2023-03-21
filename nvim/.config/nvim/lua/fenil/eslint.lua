@@ -7,7 +7,8 @@ eslint.setup({
         enable = true,
         apply_on_save = {
             enable = true,
-            types = { "problem" }, -- "directive", "problem", "suggestion", "layout"
+            -- types = { "problem" }, -- "directive", "problem", "suggestion", "layout"
+            types = { "directive", "problem", "suggestion", "layout" },
         },
         disable_rule_comment = {
             enable = true,

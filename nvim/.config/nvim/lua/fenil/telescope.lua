@@ -24,12 +24,12 @@ end
 
 require('telescope').setup {
     defaults = {
-        preview = {
+        preview                = {
             timeout = 500,
             msg_bg_fillchar = "",
             -- hide_on_startup = true -- hide previewer when picker starts
         },
-        vimgrep_arguments = {
+        vimgrep_arguments      = {
             'rg',
             '--color=never',
             '--no-heading',
@@ -40,29 +40,32 @@ require('telescope').setup {
             '--hidden',
             "--trim",
         },
-        file_sorter = require('telescope.sorters').get_fzy_sorter,
-        layout_config = {
+        file_sorter            = require('telescope.sorters').get_fzy_sorter,
+        layout_config          = {
             prompt_position = 'top',
         },
-        prompt_prefix = "❯ ",
-        selection_caret = "❯ ",
-        sorting_strategy = "ascending",
-        color_devicons = true,
-
-        file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
-        grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-        qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
-
-        mappings = {
+        prompt_prefix          = "❯ ",
+        selection_caret        = "❯ ",
+        sorting_strategy       = "ascending",
+        color_devicons         = true,
+        file_previewer         = require('telescope.previewers').vim_buffer_cat.new,
+        grep_previewer         = require('telescope.previewers').vim_buffer_vimgrep.new,
+        qflist_previewer       = require('telescope.previewers').vim_buffer_qflist.new,
+        mappings               = {
             i = {
                 ["<C-x>"] = false,
                 ["<esc>"] = actions.close,
                 ["<C-q>"] = actions.send_to_qflist,
                 ["<C-k>"] = lga_actions.quote_prompt(),
-                -- ['<C-p>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
+                ['<C-h>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
             },
         },
         buffer_previewer_maker = new_maker,
+        -- Show the files in format: <filename> <complete-path>
+        path_display = function(_opts, path)
+            local tail = require("telescope.utils").path_tail(path)
+            return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
+        end,
     },
     extensions = {
         fzy_native = {
@@ -80,7 +83,7 @@ require('telescope').setup {
         heading = {
             treesitter = true,
         },
-    }
+    },
 }
 
 require("telescope").load_extension("git_worktree")

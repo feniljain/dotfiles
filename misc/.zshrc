@@ -214,6 +214,11 @@ vgrep() {
   | awk '{print $1}' | xargs -I{} -o vgrep --show {}
 }
 
+if [ -e ~/.nix-profile/share/fzf/key-bindings.zsh ]; then
+    source ~/.nix-profile/share/fzf/key-bindings.zsh
+fi
+
+
 # Erlang and Elixir
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export KERL_BUILD_DOCS="yes"

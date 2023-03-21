@@ -131,10 +131,11 @@ end
 
 M.on_attach = on_attach
 
-local servers = { "rust_analyzer", "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" }
+local servers = { "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" } -- rust_analyzer",
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()
+    -- vim.lsp.set_log_level('debug')
     require("mason").setup()
 
     mason_lspconfig.setup({
@@ -145,22 +146,29 @@ local function setup_servers()
         lspconfig[server].setup {
             capabilities = capabilities,
             on_attach = on_attach,
-            settings = {
-                ["rust-analyzer"] = {
-                    -- server = {
-                    --     -- path = "~/Projects/rust-projects/rust-analyzer/fix_completions/target/release/rust-analyzer",
-                    -- },
-                    -- trace = {
-                    --     server = "verbose"
-                    -- },
-                    rustc = {
-                        source = "discover",
-                    },
-                }
-
-            }
         }
     end
+
+    lspconfig['rust_analyzer'].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = {
+            ["rust-analyzer"] = {
+                server = {
+                    -- path = '/Users/feniljain/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
+                    -- path = '~/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
+                },
+                -- trace = {
+                --     server = "verbose",
+                --     extension = true,
+                -- },
+                rustc = {
+                    source = "discover",
+                },
+            }
+
+        }
+    })
 
     -- local has_rust_tools, rust_tools = pcall(require, "rust-tools")
     -- if has_rust_tools then

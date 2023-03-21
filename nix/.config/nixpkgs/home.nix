@@ -23,6 +23,7 @@
     pkgs.wget
     pkgs.vifm
     pkgs.htop
+    pkgs.direnv
 
     /* Good to have */
     pkgs.bat
