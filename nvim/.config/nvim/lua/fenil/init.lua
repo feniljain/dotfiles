@@ -15,7 +15,7 @@ require("fenil.null-ls")
 require("fenil.prettier")
 require("fenil.eslint")
 require("fenil.harpoon")
--- require("fenil.tabout")
+require("fenil.numb")
 -- require("fenil.rust-tools")
 
 -- require("fenil.whid")

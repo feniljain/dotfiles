@@ -60,14 +60,12 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/playground'
     use 'simrat39/symbols-outline.nvim'
     use 'romgrk/nvim-treesitter-context'
-    use 'abecodes/tabout.nvim'
 
     -- Fuzzers
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-fzy-native.nvim'
     use 'nvim-telescope/telescope-project.nvim'
     use 'nvim-telescope/telescope-live-grep-args.nvim'
-    use 'olacin/telescope-cc.nvim'
     use 'crispgm/telescope-heading.nvim'
 
     use 'junegunn/fzf.vim'
@@ -80,8 +78,6 @@ return require('packer').startup(function(use)
     -- GIT
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
-    use 'drzel/vim-repo-edit'
-    use 'junegunn/gv.vim'
     use 'ThePrimeagen/git-worktree.nvim'
 
     -- HTML AND CSS AND JS
@@ -94,10 +90,6 @@ return require('packer').startup(function(use)
     use 'gruvbox-community/gruvbox'
     use 'Yazeed1s/minimal.nvim'
     use 'folke/tokyonight.nvim'
-
-    -- Rust
-    use 'cespare/vim-toml'
-    -- use 'simrat39/rust-tools.nvim'
 
     -- Statusline
     use 'hoob3rt/lualine.nvim'

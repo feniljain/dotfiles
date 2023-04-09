@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
     ensure_installed = { "go", "rust", "c", "cpp", "lua", "typescript", "jsonc", "gomod", "html", "css", "dockerfile",
-        "tsx", "comment", "vim", "markdown", "elixir", "javascript", "nix" },
+        "tsx", "comment", "vim", "markdown", "elixir", "javascript", "nix", "toml" },
 
     -- For nvim-ts-rainbow
     rainbow = {

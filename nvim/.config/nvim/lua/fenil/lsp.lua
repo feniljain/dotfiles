@@ -57,7 +57,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', ']g', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', 'gsf', '<cmd>Telescope lsp_document_symbols<CR>', bufopts)
     vim.keymap.set('n', 'gsw', '<cmd>Telescope lsp_workspace_symbols<CR>', bufopts)
-    vim.keymap.set('n', '<space>so', '<cmd>Lspsaga outline <CR>', bufopts) -- Not good enough as symbols-outline.nvim yet, check back in future
+    vim.keymap.set('n', '<space>so', '<cmd>SymbolsOutline <CR>', bufopts) -- Not good enough as symbols-outline.nvim yet, check back in future.
 
     if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
