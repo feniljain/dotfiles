@@ -14,7 +14,7 @@ set linebreak
 set laststatus=2
 set cmdheight=1
 " set bg=dark
-set background=dark
+set background=light
 set t_Co=256
 set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 set hidden
@@ -38,7 +38,7 @@ syntax on
 set smartcase
 set ignorecase
 " Visual indication of line your cursor is on, works in normal and visual mode
-" set cursorline
+set cursorline
 set scrolloff=0
 set signcolumn=yes:1 " Do not mess with this, unless you want your editor window dancing
 set mouse=

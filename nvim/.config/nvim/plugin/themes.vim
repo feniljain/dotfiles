@@ -10,6 +10,7 @@
 " let g:gruvbox_improved_warnings = '1'
 " let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
+let g:gruvbox_contrast_light = 'soft'
 
 " colorscheme tokyonight
 " colorscheme tokyonight-moon

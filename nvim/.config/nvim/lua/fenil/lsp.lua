@@ -42,7 +42,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', bufopts)
     vim.keymap.set('n', 'gtd', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', 'gnr', '<cmd>Lspsaga rename<CR>', bufopts)
+    -- vim.keymap.set('n', 'gnr', '<cmd>Lspsaga rename<CR>', bufopts)
+    vim.keymap.set('n', 'gnr', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set({ 'n', 'v' }, 'gca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gcra', vim.lsp.buf.range_code_action, bufopts)
@@ -131,7 +132,7 @@ end
 
 M.on_attach = on_attach
 
-local servers = { "sumneko_lua", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" } -- rust_analyzer",
+local servers = { "luau_lsp", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" } -- "rust_analyzer",
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()
@@ -158,13 +159,14 @@ local function setup_servers()
                     -- path = '/Users/feniljain/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
                     -- path = '~/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
                 },
+                checkOnSave = false,
                 -- trace = {
                 --     server = "verbose",
                 --     extension = true,
                 -- },
-                rustc = {
-                    source = "discover",
-                },
+                -- rustc = {
+                --     source = "discover",
+                -- },
             }
 
         }

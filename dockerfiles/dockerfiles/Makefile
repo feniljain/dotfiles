@@ -6,6 +6,11 @@ redis_run:
 	docker run --name my-redis -p 6379:6379 -d redis
 redis_connect:
 	docker exec -it my-redis sh
+redis_cluster_run:
+	docker run \
+    -e ALLOW_EMPTY_PASSWORD=yes \
+    -v ~/dockerfiles/volumes:/bitnami \
+    bitnami/redis-cluster:latest
 db_run:
 	docker run \
     --name my-postgres \
