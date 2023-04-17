@@ -67,7 +67,9 @@ local config = {
         lualine_c = {},
         lualine_x = {},
     },
-    extensions = { 'fugitive', 'quickfix', 'nerdtree', 'symbols-outline', 'man', 'fzf' },
+    -- do not add 'quickfix' extension for now, cause
+    -- it is causing crashes on doing go-to-ref
+    extensions = { 'fugitive', 'nerdtree', 'man', 'fzf'}
 }
 
 -- Inserts a component in lualine_c at left section
@@ -123,6 +125,12 @@ ins_left {
 }
 
 ins_left {
+    -- filesize component
+    'filesize',
+    cond = conditions.buffer_not_empty,
+}
+
+ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
     color = { fg = colors.magenta, gui = 'bold' },
@@ -135,7 +143,7 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_left {
     'diagnostics',
     sources = { 'nvim_diagnostic' },
-    -- symbols = { error = ' ', warn = ' ', info = ' ' },
+    symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
