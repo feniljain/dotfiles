@@ -17,7 +17,11 @@ source: https://github.com/Arty2/userstyles/blob/master/tabs_to_bottom.userchrom
 
 /* bring the browser window to the top */
 #browser {
-	-moz-box-ordinal-group: 0 !important;
+    /* box properties are not supported anymore:
+    * https://www.reddit.com/r/FirefoxCSS/comments/11odffm/psa_incoming_changes_to_default_element/
+    * hence we are using order property now*/
+	/* -moz-box-ordinal-group: 0 !important; */
+    order: -1 !important;
 }
 
 :root[sizemode="normal"] #browser {
@@ -50,38 +54,33 @@ source: https://github.com/Arty2/userstyles/blob/master/tabs_to_bottom.userchrom
   top: auto !important;
   bottom: 0 !important;
 }
+
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
-/* Modify to change window drag space width */
-/*
-Use tabs_on_bottom_menubar_on_top_patch.css if you
-have menubar permanently enabled and want it on top
- */
-
-/* IMPORTANT */
-/*
+/* IMPORTANT
 Get window_control_placeholder_support.css
 Window controls will be all wrong without it.
 Additionally on Linux, you may need to get:
 linux_gtk_window_control_patch.css
+
+Use tabs_on_bottom_menubar_on_top_patch.css if you
+have menubar permanently enabled and want it on top
 */
 
-:root{ --uc-titlebar-padding: 0px; }
-@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
-}
 #toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
 #TabsToolbar > .titlebar-buttonbox-container{
   position: fixed;
   display: block;
-  top: var(--uc-titlebar-padding,0px);
+  top: 0px;
   right:0;
   height: 40px;
 }
-/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root{ --uc-titlebar-padding: 0px !important }
+@media (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
   .titlebar-buttonbox-container{ left:0; right: unset !important; }
 }
 
@@ -89,26 +88,55 @@ linux_gtk_window_control_patch.css
 
 #toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
 
-#navigator-toolbox{ padding-top: var(--uc-titlebar-padding,0px) !important; }
-
 .titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
 
 #titlebar{
-  -moz-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+  order: 2;
   -moz-appearance: none !important;
   --tabs-navbar-shadow-size: 0px;
+  --uc-menubar-vertical-overlap: 19px; /* for hide_tabs_with_one_tab_w_window_controls.css compatibility */
+}
+/* Re-order window and tab notification boxes */
+#navigator-toolbox > div{ display: contents }
+.global-notificationbox,
+#tab-notification-deck{
+  -moz-box-ordinal-group: 2; /* Fx <112 compatibility */
+  order: 2;
 }
 
-.titlebar-placeholder,
 #TabsToolbar .titlebar-spacer{ display: none; }
 /* Also hide the toolbox bottom border which isn't at bottom with this setup */
 #navigator-toolbox::after{ display: none !important; }
 
-@media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
+@media (-moz-gtk-csd-close-button){
+  .titlebar-button{
+    -moz-box-orient: vertical; /* Fx <112 compatibility */
+    flex-direction: column;
+  }
+}
+
+/* At Activated Menubar */
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
+  display: block !important;
+}
+#toolbar-menubar:not([autohide="true"]) > .titlebar-buttonbox-container {
+  visibility: hidden;
+}
 
 /* These exist only for compatibility with autohide-tabstoolbar.css */
 toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
 #navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
+#TabsToolbar > .titlebar-buttonbox-container{ visibility: visible }
+#navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog }
+
+/* Uncomment the following if you want bookmarks toolbar to be below tabs */
+/*
+#PersonalToolbar{
+  -moz-box-ordinal-group: 2;
+  order: 2;
+}
+*/
 
 /* Make tabs only show icons */
 
@@ -119,7 +147,8 @@ See the above repository for updates as well as full license text. */
   display: none
 }
 .tab-icon-stack > *{ margin-inline: 0 !important; }
-.tabbrowser-tab{ -moz-box-flex: 0 !important; }
+/* .tabbrowser-tab{ -moz-box-flex: 0 !important; } */
+.tabbrowser-tab{ flex-grow: 0 !important; }
 
 .tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
 :root[uidensity="compact"] .tabbrowser-tab[fadein]{
