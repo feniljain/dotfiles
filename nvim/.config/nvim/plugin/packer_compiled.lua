@@ -144,11 +144,6 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
-  ["gv.vim"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/gv.vim",
-    url = "https://github.com/junegunn/gv.vim"
-  },
   harpoon = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -309,16 +304,6 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
     url = "https://github.com/simrat39/symbols-outline.nvim"
   },
-  ["tabout.nvim"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/tabout.nvim",
-    url = "https://github.com/abecodes/tabout.nvim"
-  },
-  ["telescope-cc.nvim"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/telescope-cc.nvim",
-    url = "https://github.com/olacin/telescope-cc.nvim"
-  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
@@ -379,11 +364,6 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
   },
-  ["vim-repo-edit"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-repo-edit",
-    url = "https://github.com/drzel/vim-repo-edit"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -398,11 +378,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
-  },
-  ["vim-toml"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-toml",
-    url = "https://github.com/cespare/vim-toml"
   },
   vimspector = {
     loaded = true,

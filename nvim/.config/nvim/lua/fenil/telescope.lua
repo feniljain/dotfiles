@@ -89,7 +89,6 @@ require('telescope').setup {
 require("telescope").load_extension("git_worktree")
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('project')
-require('telescope').load_extension('conventional_commits')
 require('telescope').load_extension('heading')
 -- require('telescope').load_extension('media_files')
 
