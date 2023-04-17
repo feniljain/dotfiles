@@ -1,59 +1,3 @@
--- local lsp_status = require('lsp-status')
--- lsp_status.register_progress()
-
--- require('lualine').setup {
---     options = {
---         -- theme = 'seoul256',
---         theme = 'gruvbox',
---         -- theme = 'gruvbox-flat',
---         section_separators = { '', '' },
---         component_separators = { '', '' },
---         icons_enabled = true,
---         globalstatus = true,
---     },
---     sections = {
---         lualine_a = { { 'mode', upper = true } },
---         lualine_b = { { 'branch', icon = '' } },
---         lualine_c = { {
---             'filename',
---             color = { fg = '#ffffff' },
---             file_status = true,
---         },
---             {
---                 'diagnostics',
---                 sources = { 'nvim_lsp' },
---                 sections = {
---                     'error',
---                     'warn',
---                     'info'
---                 },
---                 symbols = {
---                     warn = ' ',
---                     error = ' ',
---                     info = ' ',
---                 },
---                 color_error = '#ff0000',
---                 color_warn = '#ffaa00',
---                 color_info = '#ffffff',
---             },
---         },
---         -- lualine_x = { require'lsp-status'.status, 'encoding', 'fileformat', 'filetype' },
---         lualine_x = { 'lsp_progress' },
---         -- lualine_x = { play, 'encoding', 'fileformat', 'filetype' },
---         lualine_y = { 'progress' },
---         lualine_z = { 'location' },
---     },
---     inactive_sections = {
---         lualine_a = { require 'nvim-lightbulb'.get_status_text() },
---         lualine_b = {},
---         lualine_c = { 'filename' },
---         lualine_x = { 'location' },
---         lualine_y = {},
---         lualine_z = {}
---     },
---     extensions = { 'fugitive' }
--- }
-
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
@@ -131,7 +75,7 @@ local function ins_left(component)
     table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
+-- Inserts a component in lualine_x at right section
 local function ins_right(component)
     table.insert(config.sections.lualine_x, component)
 end
@@ -140,7 +84,7 @@ ins_left {
     function()
         return '▊'
     end,
-    color = { fg = colors.blue }, -- Sets highlighting of component
+    color = { fg = colors.blue },    -- Sets highlighting of component
     padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -161,6 +105,7 @@ ins_left {
             no = colors.red,
             s = colors.orange,
             S = colors.orange,
+            [''] = colors.orange,
             ic = colors.yellow,
             R = colors.violet,
             Rv = colors.violet,
@@ -177,12 +122,6 @@ ins_left {
     padding = { right = 1 },
 }
 
--- ins_left {
---   -- filesize component
---   'filesize',
---   cond = conditions.buffer_not_empty,
--- }
-
 ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
@@ -196,7 +135,7 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_left {
     'diagnostics',
     sources = { 'nvim_diagnostic' },
-    symbols = { error = ' ', warn = ' ', info = ' ' },
+    -- symbols = { error = ' ', warn = ' ', info = ' ' },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
@@ -208,7 +147,6 @@ ins_left {
 -- for lualine it's any number greater then 2
 ins_left {
     function()
-        -- return require"lsp-status".mesages()
         return '%='
     end,
 }
@@ -236,7 +174,7 @@ ins_left {
 
 -- Add components to right sections
 ins_right {
-    'o:encoding', -- option component same as &encoding in viml
+    'o:encoding',     -- option component same as &encoding in viml
     fmt = string.upper, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
     color = { fg = colors.green, gui = 'bold' },
