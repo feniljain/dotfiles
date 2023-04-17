@@ -32,7 +32,7 @@ keyboard-colemak-dual:
 ssh-dyte-ashutosh-vm:
 	ssh ubuntu@3.108.226.201
 ssh-dyte-staging-jumphost:
-	ssh -i ~/.ssh/id_rsa fenil@jumphost.staging.dyte.in
+	ssh -i ~/.ssh/id_rsa ubuntu@jumphost.staging.dyte.in
 ssh-dyte-jumphost:
 	ssh -i ~/.ssh/dyte_staging_jumphost/dyte.pem ubuntu@jumphost.staging.dyte.in
 ssh-dyte-vm:
