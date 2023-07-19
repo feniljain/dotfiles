@@ -69,7 +69,7 @@ local config = {
     },
     -- do not add 'quickfix' extension for now, cause
     -- it is causing crashes on doing go-to-ref
-    extensions = { 'fugitive', 'nerdtree', 'man', 'fzf'}
+    extensions = { 'fugitive', 'nerdtree', 'man', 'fzf' } -- 'quickfix'
 }
 
 -- Inserts a component in lualine_c at left section

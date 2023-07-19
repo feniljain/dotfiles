@@ -46,8 +46,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gnr', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set({ 'n', 'v' }, 'gca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gcra', vim.lsp.buf.range_code_action, bufopts)
-    vim.keymap.set({ 'n', 'v' }, 'gcra', vim.lsp.buf.range_code_action, bufopts)
 
     vim.keymap.set('n', 'gwd', '<cmd>TroubleToggle workspace_diagnostics<CR>', bufopts)
     vim.keymap.set('n', 'gfd', '<cmd>TroubleToggle document_diagnostics<CR>', bufopts)
@@ -99,6 +97,10 @@ local on_attach = function(client, bufnr)
            augroup END
         ]]
     end
+
+    -- Disable semantic highlighting
+    -- https://www.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
+    client.server_capabilities.semanticTokensProvider = nil
 
     vim.diagnostic.config({
         virtual_text = true,
@@ -155,18 +157,21 @@ local function setup_servers()
         on_attach = on_attach,
         settings = {
             ["rust-analyzer"] = {
-                server = {
-                    -- path = '/Users/feniljain/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
-                    -- path = '~/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
-                },
-                checkOnSave = false,
+                -- server = {
+                --     -- path = '/Users/feniljain/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
+                --     -- path = '~/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
+                -- },
+                -- checkOnSave = {
+                --     command = 'clippy',
+                -- },
+                checkOnSave = true,
                 -- trace = {
                 --     server = "verbose",
                 --     extension = true,
                 -- },
-                -- rustc = {
-                --     source = "discover",
-                -- },
+                rustc = {
+                    source = "discover",
+                },
             }
 
         }

@@ -162,8 +162,6 @@ let g:fzf_action = {
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
-autocmd InsertLeave * set nopaste
-
 " Highlighting for languages inside code blocks of markdown ( it's an inbuilt feature )
 " Ref: https://www.getrevue.co/profile/vim_tricks/issues/highlight-syntax-inside-markdown-1253642
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']

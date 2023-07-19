@@ -6,13 +6,14 @@
 " " colorscheme vim-material
 
 " GruvBox Config
-" let g:gruvbox_contrast_dark = 'soft'
 " let g:gruvbox_improved_warnings = '1'
 " let g:gruvbox_guisp_fallback = 'bg'
-colorscheme gruvbox
-let g:gruvbox_contrast_light = 'soft'
+" let g:gruvbox_contrast_dark = 'soft'
+" let g:gruvbox_contrast_light = 'soft'
+" colorscheme gruvbox
+" let g:gruvbox_colors='dark4'
 
-" colorscheme tokyonight
+colorscheme tokyonight
 " colorscheme tokyonight-moon
 
 " colorscheme minimal-base16

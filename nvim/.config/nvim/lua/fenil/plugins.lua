@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
     use 'sbdchd/neoformat'
     use 'rcarriga/nvim-notify'
     use 'ojroques/nvim-osc52'
-    use 'editorconfig/editorconfig-vim'
     use 'shortcuts/no-neck-pain.nvim'
 
     --  JAKT
@@ -57,7 +56,6 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use 'nvim-treesitter/playground'
     use 'simrat39/symbols-outline.nvim'
     use 'romgrk/nvim-treesitter-context'
 
@@ -76,9 +74,14 @@ return require('packer').startup(function(use)
     }
 
     -- GIT
-    use 'airblade/vim-gitgutter'
+    -- use 'airblade/vim-gitgutter'
+    use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
-    use 'ThePrimeagen/git-worktree.nvim'
+    use 'tpope/vim-rhubarb'
+    use {
+        'feniljain/git-worktree.nvim',
+        branch = 'fixes'
+    }
 
     -- HTML AND CSS AND JS
     -- use 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -92,10 +95,14 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
 
     -- Statusline
-    use 'hoob3rt/lualine.nvim'
+    -- use 'hoob3rt/lualine.nvim'
+    use '~/Projects/tmp/lualine.nvim'
     use 'arkav/lualine-lsp-progress'
     use 'kyazdani42/nvim-web-devicons'
-    use 'j-hui/fidget.nvim'
+    use {
+        'j-hui/fidget.nvim',
+        tag = 'legacy'
+    }
     -- use 'romgrk/barbar.nvim'
     -- use 'wellle/tmux-complete.vim'
 

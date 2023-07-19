@@ -1,16 +1,12 @@
 rabbitmq_run:
-	docker run -p 5672:5672 -p 15672:15672 rabbitmq-local
-rabbitmq_build:
-	docker run -p 5672:5672 -p 15672:15672 rabbitmq-local
+	docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:3-management
 redis_run:
 	docker run --name my-redis -p 6379:6379 -d redis
 redis_connect:
-	docker exec -it my-redis sh
+	#docker exec -it my-redis sh
+	docker exec -it redis-stack sh
 redis_cluster_run:
-	docker run \
-    -e ALLOW_EMPTY_PASSWORD=yes \
-    -v ~/dockerfiles/volumes:/bitnami \
-    bitnami/redis-cluster:latest
+	docker run -e "IP=127.0.0.1" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
 db_run:
 	docker run \
     --name my-postgres \
@@ -21,4 +17,6 @@ db_run:
     -d \
     postgres
 db_connect:
-	PGPASSWORD=dyte123 pgcli -h localhost -p 5432 -U dyte -W dyte123 -d dyte
+	PGPASSWORD=dyte123 pgcli -h localhost -p 5432 -U dyte -d dyte
+socket_redis:
+	docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest

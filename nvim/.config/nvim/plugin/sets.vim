@@ -11,14 +11,13 @@ set number
 set relativenumber
 set ts=2 sw=2
 set linebreak
-set laststatus=2
+set laststatus=3
 set cmdheight=1
-" set bg=dark
-set background=light
+" set bg=light
+set background=dark
 set t_Co=256
 set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 set hidden
-set diffopt+=vertical
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -44,6 +43,14 @@ set signcolumn=yes:1 " Do not mess with this, unless you want your editor window
 set mouse=
 "set updatetime=300
 set wildmode=longest,list,full
+
+" https://github.com/neovim/neovim/pull/14537
+" https://www.reddit.com/r/neovim/comments/ym6x7y/enable_new_diff_option_linematch_14537/
+set diffopt+=vertical
+set diffopt+=linematch:60
+
+" Replacement of https://github.com/luukvbaal/stabilize.nvim
+set splitkeep=screen
 
 set shortmess+=c
 

@@ -137,7 +137,12 @@ _G.packer_plugins = {
   ["git-worktree.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
-    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+    url = "https://github.com/feniljain/git-worktree.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   gruvbox = {
     loaded = true,
@@ -182,7 +187,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/hoob3rt/lualine.nvim"
+    url = "/Users/feniljain/Projects/tmp/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -349,11 +354,6 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
-  },
   ["vim-lastplace"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-lastplace",
@@ -363,6 +363,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
   },
   ["vim-surround"] = {
     loaded = true,
