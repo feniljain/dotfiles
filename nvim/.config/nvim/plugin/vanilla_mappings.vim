@@ -103,8 +103,8 @@ inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
 " Jumplist mutation
-nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
-nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+" nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+" nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
 " Moving lines around in visual mode
 vnoremap J :m '>+1<CR>gv=gv

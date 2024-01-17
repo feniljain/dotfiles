@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -108,11 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["editorconfig-vim"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
-    url = "https://github.com/editorconfig/editorconfig-vim"
   },
   ["eslint.nvim"] = {
     loaded = true,
@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["gruvbox-flat.nvim"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
+    url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -163,6 +168,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
     url = "https://github.com/nvim-lua/lsp-status.nvim"
+  },
+  ["lsp_lines.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14lsp_lines\frequire\0" },
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/lsp_lines.nvim",
+    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -187,7 +198,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "/Users/feniljain/Projects/tmp/lualine.nvim"
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -249,6 +260,11 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-notify"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-notify",
@@ -264,11 +280,6 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/romgrk/nvim-treesitter-context"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -278,11 +289,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -344,6 +350,11 @@ _G.packer_plugins = {
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-colors-solarized"] = {
+    loaded = true,
+    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
+    url = "https://github.com/altercation/vim-colors-solarized"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -363,11 +374,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
-  },
-  ["vim-rhubarb"] = {
-    loaded = true,
-    path = "/Users/feniljain/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
-    url = "https://github.com/tpope/vim-rhubarb"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -397,6 +403,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: lsp_lines.nvim
+time([[Config for lsp_lines.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
+time([[Config for lsp_lines.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

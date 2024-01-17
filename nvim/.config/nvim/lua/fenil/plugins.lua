@@ -31,6 +31,16 @@ return require('packer').startup(function(use)
     use 'williamboman/nvim-lsp-installer'
     use 'L3MON4D3/LuaSnip'
     -- use 'tamago324/nlsp-settings.nvim'
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
+    use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    })
 
     --  Completion
     use 'hrsh7th/nvim-cmp'
@@ -57,7 +67,8 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'simrat39/symbols-outline.nvim'
-    use 'romgrk/nvim-treesitter-context'
+    -- use 'romgrk/nvim-treesitter-context'
+    -- use 'nvim-treesitter/nvim-treesitter-context'
 
     -- Fuzzers
     use 'nvim-telescope/telescope.nvim'
@@ -77,7 +88,6 @@ return require('packer').startup(function(use)
     -- use 'airblade/vim-gitgutter'
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
     use {
         'feniljain/git-worktree.nvim',
         branch = 'fixes'
@@ -93,10 +103,13 @@ return require('packer').startup(function(use)
     use 'gruvbox-community/gruvbox'
     use 'Yazeed1s/minimal.nvim'
     use 'folke/tokyonight.nvim'
+    use 'eddyekofo94/gruvbox-flat.nvim'
+    use 'altercation/vim-colors-solarized'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- Statusline
-    -- use 'hoob3rt/lualine.nvim'
-    use '~/Projects/tmp/lualine.nvim'
+    use 'hoob3rt/lualine.nvim'
+    -- use '~/Projects/tmp/lualine.nvim'
     use 'arkav/lualine-lsp-progress'
     use 'kyazdani42/nvim-web-devicons'
     use {

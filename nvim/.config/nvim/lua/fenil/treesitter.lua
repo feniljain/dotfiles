@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
     ensure_installed = { "go", "rust", "c", "cpp", "lua", "typescript", "jsonc", "gomod", "html", "css", "dockerfile",
-        "tsx", "comment", "vim", "markdown", "elixir", "javascript", "nix", "toml" },
+        "tsx", "comment", "vim", "markdown", "elixir", "javascript", "nix", "toml" , "haskell"},
 
     -- For nvim-ts-rainbow
     rainbow = {
@@ -18,7 +18,7 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-require 'treesitter-context'.setup {
-    enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-    throttle = true, -- Throttles plugin updates (may improve performance)
-}
+-- require 'treesitter-context'.setup {
+--     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+--     throttle = true, -- Throttles plugin updates (may improve performance)
+-- }

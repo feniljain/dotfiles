@@ -5,6 +5,7 @@ DYTE="~/Projects/work/dyte"
 KNOWLEDGE_BASE="~/Projects/knowledge-base"
 RUST_PROJECTS="~/Projects/rust-projects"
 GOLANG_PROJECTS="~/Projects/golang-projects"
+HASKELL_PROJECTS="~/Projects/haskell-projects"
 
 createWindows() {
     N=$1
@@ -187,6 +188,18 @@ case "$flag" in
             createSession $sessionName
             createWindows 4
             buildGenericSession "$RUST_PROJECTS"
+        else
+            echo "session already exists, directly connecting to it"
+        fi
+        ;;
+    "-h")
+        sessionName="haskell"
+        sessionAlreadyExists $sessionName
+        if [[ $sessionExists == 0 ]]
+        then
+            createSession $sessionName
+            createWindows 4
+            buildGenericSession "$HASKELL_PROJECTS"
         else
             echo "session already exists, directly connecting to it"
         fi

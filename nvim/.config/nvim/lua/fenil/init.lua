@@ -17,9 +17,13 @@ require("fenil.eslint")
 require("fenil.harpoon")
 require("fenil.numb")
 require("fenil.gitsigns")
+require("fenil.navic")
+require("fenil.diagnostic")
 -- require("fenil.rust-tools")
 
 -- require("fenil.whid")
+
+local vim = vim
 
 -- Resize Neovim split when terminal is resized
 vim.api.nvim_command('autocmd VimResized * wincmd =')
@@ -28,3 +32,4 @@ vim.api.nvim_command('autocmd VimResized * wincmd =')
 vim.api.nvim_create_autocmd("TermOpen", {
     command = [[setlocal nonumber norelativenumber]]
 })
+

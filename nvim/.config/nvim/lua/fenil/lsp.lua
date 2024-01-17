@@ -8,6 +8,7 @@ local vim = vim
 
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require 'lspconfig'
+local navic = require("nvim-navic")
 
 local on_attach = function(client, bufnr)
 
@@ -27,6 +28,10 @@ local on_attach = function(client, bufnr)
     }
 
     require 'lsp_signature'.on_attach(cfg)
+
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
 
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -103,11 +108,12 @@ local on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
 
     vim.diagnostic.config({
-        virtual_text = true,
+        virtual_text = false,
         signs = true,
         underline = true,
         update_in_insert = true,
         severity_sort = false,
+        virtual_lines = true, -- toggle lsp_lines.nvim functionality
     })
 
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -134,7 +140,7 @@ end
 
 M.on_attach = on_attach
 
-local servers = { "luau_lsp", "gopls", "tsserver", "jsonls", "marksman", "elixirls", "clangd" } -- "rust_analyzer",
+local servers = { "luau_lsp", "gopls", "tsserver", "jsonls", "elixirls", "marksman" } -- "rust_analyzer", "clangd"
 local capabilities = require "fenil.cmp".capabilities
 
 local function setup_servers()

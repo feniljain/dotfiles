@@ -1,9 +1,9 @@
-" This vimrc is mostly for use in a light weight 
-" environment, where you just want to rely on 
+" This vimrc is mostly for use in a light weight
+" environment, where you just want to rely on
 " defaults and nothing else
 
 " General
-inoremap jk <esc> 
+inoremap jk <esc>
 
 " Pane navigation
 noremap <Space>h <C-W>h
@@ -14,6 +14,7 @@ noremap <Space>l <C-W>l
 " sets
 set relativenumber
 set number
+syntax enable
 
 " Center screen while jumping in search
 nnoremap n nzzzv
@@ -34,3 +35,8 @@ set ignorecase
 " Window split shortcuts
 nnoremap <Space>v :vsplit<CR>
 nnoremap <Space>- :split<CR>
+
+" tab navigation
+noremap  <C-l> :tabnext<CR>
+noremap  <C-h> :tabprevious<CR>
+noremap  <C-n> :tabnew<CR>

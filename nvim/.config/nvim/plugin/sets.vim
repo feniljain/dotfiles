@@ -49,9 +49,6 @@ set wildmode=longest,list,full
 set diffopt+=vertical
 set diffopt+=linematch:60
 
-" Replacement of https://github.com/luukvbaal/stabilize.nvim
-set splitkeep=screen
-
 set shortmess+=c
 
 " For tree sitter folding
@@ -67,9 +64,10 @@ set switchbuf=useopen,usetab
 " set winbar=%f " Uncomment this once it is fully realeased
 
 " enable list mode
-set list
-" display chars for tabs
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+" set list
+" displaying tabs become annyoing in Go codebases
+" display indicators for different chars
+" set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 
 " Nvim 0.8.0 features
 " " Using tree sitter based spell checker, this only checks comments in code

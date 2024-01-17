@@ -13,11 +13,18 @@
 " colorscheme gruvbox
 " let g:gruvbox_colors='dark4'
 
-colorscheme tokyonight
+" colorscheme tokyonight
 " colorscheme tokyonight-moon
 
 " colorscheme minimal-base16
 " highlight Folded ctermbg=White ctermfg=Red
+
+colorscheme gruvbox-flat
+
+" Catppuccin Latte
+" colorscheme catppuccin-frappe
+" colorscheme catppuccin-latte
+" Possible values: catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 " Gruvbox Flat
 " let g:gruvbox_flat_style = "hard"
