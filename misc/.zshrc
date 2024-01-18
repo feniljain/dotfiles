@@ -1,4 +1,4 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -35,7 +35,7 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true" # This is a heavy function and I will update if I want to :)
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -97,23 +97,12 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept # Using Ctrl+Space instead of right arrow key for accepting auto-complete suggestion
 bindkey -v '^ ' autosuggest-accept # Same but for vim mode
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
-   # Original: export EDITOR='mvim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -133,79 +122,20 @@ export VISUAL="nvim"
 export MANPAGER="nvim +Man!" # Open man pages in nvim with syntax highlighting
 export RUST_BACKTRACE=1
 
-# export JAVA_HOME="/usr/lib/jvm/jdk-16.0.1"
-# export PATH_TO_FX="/media/data/Misc/E/softwares/javafx-sdk-11.0.2/lib"
-# export PATH="$PATH:/home/fenil/anaconda3/bin"
-# export PATH="$PATH:$DART_SDK/bin"
-export PATH="$PATH:/Users/feniljain/Projects/softwares/flutter/bin/"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$(go env GOPATH)/bin"
+# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
-# export PATH="$PATH:/home/fenil/evans_linux_386"
-# export PATH="$PATH:/home/fenil/nvim-linux64/bin"
-# export PATH="$PATH:/opt/firefox/firefox"
-# export PATH="$PATH:/usr/local/share/npm/bin"
-# export PATH="$PATH:/home/fenil/flutter_linux_v1.9.1+hotfix.6-stable/flutter/bin/cache/dart-sdk/bin"
-# export PATH="$PATH:$HOME/.pub-cache/bin"
-# export PATH="$PATH:/opt/yarn-1.22.5/bin"
-export PATH="$PATH:/Users/feniljain/.pyenv/shims/"
 
-# ==== Mac setup
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/Users/feniljain/Library/Python/3.8/bin
-# export LLVM_DIR=/usr/local/opt/llvm@13
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-export PATH=/opt/homebrew/bin:$PATH
-# export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.0.0/bin:$PATH
-# export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-# ==============
-
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/fenil/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/fenil/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/fenil/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/fenil/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-
-LANG="en_US.UTF-8"
-LC_COLLATE="en_US.UTF-8"
-LC_CTYPE="en_US.UTF-8"
-LC_MESSAGES="en_US.UTF-8"
-LC_MONETARY="en_US.UTF-8"
-LC_NUMERIC="en_US.UTF-8"
-LC_TIME="en_US.UTF-8"
-LC_ALL="en_US.UTF-8"
-
-# alias luamake=/home/feniljain/Projects/softwares/lua-language-server/3rd/luamake/luamake
-# alias goland=/opt/GoLand-2021.1.3/bin/goland.sh
-# alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos registry.appointy.com/trishul'
-# alias trishul='docker run -it --mount type=bind,src="$(pwd)",target=/app/protos ayushbpl10/trishul:v1'
-# alias cls='printf "\ec"'
-
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ -e ~/.nix-profile/share/fzf/key-bindings.zsh ]; then
-    source ~/.nix-profile/share/fzf/key-bindings.zsh
-fi
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # Erlang and Elixir
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
@@ -221,29 +151,56 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 unsetopt correct_all
 setopt correct
 
-# Set vim keybindings instead of emacs keybindings( which are default ones)
-# Source: https://www.youtube.com/watch?v=XY5qCQcrHns
 set -o emacs
-export PATH=$PATH:/Users/feniljain/.spicetify
 
 export PATH=$PATH:/Users/feniljain/.local/share/neovim/bin
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/path.zsh.inc'; fi
+# ==== Mac setup
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/feniljain/Projects/softwares/google-cloud-sdk/completion.zsh.inc'; fi
+# export LLVM_DIR=/usr/local/opt/llvm@13
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
 
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-export PATH=$PATH:$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export GOPRIVATE=github.com/dyte-in
+export PATH=/opt/homebrew/bin:$PATH
+
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
 
 # postgres
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 [ -f "/Users/feniljain/.ghcup/env" ] && source "/Users/feniljain/.ghcup/env" # ghcup-env
+
+if [ -e /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
+    source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+fi
+
+# ==============
+
+# ==== Dyte Specific Setup
+export GOPRIVATE=github.com/dyte-in
+# ==============
+
+##### nvm (node version manager) #####
+# placeholder nvm shell function
+# On first use, it will set nvm up properly which will replace the `nvm`
+# shell function with the real one
+function nvm() {
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    if [[ -e ~/.nvm/alias/default ]]; then
+      PATH="${PATH}:${HOME}.nvm/versions/node/$(cat ~/.nvm/alias/default)/bin"
+    fi
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+    # invoke the real nvm function now
+    nvm "$@"
+}
