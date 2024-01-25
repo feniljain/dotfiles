@@ -69,7 +69,7 @@ tnoremap jk <C-\><C-n>
 
 " MISCELLANEOUS MAPPINGS
 
-noremap  <Space>` :Goyo<CR>
+" noremap  <Space>` :Goyo<CR>
 "noremap  <Space>k :Goyo!<CR>
 
 " Fix floating windows problem
@@ -81,9 +81,6 @@ noremap  <Space>` :Goyo<CR>
 nnoremap <silent> <C-j> :cnext<CR>
 nnoremap <silent> <C-k> :cprevious<CR>
 " nnoremap <silent> <C-q> :cw<CR> " Replaced by function QuickFixToggle()
-
-" Winteract Settings
-nmap <Space>rw :InteractiveWindow<CR>
 
 " Window split shortcuts
 nnoremap <Space>v :vsplit<CR>

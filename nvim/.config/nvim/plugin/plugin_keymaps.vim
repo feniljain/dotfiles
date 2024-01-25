@@ -122,6 +122,8 @@ nnoremap tws :lua require('telescope.builtin').grep_string { search = vim.fn.exp
 " telescope args search ( more like search with args )
 nnoremap tas :lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>
 
+" ======== Winteract ========
+nmap <Space>rw :InteractiveWindow<CR>
 
 " ======== Neovim Core Search ========
 noremap tt :Buffers<CR>

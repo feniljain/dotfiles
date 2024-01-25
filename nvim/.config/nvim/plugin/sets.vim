@@ -8,6 +8,7 @@ set undoreload=10000        " number of lines to save for undo
 set backspace=indent,eol,start
 set incsearch
 set number
+" set modifiable " allows modifying buffers like quickfixlist " after edit save the buffer using: :cgetbuffer
 set relativenumber
 set ts=2 sw=2
 set linebreak
