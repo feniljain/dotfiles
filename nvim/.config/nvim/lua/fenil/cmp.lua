@@ -44,14 +44,14 @@ cmp.setup {
         { name = 'luasnip' },
         -- { name = 'tmux' },
         { name = 'emoji' },
-        { name = 'buffer', keyword_length = 5 },
+        { name = 'buffer',  keyword_length = 5 },
         -- { name = 'nvim_lsp_signature_help' }, -- Currently using lsp_signature instead
         { name = 'path' },
     },
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol_text', -- show only symbol annotations
-            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            maxwidth = 50,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
             ellipsis_char = '...',
         }),
     },

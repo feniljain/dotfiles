@@ -62,7 +62,7 @@ require('telescope').setup {
         },
         buffer_previewer_maker = new_maker,
         -- Show the files in format: <filename> <complete-path>
-        path_display = function(_opts, path)
+        path_display           = function(_opts, path)
             local tail = require("telescope.utils").path_tail(path)
             return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
         end,

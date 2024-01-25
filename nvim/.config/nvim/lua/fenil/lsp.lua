@@ -11,7 +11,6 @@ local lspconfig = require 'lspconfig'
 local navic = require("nvim-navic")
 
 local on_attach = function(client, bufnr)
-
     local cfg = {
         bind = true, -- This is mandatory, otherwise border config won't get registered.
         -- If you want to hook lspsaga or other signature handler, pls set to false
@@ -22,7 +21,7 @@ local on_attach = function(client, bufnr)
         hint_scheme = "String",
 
         handler_opts = {
-            border = "rounded", -- double, rounded, single, shadow, none
+            border = "rounded",  -- double, rounded, single, shadow, none
         },
         decorator = { "`", "`" } -- or decorator = {"***", "***"}  decorator = {"**", "**"} see markdown help
     }

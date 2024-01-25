@@ -32,4 +32,3 @@ vim.api.nvim_command('autocmd VimResized * wincmd =')
 vim.api.nvim_create_autocmd("TermOpen", {
     command = [[setlocal nonumber norelativenumber]]
 })
-
