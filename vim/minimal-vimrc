@@ -2,6 +2,9 @@
 " environment, where you just want to rely on
 " defaults and nothing else
 
+" ===============================================
+" Mappings
+
 " General
 inoremap jk <esc>
 
@@ -10,11 +13,6 @@ noremap <Space>h <C-W>h
 noremap <Space>j <C-W>j
 noremap <Space>k <C-W>k
 noremap <Space>l <C-W>l
-
-" sets
-set relativenumber
-set number
-syntax enable
 
 " Center screen while jumping in search
 nnoremap n nzzzv
@@ -28,10 +26,6 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap > >gv
 vnoremap < <gv
 
-" Make search easier
-set smartcase
-set ignorecase
-
 " Window split shortcuts
 nnoremap <Space>v :vsplit<CR>
 nnoremap <Space>- :split<CR>
@@ -40,3 +34,48 @@ nnoremap <Space>- :split<CR>
 noremap  <C-l> :tabnext<CR>
 noremap  <C-h> :tabprevious<CR>
 noremap  <C-n> :tabnew<CR>
+
+" system clipboard sync for easier use across vim instances
+vnoremap cp "+yy
+nnoremap yp "+p
+
+" ===============================================
+
+" ===============================================
+" sets
+
+set relativenumber
+set number
+syntax enable
+
+" Make search easier
+set smartcase
+set ignorecase
+
+" Sensible tabs
+set tabstop=2 softtabstop=2
+
+" ===============================================
+
+" search using rg
+" TODO: check for existence of "rg" on system and 
+" only then register these commands
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
+" easier quickfix list for easily using search
+nnoremap <silent> <C-j> :cnext<CR>
+nnoremap <silent> <C-k> :cprevious<CR>
+
+" open and close quickfix list easily
+" QuickFixToggle ---------------------- {{{
+function! QuickFixToggle()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+      copen
+    else
+      cclose
+    endif
+endfunction
+nnoremap <silent> <C-q> :call QuickFixToggle()<CR>
+" }}}
+
