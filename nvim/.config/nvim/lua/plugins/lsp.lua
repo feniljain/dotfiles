@@ -13,7 +13,6 @@ local M = {
         },
         {
             "onsails/lspkind.nvim",
-            config = true,
         },
         {
             "David-Kunz/markid",
