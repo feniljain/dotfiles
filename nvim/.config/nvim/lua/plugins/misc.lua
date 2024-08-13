@@ -6,10 +6,6 @@ return {
         "nvim-lua/plenary.nvim",
     },
     {
-        "nacro90/numb.nvim",
-        config = true,
-    },
-    {
         "farmergreg/vim-lastplace",
     },
     {
@@ -25,6 +21,12 @@ return {
         "lambdalisue/suda.vim",
     },
     {
+        "szw/vim-maximizer",
+    },
+    {
+        "itchyny/vim-qfedit",
+    },
+    {
         "rcarriga/nvim-notify",
         config = true,
     },
@@ -33,14 +35,30 @@ return {
         config = true,
     },
     {
-        "szw/vim-maximizer",
+        "nacro90/numb.nvim",
+        config = true,
     },
     {
         "m4xshen/hardtime.nvim",
         config = true,
     },
     {
-        "itchyny/vim-qfedit",
+        'echasnovski/mini.operators',
+        version = '*',
+        config = function()
+            -- Set prefix to empty string to disable this functionality and automatic set keymap of its
+            require('mini.operators').setup({
+                evaluate = { prefix = '' },
+                exchange = { prefix = '' },
+                multiply = { prefix = '' },
+                replace = { prefix = 'cr', reindent_linewise = true, }, -- We are only interested in replace feature
+                sort = { prefix = '' },
+            })
+            -- keymaps to leverage:
+            -- - criw, replace word with value in register
+            -- - crr, replace line with value in register
+            -- - cr in visual mode, replace visual selection with value in register
+        end
     },
     {
         "hedyhli/outline.nvim",

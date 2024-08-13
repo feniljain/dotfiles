@@ -19,6 +19,7 @@
   "markid": { "branch": "main", "commit": "9b249e4d2ad0767a1091017cd52264590e41a274" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "f2acd4a21db1ca0a12559e7a9f7cdace3bdbfb09" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
+  "mini.operators": { "branch": "main", "commit": "ccc67955124dde0ba20cdcb37ea30ff1646da574" },
   "nerdtree": { "branch": "master", "commit": "9b465acb2745beb988eff3c1e4aa75f349738230" },
   "nightfox.nvim": { "branch": "main", "commit": "d3e8b1acc095baf57af81bb5e89fe7c4359eb619" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "ecc584150f5c8a2a82f2e1d43201df0f65c63d0e" },
