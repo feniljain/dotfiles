@@ -6,7 +6,8 @@ redis_connect:
 	#docker exec -it my-redis sh
 	docker exec -it redis-stack sh
 redis_cluster_run:
-	docker run -e "IP=127.0.0.1" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
+	# docker run -e "IP=127.0.0.1" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
+	docker run --name redis-cluster -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis-cluster:latest
 db_run:
 	docker run \
     --name my-postgres \

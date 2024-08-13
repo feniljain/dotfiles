@@ -35,12 +35,12 @@ return require('packer').startup(function(use)
         "SmiteshP/nvim-navic",
         requires = "neovim/nvim-lspconfig"
     }
-    use({
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function()
-            require("lsp_lines").setup()
-        end,
-    })
+    -- use({
+    --     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    --     config = function()
+    --         require("lsp_lines").setup()
+    --     end,
+    -- })
 
     --  Completion
     use 'hrsh7th/nvim-cmp'
@@ -108,7 +108,7 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
 
     -- Statusline
-    use 'hoob3rt/lualine.nvim'
+    use 'nvim-lualine/lualine.nvim'
     -- use '~/Projects/tmp/lualine.nvim'
     use 'arkav/lualine-lsp-progress'
     use 'kyazdani42/nvim-web-devicons'

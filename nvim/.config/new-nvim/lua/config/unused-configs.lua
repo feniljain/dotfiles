@@ -1,0 +1,79 @@
+-- ===========================================================================================================
+-- -- require("dapui").setup({
+--
+--   icons = {
+--     expanded = "⯆",
+--     collapsed = "⯈",
+--     circular = "↺"
+--   },
+--   mappings = {
+--     -- Use a table to apply multiple mappings
+--     expand = {"<CR>", "<2-LeftMouse>"},
+--     open = "o",
+--     remove = "d",
+--     edit = "e",
+--   },
+--   sidebar = {
+--     elements = {
+--       -- You can change the order of elements in the sidebar
+--       "scopes",
+--       "stacks",
+--       "watches"
+--     },
+--     width = 40,
+--     position = "left" -- Can be "left" or "right"
+--   },
+--   tray = {
+--     elements = {
+--       "repl"
+--     },
+--     height = 10,
+--     position = "bottom" -- Can be "bottom" or "top"
+--   },
+--   floating = {
+--     max_height = nil, -- These can be integers or a float between 0 and 1.
+--     max_width = nil   -- Floats will be treated as percentage of your screen.
+--   }
+-- })
+--
+-- local dap = require"dap"
+--
+-- dap.adapters.go = {
+--   type = 'executable';
+--   command = 'node';
+--   args = {os.getenv('HOME') .. '/Projects/softwares/vscode-go'};
+-- }
+-- dap.configurations.go = {
+--   {
+--     type = 'go';
+--     name = 'Debug';
+--     request = 'launch';
+--     showLog = false;
+--     program = "${file}";
+--     dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
+--   },
+-- }
+-- ===========================================================================================================
+-- -- require'rust-tools.hover_range'.hover_range()
+
+-- local capabilities = require "fenil.cmp".capabilities
+-- local on_attach = require "fenil.lsp".on_attach
+
+-- require('rust-tools').setup {
+--     server = {
+--         cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+--         on_attach = on_attach,
+--         capabilities = capabilities,
+--         settings = {
+--             -- to enable rust-analyzer settings visit:
+--             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+--             ["rust-analyzer"] = {
+--                 -- enable clippy on save
+--                 checkOnSave = {
+--                     command = "clippy"
+--                 },
+--             },
+--         },
+--     }
+-- }
+-- ===========================================================================================================

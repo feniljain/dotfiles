@@ -88,9 +88,6 @@ require('telescope').setup {
 
 require("telescope").load_extension("git_worktree")
 require('telescope').load_extension('fzy_native')
-require('telescope').load_extension('project')
-require('telescope').load_extension('heading')
--- require('telescope').load_extension('media_files')
 
 local M = {}
 M.search_dotfiles = function()
@@ -107,13 +104,6 @@ M.git_branches = function()
             --- map('n', '<c-d>', actions.git_delete_branch)
             return true
         end
-    })
-end
-
-M.switch_projects = function()
-    require("telescope.builtin").find_files({
-        prompt_title = "< Switch Project >",
-        cwd = "$HOME/Projects/",
     })
 end
 

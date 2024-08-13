@@ -51,9 +51,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set({ 'n', 'v' }, 'gca', vim.lsp.buf.code_action, bufopts)
 
-    vim.keymap.set('n', 'gwd', '<cmd>TroubleToggle workspace_diagnostics<CR>', bufopts)
-    vim.keymap.set('n', 'gfd', '<cmd>TroubleToggle document_diagnostics<CR>', bufopts)
-    vim.keymap.set('n', 'gqf', '<cmd>TroubleToggle quickfix<CR>', bufopts)
+    -- vim.keymap.set('n', 'gwd', '<cmd>Trouble diagnostics toggle<cr>', bufopts)
+    -- vim.keymap.set('n', 'gfd', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', bufopts)
+    -- vim.keymap.set('n', 'gqf', '<cmd>Trouble loclist toggle<cr>', bufopts)
 
     vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', ']g', vim.diagnostic.goto_next, bufopts)

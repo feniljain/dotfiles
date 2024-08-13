@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# set -e # stop script on errors
+# set -u # stop script on unset vars
+
 PROJECTS="~/Projects"
 DYTE="~/Projects/work/dyte"
 KNOWLEDGE_BASE="~/Projects/knowledge-base"
 RUST_PROJECTS="~/Projects/rust-projects"
 GOLANG_PROJECTS="~/Projects/golang-projects"
 HASKELL_PROJECTS="~/Projects/haskell-projects"
+CPP_PROJECTS="~/Projects/cpp-projects"
 
 createWindows() {
     N=$1
@@ -29,6 +33,22 @@ createWindows() {
         *) echo "Wrong index $i"
         esac
     done
+}
+
+sourceNvm() {
+    local NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+
+    if [ ! -d "$NVM_DIR" ]; then
+    	echo "not exporting nvm config as ~/.nvm does not exist"
+    	return
+    fi
+
+    export NVM_DIR
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    if [[ -e ~/.nvm/alias/default ]]; then
+      PATH="${PATH}:${HOME}.nvm/versions/node/$(cat ~/.nvm/alias/default)/bin"
+    fi
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
 createSession() {
@@ -145,6 +165,7 @@ sessionName=""
 # Build session
 case "$flag" in
     "-d")
+	sourceNvm
         sessionName="dyte"
         sessionAlreadyExists $sessionName
         if [[ $sessionExists == 0 ]]
@@ -200,6 +221,18 @@ case "$flag" in
             createSession $sessionName
             createWindows 4
             buildGenericSession "$HASKELL_PROJECTS"
+        else
+            echo "session already exists, directly connecting to it"
+        fi
+        ;;
+    "-c")
+        sessionName="c/cpp"
+        sessionAlreadyExists $sessionName
+        if [[ $sessionExists == 0 ]]
+        then
+            createSession $sessionName
+            createWindows 4
+            buildGenericSession "$CPP_PROJECTS"
         else
             echo "session already exists, directly connecting to it"
         fi
