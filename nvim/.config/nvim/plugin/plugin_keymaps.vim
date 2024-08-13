@@ -34,10 +34,6 @@ nnoremap <Space>tn :TestNearest<CR>
 nnoremap <Space>tf :TestFile<CR>
 nnoremap <Space>tl :TestLast<CR>
 
-" ----------------------------- Terminal Custom Script -----------------------------
-" ANKI: Make a small terminal at the bottom of the screen.
-nnoremap <Space>st :call <SID>small_terminal()<CR>
-
 " ----------------------------- NERD-TREE -----------------------------
 nnoremap <Space>nf :NERDTreeFind<CR>
 nnoremap <Space>nt :NERDTreeToggle<CR>
@@ -45,26 +41,22 @@ nnoremap <Space>nt :NERDTreeToggle<CR>
 " ----------------------------- NO-NECK-PAIN -----------------------------
 nnoremap <Space>np :NoNeckPain<CR>
 
-" ----------------------------- LUA DEV -----------------------------
-" save and resource current file
-nnoremap <Space>x :call <SID>save_and_exec()<CR>
-
 " ----------------------------- HARPOON -----------------------------
-nmap <leader>hq :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nmap <leader>ha :lua require("harpoon.mark").add_file()<CR>
-nmap <leader>a :lua require("harpoon.ui").nav_file(1)<CR>
-nmap <leader>s :lua require("harpoon.ui").nav_file(2)<CR>
-nmap <leader>d :lua require("harpoon.ui").nav_file(3)<CR>
-nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
-nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
-nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
-nmap <leader>td :lua require("harpoon.term").gotoTerminal(3)<CR>
-nmap <leader>va :lua require("harpoon.term").sendCommand(1, 1)<CR>
-nmap <leader>vs :lua require("harpoon.term").sendCommand(1, 2)<CR>
-nmap <leader>vd :lua require("harpoon.term").sendCommand(1, 3)<CR>
-nmap <leader>vf :lua require("harpoon.term").sendCommand(1, 4)<CR>
-nmap <leader>ca :lua require("harpoon.term").sendCommand(2, 1)<CR>
-nmap <leader>cs :lua require("harpoon.term").sendCommand(2, 2)<CR>
+" nmap <leader>hq :lua require("harpoon.ui").toggle_quick_menu()<CR>
+" nmap <leader>ha :lua require("harpoon.mark").add_file()<CR>
+" nmap <leader>a :lua require("harpoon.ui").nav_file(1)<CR>
+" nmap <leader>s :lua require("harpoon.ui").nav_file(2)<CR>
+" nmap <leader>d :lua require("harpoon.ui").nav_file(3)<CR>
+" nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
+" nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
+" nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
+" nmap <leader>td :lua require("harpoon.term").gotoTerminal(3)<CR>
+" nmap <leader>va :lua require("harpoon.term").sendCommand(1, 1)<CR>
+" nmap <leader>vs :lua require("harpoon.term").sendCommand(1, 2)<CR>
+" nmap <leader>vd :lua require("harpoon.term").sendCommand(1, 3)<CR>
+" nmap <leader>vf :lua require("harpoon.term").sendCommand(1, 4)<CR>
+" nmap <leader>ca :lua require("harpoon.term").sendCommand(2, 1)<CR>
+" nmap <leader>cs :lua require("harpoon.term").sendCommand(2, 2)<CR>
 " nmap <Space>ha :call GotoBuffer(0)<CR>
 " unmap ;w " Unmapping commands
 " unmap ;r
@@ -91,19 +83,15 @@ noremap <Space>gl :diffget //2<CR>
 noremap <Space>gr :diffget //3<CR>
 noremap <Space>gw :Gwrite!<CR>
 
-" ----------------------------- FZF  -----------------------------
-noremap <Space>fs :Rg<CR>
-noremap <Space>ff :Files<CR>
-
-" ----------------------------- COMMENTARY  -----------------------------
-nnoremap <Space><Space> :Commentary<cr>
-vnoremap <Space><Space> :Commentary<cr>
-
 " ----------------------------- TELESCOPE  -----------------------------
 " ======== Files search ========
 nnoremap tgf :lua require('telescope.builtin').git_files()<CR>
 
 nnoremap tf :lua require('telescope.builtin').find_files()<CR>
+
+nnoremap tt :lua require('telescope.builtin').buffers()<CR>
+
+nnoremap tr :lua require('telescope.builtin').registers()<CR>
 
 " Mapping is defined one more because in netrw t is supposed to be reserved and it doesnt respect other mappings
 " nnoremap `f :lua require('telescope.builtin').find_files()<CR>
@@ -126,37 +114,21 @@ nnoremap tas :lua require("telescope").extensions.live_grep_args.live_grep_args(
 nmap <Space>rw :InteractiveWindow<CR>
 
 " ======== Neovim Core Search ========
-noremap tt :Buffers<CR>
 
 nnoremap tht :lua require('telescope.builtin').help_tags()<CR>
 
 nnoremap tb :lua require('telescope.builtin').builtin()<CR>
 
-" Using fzf's default buffer search, as it has a handy out-of-the-box option
-" for going to the the buffer if it is already open instead of opening it in
-" current buffer everytime
-" nnoremap tt :lua require('telescope.builtin').buffers()<CR>
-
 
 " ======== Misc ========
-nnoremap td :lua require('fenil.telescope').search_dotfiles()<CR>
+nnoremap td :lua require('plugins.telescope').search_dotfiles()<CR>
 
-nnoremap tgb :lua require('fenil.telescope').git_branches()<CR>
-
-" nnoremap tx :lua require('fenil.telescope').switch_projects()<CR>
-" nnoremap tx :lua require('session-lens').search_session()<CR>
-
+nnoremap tgb :lua require('telescope.builtin').git_branches()<CR>
 
 " ======== Misc extensions commands ========
-nnoremap tp :lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>
-
 nnoremap tgw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 
 nnoremap tgc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
-" nnoremap tgc :lua require('git-worktree').create_worktree()
 
-" Inspired from gO of man pages
-nnoremap tO :Telescope heading<CR>
-
-" ======== Specific LSP Commands ========
-nnoremap <space>p :Prettier<CR>
+" ======== Maximizer ========
+nnoremap <Space>m :MaximizerToggle<CR>

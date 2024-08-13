@@ -6,23 +6,25 @@ set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 " set clipboard=unnamed       " Use system clipboard
 set backspace=indent,eol,start
-set incsearch
 set number
 " set modifiable " allows modifying buffers like quickfixlist " after edit save the buffer using: :cgetbuffer
 set relativenumber
 set ts=2 sw=2
 set linebreak
 set laststatus=3
-set cmdheight=1
+set cmdheight=0
 " set bg=light
 set background=dark
 set t_Co=256
 set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 set hidden
+set history=1000 " Increase the undo limit
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set shiftround
+set smarttab
 set expandtab
-set smartindent
+set smartindent " superset of autoindent
 set termguicolors
 set colorcolumn=80
 set autoread
@@ -31,15 +33,26 @@ set syntax
 set noshowmode
 set autowrite
 set emoji
+set lazyredraw
 " set nowrap
 set wrap
+set display+=lastline
 syntax on
 " Make search easier
+set hlsearch
+set incsearch
 set smartcase
-set ignorecase
+" set ignorecase
+
+set wildmenu
+set title
+
+set confirm" Display a confirmation dialog when closing an unsaved file.
+
+set backupdir=~/.cache/vim " Directory to store backup files.
+
 " Visual indication of line your cursor is on, works in normal and visual mode
 set cursorline
-set scrolloff=0
 set signcolumn=yes:1 " Do not mess with this, unless you want your editor window dancing
 set mouse=
 "set updatetime=300
@@ -56,13 +69,22 @@ set shortmess+=c
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-set so=4
+set scrolloff=4
+
 " set spilts to be done below and right rather than defaults
 set splitbelow
 set splitright
 
+set inccommand=split
+
 set switchbuf=useopen,usetab
 " set winbar=%f " Uncomment this once it is fully realeased
+
+" https://github.com/neovim/neovim/pull/20750
+set foldtext=
+" set fillchars=fold:\ " ugly
+
+set updatetime=250
 
 " enable list mode
 " set list
@@ -74,3 +96,6 @@ set switchbuf=useopen,usetab
 " " Using tree sitter based spell checker, this only checks comments in code
 " set spell " ughh...this is annoying
 " }}}
+
+syntax enable
+filetype plugin indent on

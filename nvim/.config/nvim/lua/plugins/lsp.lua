@@ -54,10 +54,10 @@ local M = {
     },
 }
 
+local vim = vim
+
 M.config = function()
     -- TODO: Give descriptions to all keymaps everywhere, to see ref checkout kickstart.nvim
-
-    local vim = vim
 
     -- vim.lsp.set_log_level 'trace'
 
@@ -104,8 +104,8 @@ M.config = function()
             -- # Server based capabilities registration
 
             -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
-                -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                map("<leader>f", vim.lsp.buf.format)
+            -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            map("<leader>f", vim.lsp.buf.format)
             -- end
 
             -- Set autocommands conditional on server_capabilities
@@ -277,7 +277,7 @@ end
 vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
 vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
-local border =  {
+local border = {
     { "┌", "FloatBorder" },
     { "─", "FloatBorder" },
     { "┐", "FloatBorder" },
@@ -290,9 +290,9 @@ local border =  {
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or border
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- #
