@@ -38,11 +38,12 @@ set lazyredraw
 set wrap
 set display+=lastline
 syntax on
+
 " Make search easier
 set hlsearch
 set incsearch
 set smartcase
-" set ignorecase
+set ignorecase
 
 set wildmenu
 set title
