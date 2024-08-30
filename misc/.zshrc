@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof # used for profiling the shell to increase startup times
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -18,8 +18,6 @@ export ZSH=$HOME/.oh-my-zsh
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,6 +61,12 @@ DISABLE_AUTO_UPDATE="true" # This is a heavy function and I will update if I wan
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# ==== History related settings
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -70,6 +74,29 @@ DISABLE_AUTO_UPDATE="true" # This is a heavy function and I will update if I wan
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+
+# Expire duplicate entries first when trimming history:
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Dont record an entry that was just recorded again:
+setopt HIST_IGNORE_DUPS
+
+# Delete old recorded entry if new entry is a duplicate:
+setopt HIST_IGNORE_ALL_DUPS
+
+# Do not display(in history file) a line previously found:
+setopt HIST_FIND_NO_DUPS
+
+# Dont write duplicate entries in the history file:
+setopt HIST_SAVE_NO_DUPS
+
+# Share history between all sessions:
+setopt SHARE_HISTORY
+
+# Execute commands using history (e.g.: using !$) immediatel: # This is for slightly better speeds
+unsetopt HIST_VERIFY
+
+# =====================
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -80,11 +107,10 @@ DISABLE_AUTO_UPDATE="true" # This is a heavy function and I will update if I wan
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
 	zsh-autosuggestions
-    evalcache
-    battery
-    # zsh-z
+        evalcache
+        # git
+        # zsh-z
 	# zsh-syntax-highlighting
 	# zsh-vim-mode
 )
@@ -128,9 +154,11 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export LANGUAGE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
+export LC_TYPE="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
@@ -153,7 +181,7 @@ setopt correct
 
 set -o emacs
 
-export PATH=$PATH:/Users/feniljain/.local/share/neovim/bin
+export PATH=$PATH:/Users/feniljain/.local/share/bob/nvim-bin
 
 # ==== Mac setup
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -170,12 +198,13 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
 
 # postgres
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c/lib/pkgconfig"
+# export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 [ -f "/Users/feniljain/.ghcup/env" ] && source "/Users/feniljain/.ghcup/env" # ghcup-env
 
@@ -200,7 +229,9 @@ function nvm() {
       PATH="${PATH}:${HOME}.nvm/versions/node/$(cat ~/.nvm/alias/default)/bin"
     fi
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
     # invoke the real nvm function now
     nvm "$@"
 }
+
+# Gstreamer
+export PATH="/Library/Frameworks/Gstreamer.framework/Commands:$PATH"

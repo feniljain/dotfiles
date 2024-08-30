@@ -6,9 +6,6 @@
 [color]
 	ui = true
 
-[includeIf "gitdir:~/Projects/word/dyte/"]
-	path = ~/Projects/work/dyte/.gitconfig
-
 [diff]
         tool = difftastic
 
@@ -25,3 +22,63 @@
 # `git dft` is less to type than `git difftool`.
 [alias]
         dft = difftool
+
+[includeIf "gitdir:~/Projects/work/dyte/"]
+	path = ~/Projects/work/dyte/.gitconfig
+
+[init]
+	defaultBranch = main
+
+[merge]
+	conflictstyle = zdiff3
+
+[rerere]
+	enabled = true
+
+[diff]
+	algorithm = histogram
+
+[blame]
+	ignoreRevsFile = 
+
+[core]
+	excludesfile = ~/.gitignore
+	pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	syntax-theme = ansi
+
+[transfer]
+	fsckobjects = true
+
+[fetch]
+	fsckobjects = true
+
+[receive]
+	fsckobjects = true
+
+[status]
+	submoduleSummary = true
+
+[diff]
+	submodule = log
+
+[branch]
+	sort = -committerdate
+
+[diff]
+	colorMoved = default
+	context = 10
+
+[rebase]
+	missingCommitsCheck = error
+
+[rebase]
+	updateRefs = true
+
+# Mostly took inspiration from: https://jvns.ca/blog/2024/02/16/popular-git-config-options/
