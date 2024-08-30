@@ -1,0 +1,16 @@
+- Adjust Page Brightness: https://addons.mozilla.org/en-US/firefox/addon/adjust-screen-brightness/
+- Language Tool: https://addons.mozilla.org/en-US/firefox/addon/languagetool/
+- Auto Tab Discard: https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/
+- Bitwarden: https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/
+- Dark Reader: https://addons.mozilla.org/en-US/firefox/addon/darkreader/
+- Enhancer for youtube: https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/
+- Firefox Multi-Account Containers: https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/
+- JSONView: https://addons.mozilla.org/en-US/firefox/addon/jsonview/
+- LeechBlock NG: https://addons.mozilla.org/en-US/firefox/addon/leechblock-ng/
+- Momentum: https://addons.mozilla.org/en-US/firefox/addon/momentumdash/
+- Panorama Tab Groups: https://addons.mozilla.org/en-US/firefox/addon/panorama-tab-groups/
+- Refined Github: https://addons.mozilla.org/en-US/firefox/addon/refined-github-/
+- Surfing Keys: https://addons.mozilla.org/en-US/firefox/addon/surfingkeys_ff/
+- Fireshot: https://addons.mozilla.org/en-US/firefox/addon/fireshot/
+- To Google Translate: https://addons.mozilla.org/en-US/firefox/addon/to-google-translate/
+- ublock origin: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
