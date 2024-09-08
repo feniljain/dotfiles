@@ -1,34 +1,33 @@
-# auto-reload yes
+# general settings
+auto-reload yes
+max-items 50
 
+# unbind keys
 unbind-key j
 unbind-key k
-unbind-key h
-unbind-key H
-unbind-key L
-unbind-key c
-unbind-key ,
+unbind-key J
+unbind-key K
+unbind-key g # bound to `sort` by default
+unbind-key G # bound to `rev-sort` by default
 
-macro s save "/tmp/tmp.txt" ; set browser "~/.config/newsboat/joplin.sh %u"; open-in-browser ; set browser "qutebrowser %u"
-macro w set browser "mpv %u" ; open-in-browser ; set browser "qutebrowser %u"
-
-#browser "open -g -a 'firefox' %u"
-#browser "/usr/bin/firefox %u"
-#browser "/home/fenil/Documents/QuickLaunch Applications/firefox-79.0b9/firefox/firefox"
-browser "/usr/bin/google-chrome %u"
-
-# bind keys
-bind-key ; macro-prefix
+# bind keys - vim style
 bind-key h quit
-bind-key BACKSPACE quit
 bind-key j down
 bind-key k up
 bind-key l open
-bind-key H prev-feed
-bind-key L next-feed
-bind-key c toggle-show-read-feeds
-bind-key B open-all-unread-in-browser-and-mark-read
-show-read-feeds  no
+bind-key g home
+bind-key G end
 
+# solarized
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     cyan
+color listfocus_unread   black     cyan
+color info               default   black
+color article            default   default
+
+# highlights
 color background default default
 color listnormal green default
 #color listnormal_unread default default 
@@ -52,57 +51,3 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default
-
-delete-read-articles-on-quit yes
-
-# -- feeds -------------------------------------------------------------------
-#auto-reload yes
-#reload-time 120
-#reload-threads 4
-#download-retries 4
-#download-timeout 10
-#prepopulate-query-feeds yes
-#download-full-page no
-#
-#
-## -- display -------------------------------------------------------------------
-#
-##show-read-feeds no
-#feed-sort-order unreadarticlecount-asc
-#
-#color info default default reverse
-#color listnormal_unread yellow default
-#color listfocus blue default reverse bold
-#color listfocus_unread blue default reverse bold
-#
-#text-width 80
-#
-#
-## -- navigation ----------------------------------------------------------------
-#
-#goto-next-feed no
-#
-##browser "open -g -a 'Google Chrome' %u"
-#
-#bind-key j down feedlist
-#bind-key k up feedlist
-#bind-key j next articlelist
-#bind-key k prev articlelist
-#bind-key J next-feed articlelist
-#bind-key K prev-feed articlelist
-#bind-key j down article
-#bind-key k up article
-#
-#
-## -- bookmarks -----------------------------------------------------------------
-#
-#bookmark-cmd ~/.newsbeuter/bookmark.sh
-#bookmark-interactive no
-#bookmark-autopilot yes
-#
-#
-## -- misc ----------------------------------------------------------------------
-#
-#unbind-key C feedlist
-#confirm-exit yes
-#cleanup-on-quit no
