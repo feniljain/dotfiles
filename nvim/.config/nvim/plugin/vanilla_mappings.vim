@@ -45,7 +45,7 @@ noremap <Space>l <C-W>l
 
 " neovim terminal mappings
 tnoremap jk <C-\><C-n>
-noremap <C-t> :tab terminal<CR>
+noremap <C-t> :terminal<CR>
 
 " Navigate quickfix list with ease for ack.vim
 nnoremap <silent> [q :cprevious<CR>

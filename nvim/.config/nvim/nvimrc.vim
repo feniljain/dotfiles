@@ -40,17 +40,6 @@ endfunction
 nnoremap <space>tb :call Toggle_transparent_background()<CR>
 " }}}
 
-" QuickFixToggle ---------------------- {{{
-function! QuickFixToggle()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
-      copen
-    else
-      cclose
-    endif
-endfunction
-nnoremap <silent> <C-q> :call QuickFixToggle()<CR>
-" }}}
-
 " Help Open Function(Helps in lua dev) ---------------------- {{{
 function! OpenHelp()
     let wordUnderCursor = expand("<cword>")
