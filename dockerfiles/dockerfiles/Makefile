@@ -10,14 +10,15 @@ redis_cluster_run:
 	docker run --name redis-cluster -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis-cluster:latest
 db_run:
 	docker run \
-    --name my-postgres \
+    --name ayoo-postgres \
     -p 5432:5432 \
-    -e POSTGRES_USER=dyte \
-    -e POSTGRES_PASSWORD=dyte123 \
-    -e POSTGRES_DB=dyte \
+    -e POSTGRES_USER=ayoo \
+    -e POSTGRES_PASSWORD=ayoo123 \
+    -e POSTGRES_DB=ayoo \
+		-v ./postgres-data:/var/lib/postgresql \
     -d \
-    postgres
+		postgres
 db_connect:
-	PGPASSWORD=dyte123 pgcli -h localhost -p 5432 -U dyte -d dyte
+	PGPASSWORD=ayoo123 pgcli -h localhost -p 5432 -U ayoo -d ayoo
 socket_redis:
 	docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest
