@@ -1,27 +1,51 @@
+/* ============================================================================ */
+
+/* NOTE(feniljain): This script brings tabs to bottom of the screen, it does not bring tab bar under URL bar, that is done by next screen */
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /*
 https://github.com/Arty2/userstyles
-@version      0.2.1
-1. Navigate to `%APPDATA%\Mozilla\Firefox\Profiles` (you can copy/paste this) or locate the exact directory by visiting `about:profiles`.
-2. Create a folder named `chrome` then create a file named userChrome.css inside it and paste this code.
+@version      0.2.6
+
+1. Find your profile folder `about:support > Profile Folder > Open Folder` or locate the exact profile in use by visiting `about:profiles`.
+2. Create a folder named `chrome` then create a file named userChrome.css inside it and paste the following code.
 3. If userChrome.css doesn’t seem to work, open `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets=true`.
+4. Restart Firefox.
+
 Other references:
 Firefox Support forum - Tabs below the URL bar: https://support.mozilla.org/en-US/kb/forum-response-tabs-below-url-bar
 Custom CSS tweaks for Firefox Quantum: https://github.com/Aris-t2/CustomCSSforFx
 */
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
-/*
-tabs to bottom
+/*----------------------------------------------------------
+Tabs to Bottom
 source: https://github.com/Arty2/userstyles/blob/master/tabs_to_bottom.userchrome.css
+
+UI model:
+	#navigator-toolbox
+		#titlebar
+			#toolbar-menubar
+			#TabsToolbar
+		#nav-bar
+		#PersonalToolbar
+	#browser
 */
 
 /* bring the browser window to the top */
 #browser {
-	order: -1 !important;
+	-moz-box-ordinal-group: 0 !important;
+	order: 0 !important;
 }
 
-:root[sizemode="normal"] #browser {
-	padding-top: 8px;
+#navigator-toolbox, /* after version 119 */ 
+#navigator-toolbox-background { /* before version 119 */
+	-moz-box-ordinal-group: 1 !important;
+	order: 1 !important;
+}
+
+/* adjust paddings */
+*|*:root[sizemode="normal"] #browser {
+	padding-top: 0 !important;
 }
 
 /* hide tab toolbar when fullscreen */
@@ -30,87 +54,100 @@ source: https://github.com/Arty2/userstyles/blob/master/tabs_to_bottom.userchrom
 	display: none;
 }
 
+/* restore top border */
+*|*:root[sizemode="normal"] #browser {
+	border-top: .5px solid AccentColor !important;
+}
+*|*:root[sizemode="normal"]:-moz-window-inactive #browser {
+	border-top-color: rgb(57,57,57) !important;
+}
+
+/* make toolbar border persist on fullscreen */
+*|*:root[sizemode="maximized"] #navigator-toolbox {
+  border-top: .5px solid AccentColor !important;
+  border-bottom: .5px solid AccentColor !important;
+}
+
 /* hide titlebar buttons */
 #TabsToolbar > .titlebar-buttonbox-container {
 	display: none !important;
 }
 
-/* remove gaps in tab bar start and end */
-.titlebar-spacer[type="pre-tabs"] {
-	display: none !important;
-}
+/*fix pop-ups opening below window*/
 
-.titlebar-spacer[type="post-tabs"] {
-	width: 8px !important;
-}
-
-#urlbar[breakout][breakout-extend]{
+/*
+#urlbar[open]{
   display: flex !important;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  bottom: -2px !important;
   top: auto !important;
-  bottom: 0 !important;
 }
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-/* Modify to change window drag space width */
-/*
-Use tabs_on_bottom_menubar_on_top_patch.css if you
-have menubar permanently enabled and want it on top
- */
-
-/* IMPORTANT */
-/*
-Get window_control_placeholder_support.css
-Window controls will be all wrong without it.
-Additionally on Linux, you may need to get:
-linux_gtk_window_control_patch.css
 */
 
-:root{ --uc-titlebar-padding: 0px; }
-@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
-  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
+/*.urlbarView-body-inner { border-top: none !important; }*/
+/*.urlbarView { display: none !important; }*/ /* uncomment this to hidden address bar suggestions */
+
+/* ============================================================================ */
+
+/* NOTE(feniljain): This script just brings tabs below URL bar. It does not bring whole thing on the bottom of screen */
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom_v2.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This reorders toolbar to place tabs below other toolbars. Requires Firefox 133+ */
+
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"){
+  #nav-bar > .titlebar-buttonbox-container{
+    order: -1 !important;
+    > .titlebar-buttonbox{
+      flex-direction: row-reverse;
+    }
+  }
 }
-#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
-#TabsToolbar > .titlebar-buttonbox-container{
-  position: fixed;
-  display: block;
-  top: var(--uc-titlebar-padding,0px);
-  right:0;
-  height: 40px;
+@media not (-moz-bool-pref: "sidebar.verticalTabs"){
+  .global-notificationbox,
+  #tab-notification-deck,
+  #TabsToolbar{
+    order: 1;
+  }
+  #TabsToolbar > :is(.titlebar-spacer,.titlebar-buttonbox-container){
+    display: none;
+  }
+  :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+    display: flex !important;
+  }
+  :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+    > .titlebar-buttonbox-container{
+      display: flex !important;
+    }
+    :root[sizemode="normal"] & {
+      > .titlebar-spacer{
+        display: flex !important;
+      }
+    }
+    :root[sizemode="maximized"] & {
+      > .titlebar-spacer[type="post-tabs"]{
+        display: flex !important;
+      }
+      @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+        (-moz-gtk-csd-reversed-placement),
+        (-moz-platform: macos){
+        > .titlebar-spacer[type="post-tabs"]{
+          display: none !important;
+        }
+        > .titlebar-spacer[type="pre-tabs"]{
+          display: flex !important;
+        }
+      }
+    }
+  }
 }
-/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-  :root{ --uc-titlebar-padding: 0px !important }
-  .titlebar-buttonbox-container{ left:0; right: unset !important; }
-}
 
-:root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
+/* ============================================================================ */
 
-#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
+/**/
 
-#navigator-toolbox{ padding-top: var(--uc-titlebar-padding,0px) !important; }
-
-.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
-
-#titlebar{
-  -moz-box-ordinal-group: 2;
-  -moz-appearance: none !important;
-  --tabs-navbar-shadow-size: 0px;
-}
-
-.titlebar-placeholder,
-#TabsToolbar .titlebar-spacer{ display: none; }
-/* Also hide the toolbox bottom border which isn't at bottom with this setup */
-#navigator-toolbox::after{ display: none !important; }
-
-@media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
-
-/* These exist only for compatibility with autohide-tabstoolbar.css */
-toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
-#navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
-
-/* Make tabs only show icons */
+/* ============================================================================ */
 
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/icon_only_tabs.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
@@ -118,16 +155,22 @@ See the above repository for updates as well as full license text. */
 .tab-content > :not(.tab-icon-stack){
   display: none
 }
+.tab-icon-image:not([src]){
+  display: block !important;
+}
 .tab-icon-stack > *{ margin-inline: 0 !important; }
-.tabbrowser-tab{ -moz-box-flex: 0 !important; }
+.tabbrowser-tab{
+  flex-grow: 0 !important;
+}
 
 .tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
 :root[uidensity="compact"] .tabbrowser-tab[fadein]{
-  min-width: calc(16px + 2 * var(--inline-tab-padding,0px) + 4px) !important;
+  min-width: calc(16px + 2 * var(--tab-inline-padding,0px) + 4px) !important;
 }
 :root:not([uidensity="compact"]) .tab-content{ padding-inline: 10px !important; }
 
-/* Overlay tab audio icons */
+/* ============================================================================ */
+
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/overlay_tab_audio_icons.css made available under Mozilla Public License v. 2.0
 See the above repository for updates as well as full license text. */
 
@@ -137,29 +180,22 @@ See the above repository for updates as well as full license text. */
 .tab-throbber{ opacity: 1 !important; }
 
 .tab-icon-overlay:not([crashed]){
-    top: -5.5px;
-    inset-inline-end: -6px;
-    z-index: 1;
-    padding: 2px;
-    opacity: 1 !important;
-    stroke: var(--tab-icon-overlay-stroke, black) !important;
+  top: -5.5px;
+  inset-inline-end: -6px;
+  z-index: 1;
+  padding: 2px;
+  opacity: 1 !important;
+  stroke: var(--tab-icon-overlay-stroke, black) !important;
+  fill: var(--tab-icon-overlay-fill, white) !important;
+  fill-opacity: 1 !important;
 }
 .tab-icon-overlay:not([crashed]):hover{
   background-color: var(--tab-icon-overlay-stroke, black) !important;
   border-radius: 10px !important;
 }
 
-/* Make menu bar acrylic */
-/*
-menupopup {
+/* ============================================================================ */
 
---dark-menu-background-color: transparent !important;
+/* Experimenting */
 
---menu-background-color: var(--dark-menu-background-color) !important;
-
-backdrop-filter: blur(25px) !important;
-
-background-color: rgba(0, 0, 0, 0.80) !important;
-
-}
-*/
+/* ============================================================================ */

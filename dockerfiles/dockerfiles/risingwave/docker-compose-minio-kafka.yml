@@ -1,0 +1,88 @@
+---
+services:
+  minio-0:
+    image: "quay.io/minio/minio:latest"
+    command:
+      - server
+      - "--address"
+      - "0.0.0.0:9301"
+      - "--console-address"
+      - "0.0.0.0:9400"
+      - /data
+    expose:
+      - "9301"
+      - "9400"
+    ports:
+      - "9301:9301"
+      - "9400:9400"
+    networks:
+      - risingwave_e6data
+    entrypoint: "
+
+      /bin/sh -c '
+
+      set -e
+
+      mkdir -p \"/data/hummock001\"
+
+      mkdir -p \"/data/bucketto\"
+
+      /usr/bin/docker-entrypoint.sh \"$$0\" \"$$@\"
+
+      '"
+    environment:
+      MINIO_CI_CD: "1"
+      MINIO_PROMETHEUS_AUTH_TYPE: public
+      MINIO_PROMETHEUS_URL: "http://prometheus-0:9500"
+      MINIO_ROOT_PASSWORD: hummockadmin
+      MINIO_ROOT_USER: hummockadmin
+      MINIO_DOMAIN: "minio-0"
+    container_name: minio-0
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - bash -c 'printf \"GET / HTTP/1.1\n\n\" > /dev/tcp/127.0.0.1/9301; exit $$?;'
+      interval: 1s
+      timeout: 5s
+      retries: 5
+    restart: always
+  message_queue:
+    image: "redpandadata/redpanda:latest"
+    command:
+      - redpanda
+      - start
+      - "--smp"
+      - "1"
+      - "--reserve-memory"
+      - 0M
+      - "--memory"
+      - 4G
+      - "--overprovisioned"
+      - "--node-id"
+      - "0"
+      - "--check=false"
+      - "--kafka-addr"
+      - "PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092"
+      - "--advertise-kafka-addr"
+      - "PLAINTEXT://message_queue:29092,OUTSIDE://localhost:9092"
+    expose:
+      - "29092"
+      - "9092"
+      - "9644"
+    ports:
+      - "29092:29092"
+      - "9092:9092"
+      - "9644:9644"
+      - "8081:8081"
+    networks:
+      - risingwave_e6data
+    container_name: message_queue
+    healthcheck:
+      test: curl -f localhost:9644/v1/status/ready
+      interval: 1s
+      timeout: 5s
+      retries: 5
+    restart: always
+networks:
+  risingwave_e6data:
+    external: true

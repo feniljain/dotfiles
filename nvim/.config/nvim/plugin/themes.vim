@@ -19,7 +19,7 @@
 " colorscheme minimal-base16
 " highlight Folded ctermbg=White ctermfg=Red
 
-colorscheme duskfox
+colorscheme nightfox
 
 " Catppuccin Latte
 " colorscheme catppuccin-frappe

@@ -12,7 +12,7 @@ set relativenumber
 set ts=2 sw=2
 set linebreak
 set laststatus=3
-set cmdheight=0
+" set cmdheight=0
 " set bg=light
 set background=dark
 set t_Co=256

@@ -226,7 +226,7 @@ M.config = function()
         end
     })
 
-    local servers = { "gopls", "tsserver", "jsonls", "marksman" } -- "rust_analyzer", "clangd"
+    local servers = { "gopls", "jsonls", "marksman" } -- "rust_analyzer", "clangd"
     local capabilities = require "plugins.nvim_cmp".capabilities
 
     local function setup_servers()

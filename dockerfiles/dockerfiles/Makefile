@@ -1,5 +1,6 @@
 rabbitmq_run:
-	docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:3-management
+	# docker run -p 5672:5672 -p 15672:15672 -d rabbitmq:3-management
+	docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 -p 1883:1883 rabbitmq:3-management-alpine
 redis_run:
 	docker run --name my-redis -p 6379:6379 -d redis
 redis_connect:
@@ -10,15 +11,49 @@ redis_cluster_run:
 	docker run --name redis-cluster -e ALLOW_EMPTY_PASSWORD=yes bitnami/redis-cluster:latest
 db_run:
 	docker run \
-    --name ayoo-postgres \
+    --name postgres \
     -p 5432:5432 \
     -e POSTGRES_USER=ayoo \
     -e POSTGRES_PASSWORD=ayoo123 \
     -e POSTGRES_DB=ayoo \
-		-v ./postgres-data:/var/lib/postgresql \
     -d \
 		postgres
+		# -v ./postgres-data:/var/lib/postgresql \
 db_connect:
 	PGPASSWORD=ayoo123 pgcli -h localhost -p 5432 -U ayoo -d ayoo
 socket_redis:
 	docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest
+linux_playground_run:
+	docker run --name linux-playground -v /tmp/binaries:/app --detach --platform linux/amd64 linux-playground
+linux_playground_connect:
+	docker exec -it linux-playground /bin/bash
+rust_playground:
+	docker run --name rust-playground -v /tmp/binaries:/app --detach --platform linux/amd64 rust-playground
+minio_playground:
+	mkdir -p minio-data/ && \
+	docker run \
+	 --rm \
+	 --detach \
+   -p 9000:9000 \
+   -p 9001:9001 \
+   --name minio \
+   -v ./minio-data:/data \
+   -e "MINIO_ROOT_USER=admin" \
+   -e "MINIO_ROOT_PASSWORD=admin1234" \
+   -e "BUCKET_NAME=bucketto" \
+   quay.io/minio/minio server /data --console-address ":9001"
+localstack_s3_playground:
+	docker run \
+	 --rm \
+	 --detach \
+   -p 9000:4566 \
+   --name localstack_s3 \
+   localstack/localstack:s3-latest
+java_playground: 
+	docker run --rm -v ~/Projects/SimpleDB_3.4:/app --name java-playground --detach --entrypoint tail openjdk:latest -f /dev/null # https://stackoverflow.com/questions/41694329/docker-run-override-entrypoint-with-shell-script-which-accepts-arguments
+kafka_playground:
+	docker run -d --name kafka -p 9092:9092 -p 9644:9644 docker.redpanda.com/vectorized/redpanda:latest start --overprovisioned --smp 1 --memory 1G --reserve-memory 0M --node-id 0 --check=false
+iceberg_rest_catalog_playground:
+	docker run -d --name kafka -p 9092:9092 -p 9644:9644 docker.redpanda.com/vectorized/redpanda:latest start --overprovisioned --smp 1 --memory 1G --reserve-memory 0M --node-id 0 --check=false
+
+# kcat -b b-3.kafkaa.dk0bqh.c18.kafka.us-east-1.amazonaws.com:9096 -X security.protocol=SASL_SSL -X sasl.mechanism=SCRAM-SHA-512 -X sasl.username=admin -X sasl.password=admin -t web_requests -T -P < $(jq -rc '.' web_requests-100.json)

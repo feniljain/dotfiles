@@ -1,0 +1,165 @@
+/*
+https://github.com/Arty2/userstyles
+@version      0.2.1
+1. Navigate to `%APPDATA%\Mozilla\Firefox\Profiles` (you can copy/paste this) or locate the exact directory by visiting `about:profiles`.
+2. Create a folder named `chrome` then create a file named userChrome.css inside it and paste this code.
+3. If userChrome.css doesn’t seem to work, open `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets=true`.
+Other references:
+Firefox Support forum - Tabs below the URL bar: https://support.mozilla.org/en-US/kb/forum-response-tabs-below-url-bar
+Custom CSS tweaks for Firefox Quantum: https://github.com/Aris-t2/CustomCSSforFx
+*/
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/*
+tabs to bottom
+source: https://github.com/Arty2/userstyles/blob/master/tabs_to_bottom.userchrome.css
+*/
+
+/* bring the browser window to the top */
+#browser {
+	order: -1 !important;
+}
+
+:root[sizemode="normal"] #browser {
+	padding-top: 8px;
+}
+
+/* hide tab toolbar when fullscreen */
+#nav-bar[inFullscreen],
+#TabsToolbar[inFullscreen] {
+	display: none;
+}
+
+/* hide titlebar buttons */
+#TabsToolbar > .titlebar-buttonbox-container {
+	display: none !important;
+}
+
+/* remove gaps in tab bar start and end */
+.titlebar-spacer[type="pre-tabs"] {
+	display: none !important;
+}
+
+.titlebar-spacer[type="post-tabs"] {
+	width: 8px !important;
+}
+
+#urlbar[breakout][breakout-extend]{
+  display: flex !important;
+  flex-direction: column-reverse;
+  top: auto !important;
+  bottom: 0 !important;
+}
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Modify to change window drag space width */
+/*
+Use tabs_on_bottom_menubar_on_top_patch.css if you
+have menubar permanently enabled and want it on top
+ */
+
+/* IMPORTANT */
+/*
+Get window_control_placeholder_support.css
+Window controls will be all wrong without it.
+Additionally on Linux, you may need to get:
+linux_gtk_window_control_patch.css
+*/
+
+:root{ --uc-titlebar-padding: 0px; }
+@media  (-moz-os-version: windows-win7),(-moz-os-version: windows-win10){
+  :root[sizemode="maximized"][tabsintitlebar]{ --uc-titlebar-padding: 8px }
+}
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container{
+  position: fixed;
+  display: block;
+  top: var(--uc-titlebar-padding,0px);
+  right:0;
+  height: 40px;
+}
+/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
+  :root{ --uc-titlebar-padding: 0px !important }
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+
+:root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
+
+#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
+
+#navigator-toolbox{ padding-top: var(--uc-titlebar-padding,0px) !important; }
+
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+
+#titlebar{
+  -moz-box-ordinal-group: 2;
+  -moz-appearance: none !important;
+  --tabs-navbar-shadow-size: 0px;
+}
+
+.titlebar-placeholder,
+#TabsToolbar .titlebar-spacer{ display: none; }
+/* Also hide the toolbox bottom border which isn't at bottom with this setup */
+#navigator-toolbox::after{ display: none !important; }
+
+@media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
+
+/* These exist only for compatibility with autohide-tabstoolbar.css */
+toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
+#navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
+
+/* Make tabs only show icons */
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/icon_only_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+.tab-content > :not(.tab-icon-stack){
+  display: none
+}
+.tab-icon-stack > *{ margin-inline: 0 !important; }
+.tabbrowser-tab{ -moz-box-flex: 0 !important; }
+
+.tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
+:root[uidensity="compact"] .tabbrowser-tab[fadein]{
+  min-width: calc(16px + 2 * var(--inline-tab-padding,0px) + 4px) !important;
+}
+:root:not([uidensity="compact"]) .tab-content{ padding-inline: 10px !important; }
+
+/* Overlay tab audio icons */
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/overlay_tab_audio_icons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the tab audio indicator show as overlay in all tabs, not just pinned ones */
+
+.tab-icon-image,
+.tab-throbber{ opacity: 1 !important; }
+
+.tab-icon-overlay:not([crashed]){
+    top: -5.5px;
+    inset-inline-end: -6px;
+    z-index: 1;
+    padding: 2px;
+    opacity: 1 !important;
+    stroke: var(--tab-icon-overlay-stroke, black) !important;
+}
+.tab-icon-overlay:not([crashed]):hover{
+  background-color: var(--tab-icon-overlay-stroke, black) !important;
+  border-radius: 10px !important;
+}
+
+/* Make menu bar acrylic */
+/*
+menupopup {
+
+--dark-menu-background-color: transparent !important;
+
+--menu-background-color: var(--dark-menu-background-color) !important;
+
+backdrop-filter: blur(25px) !important;
+
+background-color: rgba(0, 0, 0, 0.80) !important;
+
+}
+*/
