@@ -11,7 +11,7 @@ return {
     config = function()
         require('nvim-treesitter.configs').setup {
             ensure_installed = { "go", "rust", "cpp", "typescript", "jsonc", "gomod", "html", "css", "dockerfile",
-                "tsx", "comment", "vim", "markdown", "javascript", "toml" },
+                "tsx", "comment", "vim", "markdown", "javascript", "toml", "java" },
 
             highlight = {
                 enable = true,

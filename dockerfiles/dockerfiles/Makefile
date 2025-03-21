@@ -53,7 +53,6 @@ java_playground:
 	docker run --rm -v ~/Projects/SimpleDB_3.4:/app --name java-playground --detach --entrypoint tail openjdk:latest -f /dev/null # https://stackoverflow.com/questions/41694329/docker-run-override-entrypoint-with-shell-script-which-accepts-arguments
 kafka_playground:
 	docker run -d --name kafka -p 9092:9092 -p 9644:9644 docker.redpanda.com/vectorized/redpanda:latest start --overprovisioned --smp 1 --memory 1G --reserve-memory 0M --node-id 0 --check=false
-iceberg_rest_catalog_playground:
-	docker run -d --name kafka -p 9092:9092 -p 9644:9644 docker.redpanda.com/vectorized/redpanda:latest start --overprovisioned --smp 1 --memory 1G --reserve-memory 0M --node-id 0 --check=false
+check_kafka_msgs:
+	docker run -it --rm --network=host edenhill/kcat:1.7.1 -b localhost:9092 -C -t test.local
 
-# kcat -b b-3.kafkaa.dk0bqh.c18.kafka.us-east-1.amazonaws.com:9096 -X security.protocol=SASL_SSL -X sasl.mechanism=SCRAM-SHA-512 -X sasl.username=admin -X sasl.password=admin -t web_requests -T -P < $(jq -rc '.' web_requests-100.json)

@@ -1,4 +1,5 @@
 # docker run -v ~/Projects/work/e6data/delta-play/hudi/data:/data --name spark-playground --detach spark-playground
+# docker run -v ~/dockerfiles/spark/spark-data:/data --name spark-playground --detach spark-playground
 
 FROM apache/spark
 
