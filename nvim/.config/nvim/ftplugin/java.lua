@@ -21,6 +21,16 @@ local config = {
         "-data",
         workspace_dir,
     },
+    settings = {
+        java = {
+            format = {
+                settings = {
+                    url = "/Users/feniljain/Projects/work/e6data/engine/e6_style.xml",
+                    profile = "e6-style",
+                },
+            },
+        },
+    },
     root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
 }
 
