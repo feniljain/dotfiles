@@ -22,6 +22,9 @@ local M = {
             config = true,
         },
         {
+            "mfussenegger/nvim-jdtls",
+        },
+        {
             "L3MON4D3/LuaSnip",
             dependencies = {
                 {
