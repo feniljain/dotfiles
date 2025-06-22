@@ -55,4 +55,10 @@ kafka_playground:
 	docker run -d --name kafka -p 9092:9092 -p 9644:9644 docker.redpanda.com/vectorized/redpanda:latest start --overprovisioned --smp 1 --memory 1G --reserve-memory 0M --node-id 0 --check=false
 check_kafka_msgs:
 	docker run -it --rm --network=host edenhill/kcat:1.7.1 -b localhost:9092 -C -t test.local
-
+coretto_jdk_playground:
+	docker run -d -t --name coretto_jdk_playground -v /tmp/executor:/app/executor -v ~/.m2:/root/.m2 --platform linux/arm64 public.ecr.aws/e6data/amazoncoretto:21-al2023-jdk # --entrypoint tail -f /dev/null
+executor_run_playground:
+	docker run -d -t --name executor_run_playground -v /tmp/executor:/app/executor -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint /bin/bash 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust
+rs_build_playground:
+	docker run -d -t --name rs_build_playground -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img # --entrypoint tail -f /dev/null
+	# docker run -d -t --name rs_build_playground root/.m2 --platform linux/arm64 rs-build-img

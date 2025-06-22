@@ -25,7 +25,7 @@ local config = {
         java = {
             format = {
                 settings = {
-                    url = "/Users/feniljain/Projects/work/e6data/engine/e6_style.xml",
+                    url = "/Users/feniljain/Projects/work/e6data/misc/e6_style.xml",
                     profile = "e6-style",
                 },
             },
