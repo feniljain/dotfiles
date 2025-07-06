@@ -10,7 +10,6 @@ set ideajoin
 set relativenumber
 set number
 set smartcase
-set clipboard+=unnamed
 set clipboard+=ideaput
 
 inoremap jk <esc>
@@ -35,8 +34,9 @@ nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 " vim-commentary
-nnoremap <space><space> :action CommentByLineComment<CR>
-vnoremap <space><space> :action CommentByLineComment<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
+
 " NERDTree
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeToggle<CR>
@@ -47,13 +47,15 @@ nnoremap <c-q> :action Refactorings.QuickListPopupAction<CR>
 nnoremap <leader>f  :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 
-nnoremap tf :action RecentFiles<CR>
+" nnoremap tf :action RecentFiles<CR>
+nnoremap tf :action GotoFile<CR>
+
 " Try this out
 nnoremap tt :action RecentLocations<CR>
 nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
 
-nnoremap gnd :action GotoNextError<CR>
-nnoremap gpd :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
 
 nnoremap <leader>v :action SplitVertically<CR>
 nnoremap <leader>- :action SplitHorizontally<CR>

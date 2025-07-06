@@ -24,7 +24,8 @@ db_connect:
 socket_redis:
 	docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest
 linux_playground_run:
-	docker run --name linux-playground -v /tmp/binaries:/app --detach --platform linux/amd64 linux-playground
+	# docker run --name linux-playground -v /tmp/binaries:/app --detach --platform linux/amd64 linux-playground
+	docker run --name linux-playground -v /Users/feniljain/Projects/work/e6data/profiles/perf:/app --detach --platform linux/arm64 --entrypoint tail ubuntu:latest -f /dev/null
 linux_playground_connect:
 	docker exec -it linux-playground /bin/bash
 rust_playground:
@@ -62,3 +63,6 @@ executor_run_playground:
 rs_build_playground:
 	docker run -d -t --name rs_build_playground -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img # --entrypoint tail -f /dev/null
 	# docker run -d -t --name rs_build_playground root/.m2 --platform linux/arm64 rs-build-img
+	# docker run -d -t --name rs_build_playground -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img # --entrypoint tail -f /dev/null
+rs_build_playground_no_app:
+	docker run -d -t --name rs_build_playground_no_app -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img-no-app
