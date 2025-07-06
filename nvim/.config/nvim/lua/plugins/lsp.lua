@@ -15,9 +15,6 @@ local M = {
             "onsails/lspkind.nvim",
         },
         {
-            "David-Kunz/markid",
-        },
-        {
             "SmiteshP/nvim-navic",
             config = true,
         },

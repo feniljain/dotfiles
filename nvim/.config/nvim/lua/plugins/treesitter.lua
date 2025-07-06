@@ -19,8 +19,6 @@ return {
             },
 
             indent = { enable = true },
-
-            markid = { enable = true }
         }
     end
 }
