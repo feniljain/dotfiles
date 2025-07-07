@@ -161,7 +161,6 @@ M.config = function()
             -- client.server_capabilities.semanticTokensProvider = nil
 
             vim.diagnostic.config({
-                virtual_text = false,
                 signs = true,
                 underline = true,
                 update_in_insert = true,
