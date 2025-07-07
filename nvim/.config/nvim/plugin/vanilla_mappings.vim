@@ -47,13 +47,13 @@ noremap <Space>l <C-W>l
 tnoremap jk <C-\><C-n>
 noremap <C-t> :terminal<CR>
 
-" Navigate quickfix list with ease for ack.vim
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
+" bunch of vim-unimpaired mappings are 
+" shipped by default with nvim now(https://github.com/neovim/neovim/pull/28525/):
+" - ]b and [b for buffer navigation
+" - ]q and [q for quickfix list navigation
+" - ]t works with with ctags and LSP for tags
 
 " Work with buffers faster
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Space>cb :bd<CR>
 
 " Window split shortcuts
