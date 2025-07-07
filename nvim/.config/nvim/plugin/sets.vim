@@ -11,7 +11,6 @@ set number
 set relativenumber
 set ts=2 sw=2
 set linebreak
-set laststatus=3
 " set cmdheight=0
 " set bg=light
 set background=dark
@@ -100,3 +99,9 @@ set updatetime=250
 
 syntax enable
 filetype plugin indent on
+
+" Disable status line completely: https://github.com/neovim/neovim/issues/18965
+set laststatus=0
+hi! link StatusLine Normal
+hi! link StatusLineNC Normal
+set statusline=%{repeat('─',winwidth('.'))}
