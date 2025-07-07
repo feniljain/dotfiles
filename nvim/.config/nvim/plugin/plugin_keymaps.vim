@@ -41,6 +41,9 @@ nnoremap <Space>nt :NERDTreeToggle<CR>
 " ----------------------------- NO-NECK-PAIN -----------------------------
 nnoremap <Space>np :NoNeckPain<CR>
 
+" ----------------------------- Aerial -----------------------------
+nnoremap <Space>so :AerialToggle!<CR>
+
 " ----------------------------- VIM-FUGITIVE -----------------------------
 noremap <Space>gm :Gdiffsplit!<CR>
 noremap <Space>gl :diffget //2<CR>
@@ -91,8 +94,6 @@ nnoremap tgb :lua require('telescope.builtin').git_branches()<CR>
 
 " ======== Misc extensions commands ========
 nnoremap tgw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
-
-nnoremap tgc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 
 " ======== Maximizer ========
 nnoremap <Space>m :MaximizerToggle<CR>
