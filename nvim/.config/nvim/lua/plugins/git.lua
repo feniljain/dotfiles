@@ -1,8 +1,4 @@
 return {
-    -- {
-        -- "NeogitOrg/neogit", -- Crashes for local setup rn :(
-        -- config = true,
-    -- },
     {
         "tpope/vim-fugitive",
     },

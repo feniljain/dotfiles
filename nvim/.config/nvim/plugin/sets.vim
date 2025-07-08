@@ -11,7 +11,6 @@ set number
 set relativenumber
 set ts=2 sw=2
 set linebreak
-" set cmdheight=0
 " set bg=light
 set background=dark
 set t_Co=256
@@ -105,3 +104,11 @@ set laststatus=0
 hi! link StatusLine Normal
 hi! link StatusLineNC Normal
 set statusline=%{repeat('─',winwidth('.'))}
+
+" https://neovim.io/doc/user/news-0.11.html
+set completeopt=fuzzy
+
+" set messagesopt=wait:5000,history:500 " https://www.reddit.com/r/neovim/comments/1h8q8ih/goodbye_to_the_press_enter_in_messages/ " I find hitting enter easier 😅
+set cmdheight=0
+
+set winborder=rounded
