@@ -62,7 +62,7 @@ set wildmode=longest,list,full
 set diffopt+=vertical
 set diffopt+=linematch:60
 
-" set shortmess+=c
+set shortmess+=c
 
 " For tree sitter folding
 set foldmethod=expr
@@ -109,7 +109,7 @@ set statusline=%{repeat('─',winwidth('.'))}
 set completeopt=fuzzy
 
 " set messagesopt=wait:5000,history:500 " https://www.reddit.com/r/neovim/comments/1h8q8ih/goodbye_to_the_press_enter_in_messages/ " I find hitting enter easier 😅
-set cmdheight=0
+" set cmdheight=0
 
 set winborder=rounded
 
