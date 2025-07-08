@@ -43,6 +43,13 @@ return {
         config = true,
     },
     {
+        "TobinPalmer/rayso.nvim",
+        cmd = { 'Rayso' },
+        config = function()
+            require('rayso').setup {}
+        end
+    },
+    {
         'echasnovski/mini.operators',
         version = '*',
         config = function()
