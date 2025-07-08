@@ -112,3 +112,16 @@ set completeopt=fuzzy
 set cmdheight=0
 
 set winborder=rounded
+
+" https://github.com/mhinz/vim-galore#disable-audible-and-visual-bells
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" https://github.com/mhinz/vim-galore#smarter-cursorline
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
+
+" use rg for vimgrep
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
