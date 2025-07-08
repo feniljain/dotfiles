@@ -63,9 +63,14 @@ nnoremap <Space>- :split<CR>
 " Use Y to automatically select to the end of the line
 nnoremap Y y$
 
-" Center screen while jumping in search
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+" This also centers screen while jumping in search
+map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 " Undo break points
 inoremap , ,<c-g>u
