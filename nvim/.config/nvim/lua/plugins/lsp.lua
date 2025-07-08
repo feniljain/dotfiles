@@ -3,6 +3,7 @@ local M = {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             ensure_installed = { "rust_analyzer" },
+            automatic_enable = true, -- call vim.lsp.enable()
         },
         dependencies = {
             -- lazy calls mason.setup() internally
@@ -230,32 +231,3 @@ vim.lsp.config("*", {
 })
 
 return M
-
--- return {
---     -- on_attach = function ()
---     --     print("rust_analyzer attached")
---     -- end,
---     cmd = { "rust-analyzer" },
---     root_markers = { "Cargo.lock" },
---     filetypes = { "rust" },
---     settings = {
---         ["rust-analyzer"] = {
---             -- server = {
---             --     -- path = '/Users/feniljain/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
---             --     -- path = '~/Projects/rust-projects/rust-analyzer/fix_enum_completion/target/release/rust-analyzer',
---             -- },
---             -- checkOnSave = {
---             --     command = 'clippy',
---             -- },
---             checkOnSave = true,
---             -- trace = {
---             --     server = "verbose",
---             --     extension = true,
---             -- },
---             rustc = {
---                 source = "discover",
---             },
---
---         },
---     },
--- }
