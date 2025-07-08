@@ -12,6 +12,7 @@
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "git-worktree.nvim": { "branch": "fixes", "commit": "5fb4e139f3e3c7a0b45b17fee85bb73c912d068e" },
   "gitsigns.nvim": { "branch": "main", "commit": "362fe61f9f19e9bceff178792780df5cce118a7d" },
+  "grug-far.nvim": { "branch": "main", "commit": "b3f9412b1ed76f14cfc68e1ee899873544330c80" },
   "hardtime.nvim": { "branch": "main", "commit": "a706043b6e9f865f631d23c9a32cb0c1201a4471" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lsp_signature.nvim": { "branch": "master", "commit": "d9c39937e4e0977357530e988aa8940078bb231f" },

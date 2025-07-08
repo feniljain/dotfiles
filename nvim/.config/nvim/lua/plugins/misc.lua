@@ -75,4 +75,10 @@ return {
             "nvim-tree/nvim-web-devicons"
         },
     },
+    {
+        'MagicDuck/grug-far.nvim',
+        config = function()
+            require('grug-far').setup({});
+        end
+   },
 }
