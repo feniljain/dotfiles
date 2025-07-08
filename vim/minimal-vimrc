@@ -60,6 +60,10 @@ set tabstop=2 softtabstop=2
 " Set block cursor always
 set guicursor= "
 
+set undofile=true
+set laststatus=0 " Don't show any statusline
+set expandtab=true
+
 " ===============================================
 
 " search using rg
@@ -69,8 +73,8 @@ set grepprg=rg\ --vimgrep
 set grepformat^=%f:%l:%c:%m
 
 " easier quickfix list for easily using search
-nnoremap <silent> <C-j> :cnext<CR>
-nnoremap <silent> <C-k> :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
+nnoremap <silent> [q :cprevious<CR>
 
 " open and close quickfix list easily
 " QuickFixToggle ---------------------- {{{
