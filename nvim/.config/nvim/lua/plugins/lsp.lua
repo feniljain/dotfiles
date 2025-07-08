@@ -9,7 +9,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(event)
         -- # Helper declarations
         local bufnr = event.buf
-        local client = event.client
+        -- local client = event.client
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
 
         local map = function(keys, func)
             vim.keymap.set('n', keys, func, { noremap = true, silent = true, buffer = bufnr })
@@ -61,24 +62,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
             })
 
             vim.api.nvim_clear_autocmds({
+                group = highlight_group_name,
                 buffer = bufnr,
-                group = 'lsp_document_highlight',
             })
 
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-                group = 'lsp_document_highlight',
+                group = highlight_group_name,
                 buffer = bufnr,
                 callback = vim.lsp.buf.document_highlight,
             })
 
             vim.api.nvim_create_autocmd('CursorMoved', {
-                group = 'lsp_document_highlight',
+                group = highlight_group_name,
                 buffer = bufnr,
                 callback = vim.lsp.buf.clear_references,
             })
 
             vim.api.nvim_create_autocmd('LspDetach', {
-                group = vim.api.nvim_create_augroup('lsp-detach-u-la-la', { clear = true }),
+                group = vim.api.nvim_create_augroup(highlight_group_name, { clear = true }),
                 callback = function(event2)
                     vim.lsp.buf.clear_references()
                     vim.api.nvim_clear_autocmds { group = highlight_group_name, buffer = event2.buf }
@@ -97,8 +98,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
 
         -- Disable semantic highlighting
+        -- https://github.com/mrcjkb/rustaceanvim/discussions/135
         -- https://www.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
-        -- client.server_capabilities.semanticTokensProvider = nil
+        client.server_capabilities.semanticTokensProvider = nil
 
         vim.diagnostic.config({
             signs = true,
