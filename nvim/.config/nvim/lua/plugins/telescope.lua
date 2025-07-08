@@ -50,6 +50,7 @@ M.config = function()
             preview                = {
                 timeout = 500,
                 msg_bg_fillchar = "",
+                filesize_limit = 1, -- MB, don't preview files larger than this size
                 -- hide_on_startup = true -- hide previewer when picker starts
             },
             vimgrep_arguments      = {
