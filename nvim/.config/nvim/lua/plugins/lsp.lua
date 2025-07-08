@@ -141,34 +141,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.document_color.enable(true, bufnr)
         end
 
-        -- # Plugin specific registration
-
-        local lsp_sig_cfg = {
-            bind = true, -- This is mandatory, otherwise border config won't get registered.
-            -- If you want to hook lspsaga or other signature handler, pls set to false
-            doc_lines = 10, -- only show one line of comment set to 0 if you do not want API comments be shown
-
-            hint_enable = false, -- virtual hint enable
-            hint_prefix = "🐼 ", -- Panda for parameter
-            hint_scheme = "String",
-
-            handler_opts = {
-                border = "rounded",  -- double, rounded, single, shadow, none
-            },
-            decorator = { "`", "`" } -- or decorator = {"***", "***"}  decorator = {"**", "**"} see markdown help
-        }
-
-        require 'lsp_signature'.on_attach(lsp_sig_cfg)
-
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentSymbol) then
             require("nvim-navic").attach(client, bufnr)
         end
     end
 }) 
-
-vim.lsp.config("*", {
-  capabilities = require "plugins.nvim_cmp".capabilities,
-})
 
 local M = {
     {
@@ -185,18 +162,6 @@ local M = {
     },
     {
         "SmiteshP/nvim-navic",
-        config = true,
-    },
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-            {
-                "rafamadriz/friendly-snippets",
-                config = function()
-                    require("luasnip.loaders.from_vscode").lazy_load() -- required for this plugin to work
-                end
-            },
-        },
         config = true,
     },
     {
@@ -220,11 +185,6 @@ local M = {
                 desc = "Buffer Diagnostics (Trouble)",
             },
         },
-        config = true,
-    },
-    {
-        -- if you are removing this plugin, do explore usage of vim.lsp.buf.signatureHelp
-        "ray-x/lsp_signature.nvim",
         config = true,
     },
 }

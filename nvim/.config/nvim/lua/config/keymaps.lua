@@ -19,7 +19,7 @@ vim.keymap.set("x", "p", '"_dP', { silent = true, noremap = true })
 -- map("x", "@", ":norm @q<CR>", { silent = false })
 
 -- https://yobibyte.github.io/vim.html
-vim.keymap.set("n", "<space>c", function()
+vim.keymap.set("n", "<Space>c", function()
   vim.ui.input({}, function(c) 
       if c and c~="" then 
         vim.cmd("noswapfile vnew") 
