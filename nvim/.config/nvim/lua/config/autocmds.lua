@@ -36,3 +36,8 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     vim.bo[event.buf].commentstring = cs:gsub('(%S)%%s', '%1 %%s'):gsub('%%s(%S)', '%%s %1')
   end,
 })
+
+-- when cmdheight is 0, it does not show macro record message, that's why add this
+-- https://vi.stackexchange.com/questions/39947/nvim-vim-o-cmdheight-0-looses-the-recording-a-macro-messages
+vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]

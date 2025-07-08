@@ -62,7 +62,7 @@ set wildmode=longest,list,full
 set diffopt+=vertical
 set diffopt+=linematch:60
 
-set shortmess+=c
+" set shortmess+=c
 
 " For tree sitter folding
 set foldmethod=expr
