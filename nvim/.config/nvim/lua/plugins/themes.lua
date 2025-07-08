@@ -1,3 +1,4 @@
 return {
-    "EdenEast/nightfox.nvim"
+    -- "luisiacc/gruvbox-baby", -- beautiful theme!
+    "sainnhe/sonokai", -- another beautiful theme!
 }
