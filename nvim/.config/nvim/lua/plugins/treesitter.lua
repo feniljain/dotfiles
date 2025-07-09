@@ -6,6 +6,11 @@ return {
             "romgrk/nvim-treesitter-context",
             config = true,
         },
+        {
+            "OXY2DEV/markview.nvim",
+            lazy = false,
+            priority = 49,
+        },
     },
 
     config = function()
@@ -19,8 +24,6 @@ return {
             },
 
             indent = { enable = true },
-
-            markid = { enable = true }
         }
     end
 }

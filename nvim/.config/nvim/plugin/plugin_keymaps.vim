@@ -41,41 +41,8 @@ nnoremap <Space>nt :NERDTreeToggle<CR>
 " ----------------------------- NO-NECK-PAIN -----------------------------
 nnoremap <Space>np :NoNeckPain<CR>
 
-" ----------------------------- HARPOON -----------------------------
-" nmap <leader>hq :lua require("harpoon.ui").toggle_quick_menu()<CR>
-" nmap <leader>ha :lua require("harpoon.mark").add_file()<CR>
-" nmap <leader>a :lua require("harpoon.ui").nav_file(1)<CR>
-" nmap <leader>s :lua require("harpoon.ui").nav_file(2)<CR>
-" nmap <leader>d :lua require("harpoon.ui").nav_file(3)<CR>
-" nmap <leader>f :lua require("harpoon.ui").nav_file(4)<CR>
-" nmap <leader>ta :lua require("harpoon.term").gotoTerminal(1)<CR>
-" nmap <leader>ts :lua require("harpoon.term").gotoTerminal(2)<CR>
-" nmap <leader>td :lua require("harpoon.term").gotoTerminal(3)<CR>
-" nmap <leader>va :lua require("harpoon.term").sendCommand(1, 1)<CR>
-" nmap <leader>vs :lua require("harpoon.term").sendCommand(1, 2)<CR>
-" nmap <leader>vd :lua require("harpoon.term").sendCommand(1, 3)<CR>
-" nmap <leader>vf :lua require("harpoon.term").sendCommand(1, 4)<CR>
-" nmap <leader>ca :lua require("harpoon.term").sendCommand(2, 1)<CR>
-" nmap <leader>cs :lua require("harpoon.term").sendCommand(2, 2)<CR>
-" nmap <Space>ha :call GotoBuffer(0)<CR>
-" unmap ;w " Unmapping commands
-" unmap ;r
-" unmap ;e
-"
-" nmap <leader>hr :lua require("harpoon.mark").rm_file()<CR>
-" nmap <leader>hr1 :lua require("harpoon.mark").rm_file(1)<CR>
-" nmap <leader>hc :lua require("harpoon.mark").clear_all()<CR>
-"
-" Navigation
-"nmap <C-q> :lua require("harpoon.ui").nav_file(1)<CR>
-" nmap <leader>ca :lua require("harpoon.mark").set_current_at(1)<CR>
-" nmap <leader>cs :lua require("harpoon.mark").set_current_at(2)<CR>
-" nmap <leader>cd :lua require("harpoon.mark").set_current_at(3)<CR>
-" nmap <leader>cf :lua require("harpoon.mark").set_current_at(4)<CR>
-" nmap <leader>ra :lua require("harpoon.mark").rm_file(1)<CR>
-" nmap <leader>rs :lua require("harpoon.mark").rm_file(2)<CR>
-" nmap <leader>rd :lua require("harpoon.mark").rm_file(3)<CR>
-" nmap <leader>rf :lua require("harpoon.mark").rm_file(4)<CR>
+" ----------------------------- Aerial -----------------------------
+nnoremap <Space>so :AerialToggle!<CR>
 
 " ----------------------------- VIM-FUGITIVE -----------------------------
 noremap <Space>gm :Gdiffsplit!<CR>
@@ -127,8 +94,6 @@ nnoremap tgb :lua require('telescope.builtin').git_branches()<CR>
 
 " ======== Misc extensions commands ========
 nnoremap tgw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
-
-nnoremap tgc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 
 " ======== Maximizer ========
 nnoremap <Space>m :MaximizerToggle<CR>
