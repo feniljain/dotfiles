@@ -64,10 +64,6 @@ set diffopt+=linematch:60
 
 set shortmess+=c
 
-" For tree sitter folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-
 set scrolloff=4
 
 " set spilts to be done below and right rather than defaults
