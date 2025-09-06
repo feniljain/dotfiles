@@ -64,5 +64,12 @@ rs_build_playground:
 	docker run -d -t --name rs_build_playground -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img # --entrypoint tail -f /dev/null
 	# docker run -d -t --name rs_build_playground root/.m2 --platform linux/arm64 rs-build-img
 	# docker run -d -t --name rs_build_playground -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img # --entrypoint tail -f /dev/null
-rs_build_playground_no_app:
-	docker run -d -t --name rs_build_playground_no_app -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 rs-build-img-no-app
+rs_build_playground_alpine:
+	docker run -d -t --name rs_build_playground_alpine -v ~/.m2:/root/.m2 -v /tmp/executor/:/app/executor --platform linux/arm64 amazoncorretto:21.0.8-alpine3.22 
+upstream_img_check:
+	# docker run -d -t --name upstream_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:gh-pr-1.0.32-rs -f /dev/null
+	docker run -d -t --name upstream_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:gh-pr-1.0.32-rs
+asdf_upstream_img_check:
+	# docker run -d -t --name upstream_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust-upstream -f /dev/null
+local_img_check:
+	docker run -d -t --name local_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust -f /dev/null

@@ -60,9 +60,10 @@ set tabstop=2 softtabstop=2
 " Set block cursor always
 set guicursor= "
 
-set undofile=true
 set laststatus=0 " Don't show any statusline
-set expandtab=true
+
+" highlight searched text
+set hlsearch
 
 " ===============================================
 
