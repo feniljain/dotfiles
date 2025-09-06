@@ -43,6 +43,13 @@ return {
         config = true,
     },
     {
+        "TobinPalmer/rayso.nvim",
+        cmd = { 'Rayso' },
+        config = function()
+            require('rayso').setup {}
+        end
+    },
+    {
         'echasnovski/mini.operators',
         version = '*',
         config = function()
@@ -61,17 +68,17 @@ return {
         end
     },
     {
-        "hedyhli/outline.nvim",
-        config = function()
-            vim.keymap.set("n", "<Space>so", "<cmd>Outline<CR>",
-                { desc = "Toggle Outline" })
-
-            require("outline").setup { -- without call to `setup`, this plugin won't work
-                keymaps = {
-                    peek_location = 'p',
-                    fold_toggle = 'o',
-                },
-            }
-        end,
+        'stevearc/aerial.nvim',
+        opts = {},
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
     },
+    {
+        'MagicDuck/grug-far.nvim',
+        config = function()
+            require('grug-far').setup({});
+        end
+   },
 }

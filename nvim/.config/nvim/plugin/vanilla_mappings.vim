@@ -47,13 +47,13 @@ noremap <Space>l <C-W>l
 tnoremap jk <C-\><C-n>
 noremap <C-t> :terminal<CR>
 
-" Navigate quickfix list with ease for ack.vim
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
+" bunch of vim-unimpaired mappings are 
+" shipped by default with nvim now(https://github.com/neovim/neovim/pull/28525/):
+" - ]b and [b for buffer navigation
+" - ]q and [q for quickfix list navigation
+" - ]t works with with ctags and LSP for tags
 
 " Work with buffers faster
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> <Space>cb :bd<CR>
 
 " Window split shortcuts
@@ -63,9 +63,14 @@ nnoremap <Space>- :split<CR>
 " Use Y to automatically select to the end of the line
 nnoremap Y y$
 
-" Center screen while jumping in search
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+" This also centers screen while jumping in search
+map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 " Undo break points
 inoremap , ,<c-g>u

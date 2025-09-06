@@ -3,7 +3,7 @@ local map = function(keys, func)
 end
 
 toggle_qf = function()
-    print("toggle_qf::start")
+  -- print("toggle_qf::start")
   local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
     if win["quickfix"] == 1 then

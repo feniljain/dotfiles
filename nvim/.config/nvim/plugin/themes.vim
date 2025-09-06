@@ -19,7 +19,22 @@
 " colorscheme minimal-base16
 " highlight Folded ctermbg=White ctermfg=Red
 
-colorscheme nightfox
+colorscheme sonokai
+
+" list of decent inbuilt themes
+" Dark:
+" habamax
+" unokai
+" sorbet
+" slate
+" lunarperche
+" murphy
+" pablo
+"
+" Light:
+" peachpuff
+" retrobox
+" shine
 
 " Catppuccin Latte
 " colorscheme catppuccin-frappe

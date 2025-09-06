@@ -1,0 +1,21 @@
+# QoL
+mouse-hide-while-typing = true
+
+# Phew finally my clipboard isnt spammed with selected text
+copy-on-select = false
+
+# Get tmux working
+macos-option-as-alt = left
+
+# https://github.com/ghostty-org/ghostty/discussions/3836
+cursor-style = block
+shell-integration-features = no-cursor
+cursor-style-blink = false
+
+# Font
+font-family = FiraCode Nerd Font Mono Med
+font-size = 12
+
+# Blur the background like iterm
+background-blur = true
+background-opacity = 0.9

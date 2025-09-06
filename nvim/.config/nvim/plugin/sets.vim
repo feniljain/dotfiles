@@ -11,8 +11,6 @@ set number
 set relativenumber
 set ts=2 sw=2
 set linebreak
-set laststatus=3
-" set cmdheight=0
 " set bg=light
 set background=dark
 set t_Co=256
@@ -66,10 +64,6 @@ set diffopt+=linematch:60
 
 set shortmess+=c
 
-" For tree sitter folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-
 set scrolloff=4
 
 " set spilts to be done below and right rather than defaults
@@ -100,3 +94,30 @@ set updatetime=250
 
 syntax enable
 filetype plugin indent on
+
+" Disable status line completely: https://github.com/neovim/neovim/issues/18965
+set laststatus=0
+hi! link StatusLine Normal
+hi! link StatusLineNC Normal
+set statusline=%{repeat('─',winwidth('.'))}
+
+" https://neovim.io/doc/user/news-0.11.html
+set completeopt=fuzzy
+
+" set messagesopt=wait:5000,history:500 " https://www.reddit.com/r/neovim/comments/1h8q8ih/goodbye_to_the_press_enter_in_messages/ " I find hitting enter easier 😅
+" set cmdheight=0
+
+set winborder=rounded
+
+" https://github.com/mhinz/vim-galore#disable-audible-and-visual-bells
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" https://github.com/mhinz/vim-galore#smarter-cursorline
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
+
+" use rg for vimgrep
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
