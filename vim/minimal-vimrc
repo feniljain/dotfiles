@@ -64,6 +64,8 @@ set laststatus=0 " Don't show any statusline
 
 " highlight searched text
 set hlsearch
+" incremental search
+set incsearch
 
 " ===============================================
 
@@ -88,3 +90,6 @@ function! QuickFixToggle()
 endfunction
 nnoremap <silent> <C-q> :call QuickFixToggle()<CR>
 " }}}
+
+
+autocmd BufRead,BufNewFile *.plan setlocal nowrap
