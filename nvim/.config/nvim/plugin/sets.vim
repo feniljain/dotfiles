@@ -121,3 +121,5 @@ autocmd InsertEnter,WinLeave * set nocursorline
 " use rg for vimgrep
 set grepprg=rg\ --vimgrep
 set grepformat^=%f:%l:%c:%m
+
+set exrc
