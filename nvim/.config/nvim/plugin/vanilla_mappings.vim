@@ -23,7 +23,7 @@ noremap  <C-l> :tabn<CR>
 noremap  <C-h> :tabp<CR>
 noremap  <C-n> :tabnew<CR>
 
-"Remove the highlighting from previous search
+" Remove the highlighting from previous search
 nnoremap <Space>rh :nohlsearch<CR>
 " Print pwd
 nnoremap <Space>cd :!pwd<CR>

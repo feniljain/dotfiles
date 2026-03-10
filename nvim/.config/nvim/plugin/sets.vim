@@ -72,7 +72,9 @@ set splitright
 
 set inccommand=split
 
-set switchbuf=useopen,usetab
+" How should quickfix list decide which
+" window to open `Enter`ed entry in
+set switchbuf=useopen,usetab 
 " set winbar=%f " Uncomment this once it is fully realeased
 
 " https://github.com/neovim/neovim/pull/20750
