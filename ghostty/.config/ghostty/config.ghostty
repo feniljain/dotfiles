@@ -9,12 +9,16 @@ macos-option-as-alt = left
 
 # https://github.com/ghostty-org/ghostty/discussions/3836
 cursor-style = block
+# now below config is set by default when config above is manually
+# set: https://github.com/ghostty-org/ghostty/issues/8681
+# But we will it around for strictness :)
 shell-integration-features = no-cursor
 cursor-style-blink = false
 
 # Font
-font-family = FiraCode Nerd Font Mono SemBd
+font-family = FiraCode Nerd Font Mono
 font-size = 12
+# font-style-bold = true
 
 # Blur the background like iterm
 background-blur = true

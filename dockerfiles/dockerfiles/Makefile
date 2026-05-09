@@ -24,12 +24,16 @@ db_connect:
 socket_redis:
 	docker run -d --name redis-stack -p 6379:6379 redis/redis-stack-server:latest
 linux_playground_run:
-	# docker run --name linux-playground -v /tmp/binaries:/app --detach --platform linux/amd64 linux-playground
-	docker run --name linux-playground -v /Users/feniljain/Projects/work/e6data/profiles/perf:/app --detach --platform linux/arm64 --entrypoint tail ubuntu:latest -f /dev/null
+	docker run --name linux-playground -v /Users/feniljain/Projects/work/e6data/engine/e6-native-executor/main:/app --detach --platform linux/arm64 --entrypoint tail ubuntu:latest -f /dev/null
 linux_playground_connect:
 	docker exec -it linux-playground /bin/bash
 rust_playground:
-	docker run --name rust-playground -v /tmp/binaries:/app --detach --platform linux/amd64 rust-playground
+	docker run \
+	--name rust-playground \
+	--network host \
+	-v /Users/feniljain/Projects/work/e6data/engine/e6-native-executor/work:/app \
+	-v /Users/feniljain/app:/Users/feniljain/app \
+	--detach --platform linux/arm64 --entrypoint tail rust-playground -f /dev/null
 minio_playground:
 	mkdir -p minio-data/ && \
 	docker run \
@@ -73,3 +77,11 @@ asdf_upstream_img_check:
 	# docker run -d -t --name upstream_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust-upstream -f /dev/null
 local_img_check:
 	docker run -d -t --name local_img_check -e ENABLE_RUST_EXECUTION=true --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust -f /dev/null
+
+df_img_check:
+	docker run -d -t --name df_img_check --platform linux/arm64 --entrypoint tail 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-rust -f /dev/null
+
+java_executor:
+	docker run -d -t --name java-exec --platform linux/arm64 670514002493.dkr.ecr.us-east-1.amazonaws.com/executor:fenil-java
+schema_service:
+	docker run -d -t --name schema --platform linux/arm64 670514002493.dkr.ecr.us-east-1.amazonaws.com/schema:fenil
