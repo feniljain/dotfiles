@@ -1,4 +1,5 @@
-local lang_parsers_to_install = { "go", "rust", "cpp", "typescript", "gomod", "html", "css", "dockerfile", "tsx", "comment", "javascript", "toml", "java" }
+-- lua, markdown, c, etc are installed for features like folding and indent
+local lang_parsers_to_install = { "go", "rust", "cpp", "typescript", "gomod", "html", "css", "dockerfile", "tsx", "comment", "javascript", "toml", "java", "lua", "markdown" }
 
 require('nvim-treesitter').install(lang_parsers_to_install):wait(300000) -- wait max. 5 minutes
 vim.api.nvim_create_autocmd('FileType', {

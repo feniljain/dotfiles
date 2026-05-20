@@ -3,7 +3,9 @@ local actions = require('telescope.actions')
 local lga_actions = require('telescope-live-grep-args.actions')
 local previewers = require("telescope.previewers")
 local Job = require("plenary.job")
-local new_maker = function(filepath, bufnr, opts)
+
+-- dont preview binaries: https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#dont-preview-binaries
+local preview_maker_without_binaries = function(filepath, bufnr, opts)
     filepath = vim.fn.expand(filepath)
     Job:new({
         command = "file",
@@ -68,7 +70,7 @@ require('telescope').setup {
                 ['<C-h>'] = require('telescope.actions.layout').toggle_preview, -- Toggle file preview
             },
         },
-        buffer_previewer_maker = new_maker,
+        buffer_previewer_maker = preview_maker_without_binaries,
         -- Show the files in format: <filename> <complete-path>
         path_display           = function(_opts, path)
             local tail = require("telescope.utils").path_tail(path)

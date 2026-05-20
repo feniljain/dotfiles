@@ -27,6 +27,10 @@ vim.keymap.set("n", "<Space>c", function()
   end)
 end)
 
+-- =======================================================================================
+
+-- Vanilla Bindings ported to lua
+
 vim.keymap.set("i", "jk", "<esc>")
 
 -- To force myself to learn to use new esc key: 'jk', and also not use any
