@@ -1,9 +1,8 @@
 local map = function(keys, func)
-    vim.keymap.set('n', keys, func, { noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', keys, func, { noremap = true, silent = true, buf = bufnr })
 end
 
 toggle_qf = function()
-  -- print("toggle_qf::start")
   local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
     if win["quickfix"] == 1 then
