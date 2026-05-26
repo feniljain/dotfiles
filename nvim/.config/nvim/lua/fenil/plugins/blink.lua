@@ -7,7 +7,7 @@ require('blink.cmp').setup({
             "path",
         },
     },
-    signature = { 
+    signature = {
         enabled = true,
         window = {
             show_documentation = false,

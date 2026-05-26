@@ -13,6 +13,10 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "fidget.nvim": {
+      "rev": "82404b196e73a00b1727a91903beef5ddc319d22",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
     "git-worktree.nvim": {
       "rev": "5fb4e139f3e3c7a0b45b17fee85bb73c912d068e",
       "src": "https://github.com/feniljain/git-worktree.nvim",

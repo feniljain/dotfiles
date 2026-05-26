@@ -5,6 +5,8 @@ local vim = vim
 -- add back semver with version tag
 -- remeber about custom loading function: { 'plugin-name', { load = function() end } }
 
+vim.cmd.packadd 'nvim.undotree'
+
 vim.pack.add({
     -- ==============================================
 
@@ -29,6 +31,7 @@ vim.pack.add({
     -- ==============================================
 
     -- LSP deps
+    'https://github.com/j-hui/fidget.nvim',
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/folke/trouble.nvim',
 

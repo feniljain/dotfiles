@@ -1,6 +1,13 @@
 local vim = vim
 
 require("mason").setup()
+-- keeping fidget around as printing lsp progress in ui2
+-- makes search and command operations much more weird.
+-- They are almost impossible to do correct, ui2 does not
+-- print them, you have to guess, and besides that you keep
+-- getting piling of LSP progress messages if you go into
+-- search or cmd mode
+require("fidget").setup()
 
 local group = vim.api.nvim_create_augroup("LSP", { clear = true })
 
@@ -133,7 +140,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- =======================================================================================
     end
-}) 
+})
 
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('taplo')

@@ -54,3 +54,37 @@
 --   },
 -- }
 -- ===========================================================================================================
+-- replace fidget.nvim: https://www.reddit.com/r/neovim/comments/1scg235/comment/oedgldy/
+-- vim.api.nvim_create_autocmd('LspProgress', {
+--   group = group,
+--   desc = 'show lsp progress messages in ui2',
+--   callback = function(ev)
+--     local value = ev.data.params.value
+--     vim.api.nvim_echo({ { value.message or 'done' } }, false, {
+--       id = 'lsp.' .. ev.data.client_id,
+--       kind = 'progress',
+--       source = 'vim.lsp',
+--       title = value.title,
+--       status = value.kind ~= 'end' and 'running' or 'success',
+--       percent = value.percentage,
+--     })
+--   end,
+-- })
+-- ===========================================================================================================
+-- -- Neovim only sometimes prints `recording @` when recording macros with cmdheight=0.
+-- -- So leave a manual message to indicate recording indeed has started.
+--
+-- vim.api.nvim_create_autocmd("RecordingEnter", {
+--     group = group,
+--     callback = function()
+--         vim.api.nvim_echo({{"recording macro"}}, false, {})
+--     end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("RecordingLeave", {
+--     group = group,
+--     callback = function()
+--         vim.api.nvim_echo({{"done recording macro"}}, false, {})
+--     end,
+-- })
+-- ===========================================================================================================

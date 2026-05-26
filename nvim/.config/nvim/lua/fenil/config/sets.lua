@@ -107,8 +107,6 @@ vim.o.completeopt = "fuzzy"
 
 -- set messagesopt=wait:5000,history:500 " https://www.reddit.com/r/neovim/comments/1h8q8ih/goodbye_to_the_press_enter_in_messages/ " I find hitting enter easier 😅
 
-vim.o.cmdheight = 0
-
 vim.o.winborder = "rounded"
 
 -- https://github.com/mhinz/vim-galore#disable-audible-and-visual-bells
