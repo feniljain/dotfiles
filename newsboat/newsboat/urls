@@ -1,14 +1,32 @@
+# Frequently Updated
+
+https://xkcd.com/rss.xml "~xkcd"
+
+https://feeds.feedburner.com/TheDailyWtf
+
+https://lobste.rs/top/rss
+
+# Weekly Updates
+
+https://msfjarvis.dev/index.xml
+
+https://yashgarg.dev/index.xml
+
+https://fknil.pages.dev/rss.xml
+
+# Tech feeds
+
 http://antirez.com/rss "~Antirez, Redis Creator's Blogs"
 
 https://smallcultfollowing.com/babysteps//index.xml "~Niko's Blog"
 
-https://www.joelonsoftware.com/feed/ "~Joel On Software"
-
-https://dave.cheney.net/feed/atom "~Dave Cheney Blog"
+https://dave.cheney.net/feed "~Dave Cheney Blog"
 
 https://lemire.me/blog/feed/
 
 https://jvns.ca/atom.xml
+
+https://jvns.ca/til/atom.xml
 
 https://matklad.github.io/feed.xml
 
@@ -18,17 +36,9 @@ https://nullprogram.com/feed/
 
 https://pagedout.institute/rss.xml
 
-https://www.josehu.com/blogs.html
-
-https://feeds.feedburner.com/TheDailyWtf
-
 https://andrewkelley.me/rss.xml "~Andrew Kelley, Zig's Founder Blog"
 
-https://dotfyle.com/this-week-in-neovim/rss.xml
-
-https://transactional.blog/feed.xml "~Phil Eaton community's Miller's Blog"
-
-https://xkcd.com/rss.xml "~xkcd"
+https://transactional.blog/feed.xml "~Alex Miller's Blog"
 
 https://www.potaroo.net/rss.xml
 
@@ -36,4 +46,26 @@ https://leahneukirchen.org/trivium/index.atom
 
 https://verdagon.dev/rss.xml "~Interesting PL Design blogs from Vale contributor"
 
-https://www.pypy.org/rss.xml
+https://brooker.co.za/blog/rss.xml
+
+https://bcantrill.dtrace.org/index.xml "~Bryan Cantril's blog"
+
+https://redixhumayun.github.io/feed.xml
+
+https://susam.net/feed.xml
+
+https://graydon2.dreamwidth.org/data/rss
+
+https://eli.thegreenplace.net/feeds/all.atom.xml
+
+https://abhinavsarkar.net/feed.atom
+
+https://ratfactor.com/atom.xml
+
+https://without.boats/index.xml
+
+# Non Tech feeds
+
+https://blr.indiewebclub.org/events.atom
+
+https://solar.lowtechmagazine.com/posts/index.xml
