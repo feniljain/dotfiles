@@ -19,7 +19,7 @@ vim.keymap.set('n', '<Space>so', ':AerialToggle!<CR>')
 
 -- ----------------------------- VIM-FUGITIVE -----------------------------
 
-vim.keymap.set('n', '<Space>gm', ':Gdiffsplit!CR>')
+vim.keymap.set('n', '<Space>gm', ':Gdiffsplit!<CR>')
 vim.keymap.set('n', '<Space>gl', ':diffget //2<CR>')
 vim.keymap.set('n', '<Space>gr', ':diffget //3<CR>')
 vim.keymap.set('n', '<Space>gw', ':Gwrite!<CR>')
