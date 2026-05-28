@@ -165,11 +165,6 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# Erlang and Elixir
-export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
-export KERL_BUILD_DOCS="yes"
-export ERL_AFLAGS="-kernel shell_history enabled"
-
 # Next two lines are from preventing
 # zsh giving repetitive "correct `cargo`
 # to `.cargo` prompts"
@@ -181,42 +176,24 @@ setopt correct
 
 set -o emacs
 
-export PATH=$PATH:/Users/feniljain/.local/share/bob/nvim-bin
+# ==============
 
-# ==== Mac setup
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# export LLVM_DIR=/usr/local/opt/llvm@13
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home"
-
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Mac setup
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/sbin:$PATH"
-
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/opt/homebrew/opt/openssl@1.1"
-
-# postgres
-# export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/icu4c/lib/pkgconfig"
-
-[ -f "/Users/feniljain/.ghcup/env" ] && source "/Users/feniljain/.ghcup/env" # ghcup-env
 
 if [ -e /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
     source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 fi
 
+export PATH=$PATH:/Users/feniljain/.local/share/bob/nvim-bin
+
 # ==============
 
-# ==== Dyte Specific Setup
-export GOPRIVATE=github.com/dyte-in
 # ==============
+
+# NVM Settings
 
 ##### nvm (node version manager) #####
 # placeholder nvm shell function
@@ -233,5 +210,40 @@ function nvm() {
     nvm "$@"
 }
 
-# Gstreamer
-export PATH="/Library/Frameworks/Gstreamer.framework/Commands:$PATH"
+# ==============
+
+# e6data specific configs
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home"
+# export PATH=$PATH:/opt/homebrew/opt/
+
+# ==============
+
+# Aliases
+alias reset="reset && printf '\33c\e[3J'" # https://askubuntu.com/questions/25077/how-to-really-clear-the-terminal
+
+# ==============
+
+# Word based operations
+# https://github.com/ohmyzsh/ohmyzsh/blob/69a6359f7cf8978d464573fb7b023ee3cd00181a/lib/key-bindings.zsh#L99-L111
+
+# [Ctrl-Delete] - delete whole forward-word
+bindkey -M emacs '^[[3;5~' kill-word
+bindkey -M viins '^[[3;5~' kill-word
+bindkey -M vicmd '^[[3;5~' kill-word
+
+# bindkey -M emacs '^[[1;5D' backward-word                  # ctrl+left
+# bindkey -M emacs '^[[1;5C' forward-word                   # ctrl+right
+
+# # [Ctrl-RightArrow] - move forward one word
+# bindkey -M emacs '^[[1;5C' forward-word
+# bindkey -M viins '^[[1;5C' forward-word
+# bindkey -M vicmd '^[[1;5C' forward-word
+# # [Ctrl-LeftArrow] - move backward one word
+# bindkey -M emacs '^[[1;5D' backward-word
+# bindkey -M viins '^[[1;5D' backward-word
+# bindkey -M vicmd '^[[1;5D' backward-word
+
+# ==============
+export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
+

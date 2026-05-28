@@ -37,7 +37,7 @@ UI model:
 	order: 0 !important;
 }
 
-#navigator-toolbox, /* after version 119 */ 
+#navigator-toolbox, /* after version 119 */
 #navigator-toolbox-background { /* before version 119 */
 	-moz-box-ordinal-group: 1 !important;
 	order: 1 !important;

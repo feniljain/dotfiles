@@ -23,9 +23,6 @@
 [alias]
         dft = difftool
 
-[includeIf "gitdir:~/Projects/work/dyte/"]
-	path = ~/Projects/work/dyte/.gitconfig
-
 [init]
 	defaultBranch = main
 
@@ -39,7 +36,7 @@
 	algorithm = histogram
 
 [blame]
-	ignoreRevsFile = 
+	ignoreRevsFile =
 
 [core]
 	excludesfile = ~/.gitignore
@@ -82,3 +79,13 @@
 	updateRefs = true
 
 # Mostly took inspiration from: https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+# https://stackoverflow.com/questions/11623862/fetch-in-git-doesnt-get-all-branches
+# https://stackoverflow.com/questions/54922704/git-cloning-error-fatal-multiple-updates-for-ref-not-allowed
+[remote "origin"]
+	fetch = +refs/archive/*:refs/archive/*
+ 	# fetch = +refs/heads/*:refs/remotes/origin/*
+	# fetch = +refs/heads/*:refs/remotes/origin/*
