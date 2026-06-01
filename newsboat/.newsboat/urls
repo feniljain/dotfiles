@@ -16,9 +16,9 @@ https://fknil.pages.dev/rss.xml
 
 # Tech feeds
 
-http://antirez.com/rss "~Antirez, Redis Creator's Blogs"
+http://antirez.com/rss "~Antirez, Redis Creators Blogs"
 
-https://smallcultfollowing.com/babysteps//index.xml "~Niko's Blog"
+https://smallcultfollowing.com/babysteps//index.xml "~Nikos Blog"
 
 https://dave.cheney.net/feed "~Dave Cheney Blog"
 
@@ -36,9 +36,9 @@ https://nullprogram.com/feed/
 
 https://pagedout.institute/rss.xml
 
-https://andrewkelley.me/rss.xml "~Andrew Kelley, Zig's Founder Blog"
+https://andrewkelley.me/rss.xml "~Andrew Kelley, Zigs Founder Blog"
 
-https://transactional.blog/feed.xml "~Alex Miller's Blog"
+https://transactional.blog/feed.xml "~Alex Millers Blog"
 
 https://www.potaroo.net/rss.xml
 
@@ -48,7 +48,7 @@ https://verdagon.dev/rss.xml "~Interesting PL Design blogs from Vale contributor
 
 https://brooker.co.za/blog/rss.xml
 
-https://bcantrill.dtrace.org/index.xml "~Bryan Cantril's blog"
+https://bcantrill.dtrace.org/index.xml "~Bryan Cantrils blog"
 
 https://redixhumayun.github.io/feed.xml
 
@@ -64,8 +64,18 @@ https://ratfactor.com/atom.xml
 
 https://without.boats/index.xml
 
+https://muratdemirbas.substack.com/feed "~Murat Deimbras blog"
+ 
+https://www.bitsxpages.com/feed
+
 # Non Tech feeds
 
 https://blr.indiewebclub.org/events.atom
 
 https://solar.lowtechmagazine.com/posts/index.xml
+
+https://www.readtrung.com/feed
+
+https://kyla.substack.com/feed
+
+https://usefulfictions.substack.com/feed
