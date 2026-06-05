@@ -9,19 +9,23 @@ require("mason").setup()
 -- search or cmd mode
 require("fidget").setup()
 
-local group = vim.api.nvim_create_augroup("LSP", { clear = true })
+local lsp_attach_group = vim.api.nvim_create_augroup("LSPAttach", { clear = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     -- TODO: Give descriptions to all keymaps everywhere, to see ref checkout kickstart.nvim
 
     -- vim.lsp.log.set_level 'trace'
 
-    group = group,
+    group = lsp_attach_group,
     callback = function(event)
         -- # Helper declarations
         local bufnr = event.buf
         -- local client = event.client
         local client = vim.lsp.get_client_by_id(event.data.client_id)
+        local feature_group = vim.api.nvim_create_augroup(
+            ("LSPFeatures_%d_%d"):format(bufnr, event.data.client_id),
+            { clear = true }
+        )
 
         local map = function(keys, func)
             vim.keymap.set('n', keys, func, { noremap = true, silent = true, buf = bufnr })
@@ -59,12 +63,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         local protocol_methods = vim.lsp.protocol.Methods
 
-        -- clean all existing autocmds
-        vim.api.nvim_clear_autocmds({
-            group = group,
-            buf = bufnr,
-        })
-
         -- Step 1: Registration
 
         -- =======================================================================================
@@ -78,13 +76,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
             ]]
 
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-                group = group,
+                group = feature_group,
                 buf = bufnr,
                 callback = vim.lsp.buf.document_highlight,
             })
 
             vim.api.nvim_create_autocmd('CursorMoved', {
-                group = group,
+                group = feature_group,
                 buf = bufnr,
                 callback = vim.lsp.buf.clear_references,
             })
@@ -105,7 +103,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- document color
         -- https://github.com/neovim/neovim/pull/33440/
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentColor) then
-            vim.lsp.document_color.enable(true, bufnr)
+            vim.lsp.document_color.enable(true, { bufnr = bufnr })
         end
 
         -- Disable semantic highlighting
@@ -121,11 +119,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- detach server side registered capabilities
         vim.api.nvim_create_autocmd('LspDetach', {
-            group = group,
+            group = feature_group,
+            buffer = bufnr,
             callback = function(event2)
                 if client and client:supports_method(protocol_methods.textDocument_documentHighlight) then
                     vim.lsp.buf.clear_references()
-                    vim.api.nvim_clear_autocmds { group = group, buf = event2.buf }
+                    vim.api.nvim_clear_autocmds { group = feature_group, buf = event2.buf }
                 end
 
                 if client and client:supports_method(protocol_methods.textDocument_codeLens) then
@@ -135,6 +134,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 if client and client:supports_method(protocol_methods.textDocument_documentColor) then
                     vim.lsp.document_color.enable(false, { bufnr = event2.buf })
                 end
+
+                pcall(vim.api.nvim_del_augroup_by_id, feature_group)
             end,
         })
 
