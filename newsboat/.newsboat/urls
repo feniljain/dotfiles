@@ -1,81 +1,93 @@
 # Frequently Updated
 
-https://xkcd.com/rss.xml "~xkcd"
+https://xkcd.com/rss.xml "~xkcd" "science"
 
-https://feeds.feedburner.com/TheDailyWtf
+https://feeds.feedburner.com/TheDailyWtf "tech"
 
-https://lobste.rs/top/rss
+https://lobste.rs/top/rss "tech"
 
 # Weekly Updates
 
-https://msfjarvis.dev/index.xml
+https://msfjarvis.dev/index.xml "weekly updates"
 
-https://yashgarg.dev/index.xml
-
-https://fknil.pages.dev/rss.xml
+https://yashgarg.dev/index.xml "weekly updates"
 
 # Tech feeds
 
-http://antirez.com/rss "~Antirez, Redis Creators Blogs"
+http://antirez.com/rss "~Antirez, Redis Creators Blogs" "tech"
 
-https://smallcultfollowing.com/babysteps//index.xml "~Nikos Blog"
+https://smallcultfollowing.com/babysteps//index.xml "~Nikos Blog" "tech"
 
-https://dave.cheney.net/feed "~Dave Cheney Blog"
+https://dave.cheney.net/feed "~Dave Cheney Blog" "tech"
 
-https://lemire.me/blog/feed/
+https://lemire.me/blog/feed/ "tech"
 
-https://jvns.ca/atom.xml
+https://jvns.ca/atom.xml "tech"
 
-https://jvns.ca/til/atom.xml
+https://jvns.ca/til/atom.xml "tech"
 
-https://matklad.github.io/feed.xml
+https://matklad.github.io/feed.xml "tech"
 
-https://ochagavia.nl/blog/index.xml
+https://ochagavia.nl/blog/index.xml "tech"
 
-https://nullprogram.com/feed/
+https://nullprogram.com/feed/ "tech"
 
-https://pagedout.institute/rss.xml
+https://pagedout.institute/rss.xml "tech"
 
-https://andrewkelley.me/rss.xml "~Andrew Kelley, Zigs Founder Blog"
+https://andrewkelley.me/rss.xml "~Andrew Kelley, Zigs Founder Blog" "tech"
 
-https://transactional.blog/feed.xml "~Alex Millers Blog"
+https://transactional.blog/feed.xml "~Alex Millers Blog" "tech"
 
-https://www.potaroo.net/rss.xml
+https://www.potaroo.net/rss.xml "tech"
 
-https://leahneukirchen.org/trivium/index.atom
+https://leahneukirchen.org/trivium/index.atom "tech"
 
-https://verdagon.dev/rss.xml "~Interesting PL Design blogs from Vale contributor"
+https://verdagon.dev/rss.xml "~Interesting PL Design blogs from Vale contributor" "tech"
 
-https://brooker.co.za/blog/rss.xml
+https://brooker.co.za/blog/rss.xml "tech"
 
-https://bcantrill.dtrace.org/index.xml "~Bryan Cantrils blog"
+https://bcantrill.dtrace.org/index.xml "~Bryan Cantrils blog" "tech"
 
-https://redixhumayun.github.io/feed.xml
+https://redixhumayun.github.io/feed.xml "tech"
 
-https://susam.net/feed.xml
+https://susam.net/feed.xml "tech"
 
-https://graydon2.dreamwidth.org/data/rss
+https://eli.thegreenplace.net/feeds/all.atom.xml "tech"
 
-https://eli.thegreenplace.net/feeds/all.atom.xml
+https://ratfactor.com/atom.xml "tech"
 
-https://abhinavsarkar.net/feed.atom
+https://without.boats/index.xml "tech"
 
-https://ratfactor.com/atom.xml
-
-https://without.boats/index.xml
-
-https://muratdemirbas.substack.com/feed "~Murat Deimbras blog"
+https://muratdemirbas.substack.com/feed "~Murat Deimbras blog" "tech"
  
-https://www.bitsxpages.com/feed
+https://www.bitsxpages.com/feed "tech"
+
+https://registerspill.thorstenball.com/feed "tech"
+
+https://www.allthingsdistributed.com/atom.xml "tech"
+
+https://www.scattered-thoughts.net/atom.xml "tech"
+
+https://datafusion.apache.org/blog/feed.xml "tech"
+
+https://newsletter.semianalysis.com/feed "tech"
+
+https://blog.codingconfessions.com/feed "tech"
+
+https://fknil.pages.dev/rss.xml "tech"
+
+https://notado.app/rss/jado/lobsters-comments/feed.rss "~Top lobsters comments" "tech"
 
 # Non Tech feeds
 
-https://blr.indiewebclub.org/events.atom
+https://blr.indiewebclub.org/events.atom "non tech"
 
-https://solar.lowtechmagazine.com/posts/index.xml
+https://solar.lowtechmagazine.com/posts/index.xml "non tech"
 
-https://www.readtrung.com/feed
+https://www.readtrung.com/feed "non tech"
 
-https://kyla.substack.com/feed
+https://kyla.substack.com/feed "non tech"
 
-https://usefulfictions.substack.com/feed
+https://usefulfictions.substack.com/feed "non tech"
+
+https://abhinavsarkar.net/all.atom "non tech"
