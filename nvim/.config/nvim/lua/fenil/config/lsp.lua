@@ -1,6 +1,7 @@
 local vim = vim
 
 require("mason").setup()
+require("trouble").setup()
 -- keeping fidget around as printing lsp progress in ui2
 -- makes search and command operations much more weird.
 -- They are almost impossible to do correct, ui2 does not
@@ -88,11 +89,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
             })
         end
 
-        -- codelens
-        if client and client:supports_method(protocol_methods.textDocument_codeLens) then
-            vim.lsp.codelens.enable(true, { bufnr = bufnr })
-        end
-
         -- inlay hints
         if client and client:supports_method(protocol_methods.textDocument_inlayHint) then
             map('<Space>th', function()
@@ -125,10 +121,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 if client and client:supports_method(protocol_methods.textDocument_documentHighlight) then
                     vim.lsp.buf.clear_references()
                     vim.api.nvim_clear_autocmds { group = feature_group, buf = event2.buf }
-                end
-
-                if client and client:supports_method(protocol_methods.textDocument_codeLens) then
-                    vim.lsp.codelens.enable(false, { bufnr = event2.buf })
                 end
 
                 if client and client:supports_method(protocol_methods.textDocument_documentColor) then

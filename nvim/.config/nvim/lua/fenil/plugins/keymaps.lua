@@ -71,3 +71,8 @@ vim.keymap.set('n', 'tgw', require('telescope').extensions.git_worktree.git_work
 vim.keymap.set('n', 'tgw', require('telescope').extensions.git_worktree.git_worktrees)
 
 vim.keymap.set('n', 'tgw', require('telescope').extensions.git_worktree.git_worktrees)
+
+-- ----------------------------- TROUBLE  -----------------------------
+
+vim.keymap.set('n', 'gwd', ':Trouble diagnostics toggle<CR>')
+vim.keymap.set('n', 'gfd', ':Trouble diagnostics toggle filter.buf=0<CR>')
