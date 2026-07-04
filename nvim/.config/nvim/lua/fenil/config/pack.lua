@@ -19,6 +19,7 @@ vim.pack.add({
     -- treesitter deps
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
     'https://github.com/romgrk/nvim-treesitter-context',
+    'https://github.com/davidmh/mdx.nvim',
 
     -- ==============================================
 
