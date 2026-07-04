@@ -1,0 +1,6 @@
+item-limit 50
+download-timeout 30
+menu-item-sorting unread-desc
+menu-feed-sorting unread-desc
+menu-section-sorting unread-desc
+mark-item-unread-on-change true
